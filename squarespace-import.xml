@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Squarespace Import File (WordPress WXR format) -->
+<!-- Import via: Squarespace Settings > Advanced > Import / Export > WordPress -->
+<rss version="2.0"
+  xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wp="http://wordpress.org/export/1.2/">
+  <channel>
+    <title>Transition Properties</title>
+    <link>https://transitionfl.com</link>
+    <description>Helping People Through Life's Transitions</description>
+    <language>en-US</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <wp:base_site_url>https://transitionfl.com</wp:base_site_url>
+    <wp:base_blog_url>https://transitionfl.com</wp:base_blog_url>
+
+    <!-- ==================== HOME PAGE ==================== -->
+    <item>
+      <title>Home</title>
+      <link>https://transitionfl.com/</link>
+      <pubDate>Mon, 17 Mar 2026 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <wp:post_id>1</wp:post_id>
+      <wp:post_date>2026-03-17 00:00:00</wp:post_date>
+      <wp:post_status>publish</wp:post_status>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_name>home</wp:post_name>
+      <wp:menu_order>1</wp:menu_order>
+      <content:encoded><![CDATA[
+<div class="tp-hero">
+  <h1>Helping People Through Life's Transitions</h1>
+  <p>Navigating probate, foreclosure, or managing an estate? We provide fair, honest solutions that put your needs first. Not another wholesaler — a real partner.</p>
+  <ul>
+    <li>&#10003; No Fees or Commissions</li>
+    <li>&#9829; We Help Even If You Don't Sell</li>
+  </ul>
+</div>
+
+<div class="tp-form-section">
+  <h2>Get Your Free Cash Offer</h2>
+  <p>Tell us about your property. We respond within 24 hours.</p>
+  <form class="tp-form" name="residential-offer" action="/contact" method="POST">
+    <div class="tp-form-row">
+      <div class="tp-form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name" required placeholder="First Name" />
+      </div>
+      <div class="tp-form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name" required placeholder="Last Name" />
+      </div>
+    </div>
+    <div class="tp-form-row">
+      <div class="tp-form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Phone" />
+      </div>
+      <div class="tp-form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="Email" />
+      </div>
+    </div>
+    <div class="tp-form-row tp-full">
+      <div class="tp-form-group">
+        <label for="address">Property Address</label>
+        <input type="text" id="address" name="address" required placeholder="Property Address" />
+      </div>
+    </div>
+    <div class="tp-form-row">
+      <div class="tp-form-group">
+        <label for="property-type">Property Type</label>
+        <select id="property-type" name="property-type">
+          <option value="">Select...</option>
+          <option value="single-family">Single Family</option>
+          <option value="condo">Condo / Townhouse</option>
+          <option value="multi-family">Multi-Family</option>
+          <option value="land">Vacant Land</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="tp-form-group">
+        <label for="situation">Situation</label>
+        <select id="situation" name="situation">
+          <option value="">Select...</option>
+          <option value="probate">Probate / Inherited</option>
+          <option value="foreclosure">Foreclosure</option>
+          <option value="divorce">Divorce</option>
+          <option value="relocation">Relocation</option>
+          <option value="landlord">Tired Landlord</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="tp-form-row tp-full">
+      <div class="tp-form-group">
+        <label for="details">Anything else? (optional)</label>
+        <textarea id="details" name="details" rows="4" placeholder="Share any additional details..."></textarea>
+      </div>
+    </div>
+    <button type="submit" class="tp-btn-submit">Get My Cash Offer &rarr;</button>
+    <p class="tp-privacy">100% confidential &bull; No spam &bull; No obligation</p>
+  </form>
+</div>
+
+<div class="tp-badges">
+  <span>&#10029; No Obligation Offers</span>
+  <span>&#9201; Close on Your Timeline</span>
+  <span>&#10003; Zero Fees</span>
+  <span>&#9829; We Help Even If You Don't Sell</span>
+</div>
+
+<div class="tp-section">
+  <h2>What We Do</h2>
+  <p class="tp-subtitle">Real Solutions, Not Sales Pitches</p>
+  <p>We approach every situation with empathy and expertise. Our goal is to help you find the best path forward.</p>
+  <div class="tp-cards">
+    <div class="tp-card">
+      <span class="tp-icon">&#127968;</span>
+      <h3>Residential Wholesale</h3>
+      <p>Fair cash offers for homes across Southwest Florida. As-is, no repairs, no showings, close on your schedule.</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#9878;</span>
+      <h3>Probate &amp; Estate Help</h3>
+      <p>We work gently with families and attorneys to simplify property transitions during difficult times.</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#128170;</span>
+      <h3>Foreclosure Solutions</h3>
+      <p>We explore every option to protect your equity and give you a fresh start before it's too late.</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#128200;</span>
+      <h3>Investor Partnerships</h3>
+      <p>Transparent numbers and long-term partnerships. Invest with us and learn alongside our team.</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#127970;</span>
+      <h3>Commercial Acquisitions</h3>
+      <p>Nationwide commercial deals with creative structures.</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#127793;</span>
+      <h3>Financial Freedom</h3>
+      <p>We teach clients, employees, and partners to invest alongside us — building generational wealth together.</p>
+    </div>
+  </div>
+</div>
+
+<div class="tp-section tp-alt">
+  <h2>How It Works</h2>
+  <p class="tp-subtitle">Simple &amp; Honest</p>
+  <p>No games, no pressure. A straightforward process designed around your needs.</p>
+  <div class="tp-steps">
+    <div class="tp-step">
+      <span class="tp-step-num">1</span>
+      <h3>Tell Us Your Situation</h3>
+      <p>Fill out the form or call. Share as much or as little as you'd like.</p>
+    </div>
+    <div class="tp-step">
+      <span class="tp-step-num">2</span>
+      <h3>We Evaluate Together</h3>
+      <p>We review your property and walk you through every option available.</p>
+    </div>
+    <div class="tp-step">
+      <span class="tp-step-num">3</span>
+      <h3>Fair Cash Offer</h3>
+      <p>Transparent offer. No fees, no commissions, no pressure.</p>
+    </div>
+    <div class="tp-step">
+      <span class="tp-step-num">4</span>
+      <h3>Close on Your Timeline</h3>
+      <p>You pick the date. We handle everything. Walk away with cash.</p>
+    </div>
+  </div>
+</div>
+
+<div class="tp-cta-banner">
+  <h2>Need to Sell Fast?</h2>
+  <p>Fair, no-obligation cash offer in as little as 24 hours. We buy homes as-is across Southwest Florida.</p>
+  <a href="#offer-form" class="tp-btn">Get Your Free Offer &rarr;</a>
+</div>
+
+<div class="tp-section">
+  <h2>Our Mission</h2>
+  <p class="tp-subtitle">More Than Business. A Calling.</p>
+  <p>Every deal we close is an opportunity to do good — for the homeowner, for our team, and for the world. We're building a company that generates wealth and uses it to fund things that matter for eternity.</p>
+</div>
+
+<div class="tp-section tp-alt">
+  <h2>Why Choose Us</h2>
+  <div class="tp-cards">
+    <div class="tp-card">
+      <h3>&#9829; People Over Profits</h3>
+      <p>We'll help you find the best solution even if it means you don't sell to us.</p>
+    </div>
+    <div class="tp-card">
+      <h3>&#128270; Radical Transparency</h3>
+      <p>You'll always know our numbers, our offer, and our reasoning — no hidden agendas.</p>
+    </div>
+    <div class="tp-card">
+      <h3>&#127758; Kingdom Impact</h3>
+      <p>Our profits fund missionaries, fight child trafficking, and serve orphans and widows worldwide.</p>
+    </div>
+    <div class="tp-card">
+      <h3>&#127891; Teach &amp; Empower</h3>
+      <p>We invest in the financial literacy of everyone we work with.</p>
+    </div>
+  </div>
+</div>
+]]></content:encoded>
+    </item>
+
+    <!-- ==================== ABOUT PAGE ==================== -->
+    <item>
+      <title>About</title>
+      <link>https://transitionfl.com/about</link>
+      <pubDate>Mon, 17 Mar 2026 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <wp:post_id>2</wp:post_id>
+      <wp:post_date>2026-03-17 00:00:00</wp:post_date>
+      <wp:post_status>publish</wp:post_status>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_name>about</wp:post_name>
+      <wp:menu_order>2</wp:menu_order>
+      <content:encoded><![CDATA[
+<div class="tp-hero tp-hero-dark">
+  <h1>About Transition Properties</h1>
+  <p class="tp-tagline">Built on Faith. Driven by Purpose.</p>
+  <p>We're not just another real estate company. We're building a business that puts people first, creates generational wealth, and funds a mission that matters for eternity.</p>
+</div>
+
+<div class="tp-section">
+  <h2>A Company With A Mission</h2>
+  <p>Transition Properties was born out of a calling — not just to make money in real estate, but to use business as a vehicle for God's kingdom. We believe that every transaction is an opportunity to serve, to show love, and to put people's needs before profit.</p>
+  <p>That's why we help homeowners even when they don't sell to us. Our team is built on a culture of integrity, generosity, and radical transparency — because that's what we'd want if we were in your shoes.</p>
+</div>
+
+<div class="tp-section tp-alt">
+  <h2>Our Purpose</h2>
+  <p class="tp-subtitle">Storing Treasures In Heaven</p>
+  <p>Our business exists for something far bigger than ourselves. Every deal, every relationship, every dollar earned is channeled toward eternal impact.</p>
+
+  <div class="tp-cards">
+    <div class="tp-card">
+      <span class="tp-icon">&#127758;</span>
+      <h3>Spreading the Gospel Worldwide</h3>
+      <p>Our ultimate goal is to spread the gospel of Jesus Christ to the nations. Every property we acquire, every deal we close, generates the resources to fund missionaries, plant churches, and share God's love in communities around the world.</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#128694;</span>
+      <h3>Fighting Child Sex Trafficking</h3>
+      <p>This is the fight of our generation. We are committed to putting a dent in child sex trafficking around the world by funding rescue operations, safe houses, and prevention programs. This isn't a side project — it's core to who we are.</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#128591;</span>
+      <h3>Serving Orphans &amp; Widows</h3>
+      <p>James 1:27 calls us to look after orphans and widows in their distress. We take that seriously. Through our profits and partnerships, we support orphanages, widow care programs, and community support systems both locally and globally.</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#128176;</span>
+      <h3>Building Financial Freedom</h3>
+      <p>We don't just want to be wealthy — we want to create wealth in the people around us. Our team members, clients, and partners are invited to invest alongside us in our deals, learn real estate, and build generational financial freedom for their families.</p>
+    </div>
+  </div>
+</div>
+
+<div class="tp-quote">
+  <blockquote>
+    "Do not store up for yourselves treasures on earth... but store up for yourselves treasures in heaven."
+    <cite>Matthew 6:19-20</cite>
+  </blockquote>
+</div>
+
+<div class="tp-cta-banner">
+  <h2>Want to be part of the mission?</h2>
+  <p>Whether you have a property to sell, want to invest with us, or just want to connect — we'd love to hear from you.</p>
+  <a href="/" class="tp-btn">Sell Your Property &rarr;</a>
+  <a href="/commercial" class="tp-btn tp-btn-outline">Commercial Deals &rarr;</a>
+</div>
+]]></content:encoded>
+    </item>
+
+    <!-- ==================== COMMERCIAL PAGE ==================== -->
+    <item>
+      <title>Commercial</title>
+      <link>https://transitionfl.com/commercial</link>
+      <pubDate>Mon, 17 Mar 2026 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <wp:post_id>3</wp:post_id>
+      <wp:post_date>2026-03-17 00:00:00</wp:post_date>
+      <wp:post_status>publish</wp:post_status>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_name>commercial</wp:post_name>
+      <wp:menu_order>3</wp:menu_order>
+      <content:encoded><![CDATA[
+<div class="tp-hero tp-hero-dark">
+  <h1>Nationwide Commercial Acquisitions</h1>
+  <p class="tp-tagline">We Buy Commercial Properties Across America</p>
+  <p>From distressed assets to performing properties, we bring creative deal structures and fast closings to commercial real estate owners and brokers nationwide.</p>
+  <div class="tp-badges">
+    <span>Nationwide Coverage</span>
+    <span>Any Size Deal Welcome</span>
+    <span>Fast Closings</span>
+  </div>
+</div>
+
+<div class="tp-form-section">
+  <h2>Submit Your Commercial Property</h2>
+  <p>All inquiries reviewed within 48 hours.</p>
+  <form class="tp-form" name="commercial-submission" action="/contact" method="POST">
+    <div class="tp-form-row">
+      <div class="tp-form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name" />
+      </div>
+      <div class="tp-form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Phone" />
+      </div>
+    </div>
+    <div class="tp-form-row tp-full">
+      <div class="tp-form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="Email" />
+      </div>
+    </div>
+    <div class="tp-form-row tp-full">
+      <div class="tp-form-group">
+        <label for="address">Property Address / Location</label>
+        <input type="text" id="address" name="address" required placeholder="Property Address / Location" />
+      </div>
+    </div>
+    <div class="tp-form-row">
+      <div class="tp-form-group">
+        <label for="property-type">Property Type</label>
+        <select id="property-type" name="property-type">
+          <option value="">Select...</option>
+          <option value="retail">Retail</option>
+          <option value="office">Office</option>
+          <option value="industrial">Industrial</option>
+          <option value="multi-family">Multi-Family 5+</option>
+          <option value="mixed-use">Mixed Use</option>
+          <option value="hotel">Hotel</option>
+          <option value="land">Vacant Land</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="tp-form-group">
+        <label for="price">Asking Price</label>
+        <input type="text" id="price" name="price" placeholder="Asking Price" />
+      </div>
+    </div>
+    <div class="tp-form-row tp-full">
+      <div class="tp-form-group">
+        <label for="details">Deal Details</label>
+        <textarea id="details" name="details" rows="5" placeholder="Share key details about the deal..."></textarea>
+      </div>
+    </div>
+    <button type="submit" class="tp-btn-submit">Submit for Review &rarr;</button>
+    <p class="tp-privacy">100% confidential. Every submission reviewed.</p>
+  </form>
+</div>
+
+<div class="tp-section">
+  <h2>What We Acquire</h2>
+  <p class="tp-subtitle">All Commercial Property Types</p>
+  <p>We have the flexibility and capital relationships to close on a wide range of commercial real estate.</p>
+  <div class="tp-cards">
+    <div class="tp-card">
+      <span class="tp-icon">&#127970;</span>
+      <h3>Office</h3>
+      <p>Class A through C</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#127978;</span>
+      <h3>Retail</h3>
+      <p>Strip malls, standalone</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#127981;</span>
+      <h3>Industrial</h3>
+      <p>Warehouses, flex, distribution</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#127976;</span>
+      <h3>Multi-Family 5+</h3>
+      <p>Apartment complexes</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#127960;</span>
+      <h3>Mixed Use</h3>
+      <p>Residential-commercial</p>
+    </div>
+    <div class="tp-card">
+      <span class="tp-icon">&#127961;</span>
+      <h3>Hotels</h3>
+      <p>All classes and markets</p>
+    </div>
+  </div>
+</div>
+
+<div class="tp-section tp-alt">
+  <h2>Why Work With Us</h2>
+  <p class="tp-subtitle">The Transition Difference</p>
+  <div class="tp-steps">
+    <div class="tp-step">
+      <span class="tp-step-num">01</span>
+      <h3>Creative Structures</h3>
+      <p>Subject-to, seller financing, JV partnerships, assignments. We find what works.</p>
+    </div>
+    <div class="tp-step">
+      <span class="tp-step-num">02</span>
+      <h3>Speed &amp; Certainty</h3>
+      <p>Fast closings with proof of funds. No re-trades or endless delays.</p>
+    </div>
+    <div class="tp-step">
+      <span class="tp-step-num">03</span>
+      <h3>Mission-Driven</h3>
+      <p>Our profits fund fighting child trafficking and serving orphans and widows worldwide.</p>
+    </div>
+    <div class="tp-step">
+      <span class="tp-step-num">04</span>
+      <h3>Investor Network</h3>
+      <p>Access our growing network for JV opportunities on your deals.</p>
+    </div>
+    <div class="tp-step">
+      <span class="tp-step-num">05</span>
+      <h3>Nationwide Reach</h3>
+      <p>Every state. No market too small or too large to evaluate.</p>
+    </div>
+    <div class="tp-step">
+      <span class="tp-step-num">06</span>
+      <h3>Total Transparency</h3>
+      <p>You'll know our numbers, timeline, and plan. No hidden agendas.</p>
+    </div>
+  </div>
+</div>
+
+<div class="tp-cta-banner tp-dark">
+  <h2>Have a Deal? Let's Talk.</h2>
+  <p>Whether you're a broker, owner, or investor with a lead, we want to hear from you.</p>
+  <a href="#commercial-form" class="tp-btn">Submit Your Commercial Property &rarr;</a>
+  <p class="tp-note">All inquiries reviewed within 48 hours.</p>
+</div>
+]]></content:encoded>
+    </item>
+
+  </channel>
+</rss>
