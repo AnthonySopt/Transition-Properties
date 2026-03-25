@@ -28,7 +28,13 @@ const formLimiter = rateLimit({
 });
 
 // ── API Routes ────────────────────────────────────────────────────────────────
+// Residential & commercial lead forms → info@transitionfl.com
 app.use('/api/leads', formLimiter, leadsRouter);
+
+// Deal submission form → deals@transitionfl.com
+// This reuses the commercial lead endpoint but tags submissions as deals.
+// The submit-deal.html page sets situation to "Deal Submission — [Role]"
+// so deal submissions are identifiable in the admin dashboard and email notifications.
 
 // ── Admin Auth ────────────────────────────────────────────────────────────────
 function adminAuth(req, res, next) {
@@ -46,20 +52,87 @@ function adminAuth(req, res, next) {
 }
 
 // ── Admin API ─────────────────────────────────────────────────────────────────
-app.get('/api/admin/leads',     adminAuth, (req, res) => res.json(getLeads(req.query.type)));
-app.get('/api/admin/stats',     adminAuth, (req, res) => res.json(getStats()));
+app.get('/api/admin/leads',        adminAuth, (req, res) => res.json(getLeads(req.query.type)));
+app.get('/api/admin/stats',        adminAuth, (req, res) => res.json(getStats()));
 app.delete('/api/admin/leads/:id', adminAuth, (req, res) => {
   const ok = deleteLead(req.params.id);
   ok ? res.json({ success: true }) : res.status(404).json({ error: 'Lead not found.' });
 });
 
+// ── .html → clean URL redirects (before static files to intercept) ───────────
+app.get('/*.html', (req, res) => {
+  const slug = req.path.replace(/\.html$/, '').replace(/^\//, '');
+  const map = {
+    'index': '/',
+    'about': '/about',
+    'commercial': '/commercial',
+    'sell-my-house-fast': '/sell-my-house-fast',
+    'pre-foreclosure': '/pre-foreclosure',
+    'probate': '/probate',
+    'land': '/land',
+    'tired-landlords': '/tired-landlords',
+    'storage': '/storage',
+    'mobile-parks': '/mobile-parks',
+    'multifamily': '/multifamily',
+    'industrial': '/industrial',
+    'office': '/office',
+    'retail': '/retail',
+    'how-it-works': '/how-it-works',
+    'areas-we-serve': '/areas-we-serve',
+    'faq': '/faq',
+    'submit-deal': '/submit-deal',
+  };
+  if (map[slug]) return res.redirect(301, map[slug]);
+  // Fall through to static for non-mapped .html files (e.g. admin.html)
+  res.sendFile(path.join(__dirname, req.path.slice(1)), (err) => {
+    if (err) res.status(404).send('Not found');
+  });
+});
+
 // ── Static Files ──────────────────────────────────────────────────────────────
 app.use(express.static(path.join(__dirname)));
 
-app.get('/',           (_, res) => res.sendFile(path.join(__dirname, 'index.html')));
-app.get('/about',      (_, res) => res.sendFile(path.join(__dirname, 'about.html')));
-app.get('/commercial', (_, res) => res.sendFile(path.join(__dirname, 'commercial.html')));
-app.get('/admin',      (_, res) => res.sendFile(path.join(__dirname, 'admin.html')));
+// ── SEO Files ─────────────────────────────────────────────────────────────────
+app.get('/robots.txt',  (_, res) => res.sendFile(path.join(__dirname, 'robots.txt')));
+app.get('/sitemap.xml', (_, res) => res.type('application/xml').sendFile(path.join(__dirname, 'sitemap.xml')));
+
+// ── Helper: serve HTML file ───────────────────────────────────────────────────
+const html = (file) => (_, res) => res.sendFile(path.join(__dirname, file));
+
+// ── Page Routes (clean URLs) ──────────────────────────────────────────────────
+
+// Core pages
+app.get('/',                  html('index.html'));
+app.get('/about',             html('about.html'));
+app.get('/admin',             html('admin.html'));
+
+// Residential service pages
+app.get('/sell-my-house-fast', html('sell-my-house-fast.html'));
+app.get('/pre-foreclosure',    html('pre-foreclosure.html'));
+app.get('/probate',            html('probate.html'));
+app.get('/land',               html('land.html'));
+app.get('/tired-landlords',    html('tired-landlords.html'));
+
+// Commercial pages
+app.get('/commercial',         html('commercial.html'));
+app.get('/storage',            html('storage.html'));
+app.get('/mobile-parks',       html('mobile-parks.html'));
+app.get('/multifamily',        html('multifamily.html'));
+app.get('/industrial',         html('industrial.html'));
+app.get('/office',             html('office.html'));
+app.get('/retail',             html('retail.html'));
+
+// Resource pages
+app.get('/how-it-works',       html('how-it-works.html'));
+app.get('/areas-we-serve',     html('areas-we-serve.html'));
+app.get('/faq',                html('faq.html'));
+app.get('/submit-deal',        html('submit-deal.html'));
+
+// ── Redirects (alternate URLs → canonical) ────────────────────────────────────
+app.get('/tired-landlord',     (_, res) => res.redirect(301, '/tired-landlords'));
+app.get('/storage-facilities', (_, res) => res.redirect(301, '/storage'));
+app.get('/mobile-home-parks',  (_, res) => res.redirect(301, '/mobile-parks'));
+app.get('/areas',              (_, res) => res.redirect(301, '/areas-we-serve'));
 
 // ── Start ─────────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {

@@ -46,13 +46,14 @@ function formatLeadEmail(type, data) {
   };
 }
 
-async function sendNotification(type, data) {
+async function sendNotification(type, data, recipientOverride) {
   const transporter = createTransporter();
-  if (!transporter || !process.env.NOTIFY_EMAIL) return;
+  const to = recipientOverride || process.env.NOTIFY_EMAIL;
+  if (!transporter || !to) return;
   const { subject, html } = formatLeadEmail(type, data);
   await transporter.sendMail({
     from: `"Transition Properties" <${process.env.SMTP_USER}>`,
-    to:   process.env.NOTIFY_EMAIL,
+    to,
     subject,
     html,
   }).catch(err => console.error('Email error:', err.message));
@@ -78,7 +79,7 @@ router.post('/residential', (req, res) => {
 
 // POST /api/leads/commercial
 router.post('/commercial', (req, res) => {
-  const { name, phone, email, address, property_type, asking_price, details } = req.body;
+  const { name, phone, email, address, property_type, situation, asking_price, details } = req.body;
 
   if (!phone?.trim() || !email?.trim() || !address?.trim()) {
     return res.status(400).json({ error: 'Phone, email, and property address are required.' });
@@ -86,10 +87,18 @@ router.post('/commercial', (req, res) => {
 
   const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
 
-  insertLead({ type: 'commercial', name, phone, email, address, property_type, asking_price, details, ip });
-  sendNotification('commercial', req.body);
+  insertLead({ type: 'commercial', name, phone, email, address, property_type, situation, asking_price, details, ip });
 
-  res.json({ success: true, message: "✓ Submission received! We review all inquiries within 48 hours." });
+  // Deal submissions (from /submit-deal page) go to deals@transitionfl.com
+  // Regular commercial leads go to the standard NOTIFY_EMAIL (info/leads)
+  const isDeal = situation && situation.startsWith('Deal Submission');
+  const recipient = isDeal ? (process.env.DEALS_EMAIL || 'deals@transitionfl.com') : undefined;
+  sendNotification('commercial', req.body, recipient);
+
+  res.json({ success: true, message: isDeal
+    ? "✓ Deal submitted! We review all submissions within 24 hours."
+    : "✓ Submission received! We review all inquiries within 48 hours."
+  });
 });
 
 module.exports = router;

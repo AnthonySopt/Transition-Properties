@@ -1,21 +1,12 @@
-# Everything except Website/
-/*
-!Website/
-!.gitignore
-
 # Dependencies
 node_modules/
-Website/node_modules/
 
 # Environment variables
 .env
-Website/.env
 
 # Database
 *.db
 *.sqlite
-Website/*.db
-Website/*.sqlite
 
 # OS files
 .DS_Store
@@ -23,12 +14,23 @@ Thumbs.db
 
 # Logs
 *.log
-Website/*.log
 
 # Backup files
 *.bak
-Website/*.bak
 
 # Lead data
 leads.json
-Website/leads.json
+
+# Old scripts/misc
+*.ps1
+convert-cards.js
+*.code-workspace
+.claude/
+
+# Non-website folders
+Business Cards/
+LOgo Package/
+Leads/
+Legal Registration/
+SOP/
+Website/

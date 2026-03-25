@@ -40,7 +40,8 @@
 
   function getEndpoint() {
     const path = window.location.pathname.replace(/\/$/, '');
-    return path === '/commercial' ? '/api/leads/commercial' : '/api/leads/residential';
+    const commercialPages = ['/commercial', '/storage', '/mobile-parks', '/multifamily', '/industrial', '/office', '/retail'];
+    return commercialPages.includes(path) ? '/api/leads/commercial' : '/api/leads/residential';
   }
 
   function validate(data, type) {
