@@ -1,0 +1,7 @@
+Database ready (leads.json).
+
+  Transition Properties running
+  Site:    http://localhost:3000
+  Admin:   http://localhost:3000/admin
+  (username: admin  /  password: change-me-before-deploying)
+
