@@ -517,16 +517,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 </div><div class="fbo"><span>&copy; 2026 Transition Properties. All rights reserved.</span><span>transitionfl.com</span></div></footer>
 
 <script src="/form-handler.js"></script>
-<script>
-document.querySelectorAll('.faq-q').forEach(function(q){
-  q.addEventListener('click',function(){
-    var item=this.parentElement;
-    var wasOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
-    if(!wasOpen) item.classList.add('open');
-  });
-});
-</script>
+<!-- FAQ accordion handled by interactions.js -->
 <script>
 function toggleMobileNav(){var n=document.querySelector('.nl');if(n.classList.contains('mob-open')){n.classList.remove('mob-open');var cb=n.querySelector('.mob-close-btn');if(cb)cb.remove();}else{n.classList.add('mob-open');var btn=document.createElement('button');btn.className='mob-close-btn';btn.innerHTML='\u00D7';btn.style.cssText='position:fixed;top:1.5rem;right:2rem;background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;z-index:250;line-height:1';btn.onclick=function(){n.classList.remove("mob-open");btn.remove()};n.appendChild(btn);}}
 </script>

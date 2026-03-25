@@ -262,14 +262,15 @@
   min-height:56px;transition:background .2s;
 }
 .faq-q:hover{background:rgba(232,97,45,0.02)}
-/* Animated chevron icon */
+/* Animated chevron icon — overrides inline +/- with CSS arrow */
 .faq-q::after{
-  content:'';display:block;flex-shrink:0;
+  content:''!important;display:block;flex-shrink:0;
   width:10px;height:10px;
   border-right:2.5px solid var(--o);border-bottom:2.5px solid var(--o);
   transform:rotate(45deg);
   transition:transform .3s ease;
   margin-top:-3px;
+  font-size:0!important;
 }
 .faq-item.open .faq-q::after{transform:rotate(-135deg);margin-top:3px}
 .faq-a{
