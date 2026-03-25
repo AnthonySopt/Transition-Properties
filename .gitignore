@@ -3,9 +3,17 @@
 !Website/
 !.gitignore
 
-# Inside Website/ — exclude sensitive/generated files
+# Dependencies
+node_modules/
 Website/node_modules/
+
+# Environment variables
+.env
 Website/.env
+
+# Database
+*.db
+*.sqlite
 Website/*.db
 Website/*.sqlite
 
@@ -14,11 +22,13 @@ Website/*.sqlite
 Thumbs.db
 
 # Logs
+*.log
 Website/*.log
-Website/server-error.log
 
 # Backup files
+*.bak
 Website/*.bak
 
 # Lead data
+leads.json
 Website/leads.json
