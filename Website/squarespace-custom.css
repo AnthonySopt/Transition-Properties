@@ -1,0 +1,565 @@
+/* ============================================================
+   Transition Properties — Design Overhaul
+   Linked in all HTML pages as an external stylesheet.
+   Works WITH the existing inline <style> blocks (additive).
+   ============================================================ */
+
+/* ── 1. NAVIGATION DROPDOWN FIX ─────────────────────────────── */
+
+/* Dropdown trigger — larger hit area, flex alignment */
+.dd{position:relative}
+.dd-toggle{
+  font-size:.85rem;color:var(--tm);font-weight:500;cursor:pointer;
+  background:none;border:none;font-family:inherit;
+  display:inline-flex;align-items:center;gap:.3rem;
+  padding:.5rem .25rem;transition:color .3s;
+  white-space:nowrap;
+}
+.dd-toggle:hover{color:var(--o)}
+.nv-d .dd-toggle{color:rgba(255,255,255,0.6)}
+.nv-d .dd-toggle:hover{color:var(--am)}
+
+/* Chevron icon via CSS — replaces inline ▾ */
+.dd-toggle .dd-chev{
+  display:inline-block;width:0;height:0;
+  border-left:4px solid transparent;border-right:4px solid transparent;
+  border-top:5px solid currentColor;
+  transition:transform .3s ease;
+  margin-left:2px;
+}
+.dd.open .dd-toggle .dd-chev,
+.dd:hover .dd-toggle .dd-chev{transform:rotate(180deg)}
+
+/* Desktop dropdown menu — animated */
+.dd-menu{
+  display:block;position:absolute;top:calc(100% + 4px);left:50%;
+  transform:translateX(-50%) translateY(8px);
+  min-width:230px;background:#fff;border-radius:12px;
+  box-shadow:0 16px 48px rgba(44,24,16,0.14),0 2px 8px rgba(44,24,16,0.06);
+  border:1px solid rgba(74,44,26,0.08);
+  padding:.6rem 0;z-index:200;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease,visibility .25s;
+}
+.dd-menu::before{
+  content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);
+  width:12px;height:12px;background:#fff;
+  border-left:1px solid rgba(74,44,26,0.08);border-top:1px solid rgba(74,44,26,0.08);
+}
+/* Show on hover with delay protection */
+.dd:hover>.dd-menu,.dd.open>.dd-menu{
+  opacity:1;visibility:visible;pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+.dd-menu a{
+  display:block;padding:.65rem 1.4rem;font-size:.84rem;color:var(--tb);
+  font-weight:500;transition:background .2s,color .2s,padding-left .2s;
+  white-space:nowrap;min-height:44px;display:flex;align-items:center;
+}
+.dd-menu a:hover{background:var(--cr);color:var(--o);padding-left:1.6rem}
+
+/* Active page highlight in nav */
+.nl a.nav-active{color:var(--o);font-weight:600}
+.nv-d .nl a.nav-active{color:var(--am)}
+.dd-menu a.nav-active{color:var(--o);font-weight:600;background:rgba(232,97,45,0.05)}
+
+/* Nav call button improved */
+.nav-call-btn{
+  display:inline-flex;align-items:center;gap:.35rem;
+  color:var(--o);font-weight:700;font-size:.85rem;
+  padding:.5rem 1.1rem;border-radius:8px;
+  background:#fff;box-shadow:0 2px 8px rgba(232,97,45,.15);
+  transition:all .25s;white-space:nowrap;text-decoration:none;
+}
+.nav-call-btn:hover{
+  box-shadow:0 4px 16px rgba(232,97,45,.28);
+  transform:translateY(-1px);
+}
+.nv-d .nav-call-btn{
+  background:rgba(255,255,255,0.08);color:var(--am);
+  box-shadow:none;border:1px solid rgba(255,255,255,0.15);
+}
+
+/* ── NAV BRAND (icon + "TRANSITION" text) ───────────────────── */
+.nav-brand{flex-shrink:0}
+.nav-brand a{
+  display:flex;align-items:center;gap:.65rem;
+  text-decoration:none;
+}
+.nav-brand img{
+  height:50px;width:auto;object-fit:contain;display:block;
+}
+.nav-brand-text{
+  font-family:Georgia,'Playfair Display',serif;
+  font-weight:700;font-size:1.15rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--td);white-space:nowrap;
+  line-height:1;
+}
+/* Dark nav brand text */
+.nv-d .nav-brand-text{color:#fff}
+
+/* Override old inline .nv img{height:88px} */
+.nv .nav-brand img{height:50px!important;width:auto!important;max-height:50px!important;object-fit:contain;display:block}
+.nv img{height:auto;width:auto;object-fit:contain;display:block}
+
+/* ── MOBILE NAV ─────────────────────────────────────────────── */
+.hb{
+  display:none;flex-direction:column;gap:5px;cursor:pointer;
+  padding:10px;z-index:300;position:relative;
+  width:44px;height:44px;justify-content:center;align-items:center;
+}
+.hb span{
+  width:22px;height:2px;background:var(--b);display:block;
+  transition:transform .3s ease,opacity .3s ease;
+  border-radius:2px;
+}
+/* Hamburger → X animation */
+.hb.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hb.active span:nth-child(2){opacity:0}
+.hb.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nv-d .hb span{background:#fff}
+
+/* Mobile slide-in overlay */
+.nl.mob-open{
+  display:flex!important;position:fixed;top:0;left:0;width:100%;height:100dvh;
+  background:rgba(44,24,16,0.97);
+  flex-direction:column;align-items:center;justify-content:center;
+  gap:0;z-index:250;padding:2rem;overflow-y:auto;
+  animation:mobileNavIn .35s ease;
+}
+@keyframes mobileNavIn{
+  from{opacity:0;transform:translateY(-20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.nl.mob-open>a,
+.nl.mob-open>button,
+.nl.mob-open>.dd>.dd-toggle{
+  color:rgba(255,255,255,0.85);font-size:1.1rem;
+  padding:.75rem 0;min-height:48px;
+  display:flex;align-items:center;
+}
+.nl.mob-open>a:hover{color:var(--am)}
+
+/* Mobile dropdown children */
+.nl.mob-open .dd{width:100%;text-align:center}
+.nl.mob-open .dd-toggle{
+  color:var(--am);font-size:1.1rem;width:100%;
+  justify-content:center;padding:.75rem 0;min-height:48px;
+}
+.nl.mob-open .dd-menu{
+  position:static;transform:none;background:transparent;
+  box-shadow:none;border:none;display:none;
+  padding:0;margin:0;min-width:auto;
+  opacity:1;visibility:visible;pointer-events:auto;
+}
+.nl.mob-open .dd-menu::before{display:none}
+.nl.mob-open .dd.open .dd-menu{
+  display:block;animation:accordionDown .3s ease;
+}
+.nl.mob-open .dd-menu a{
+  color:rgba(255,255,255,0.6);font-size:.95rem;
+  padding:.55rem 0;justify-content:center;min-height:44px;
+}
+.nl.mob-open .dd-menu a:hover{background:transparent;color:var(--am);padding-left:0}
+
+/* Mobile close button */
+.mob-close-btn{
+  position:fixed;top:1.2rem;right:1.5rem;
+  background:none;border:none;color:#fff;
+  font-size:2.2rem;cursor:pointer;z-index:260;
+  line-height:1;width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* Mobile nav call button */
+.nl.mob-open .nav-call-btn{
+  display:inline-flex!important;background:transparent;
+  box-shadow:none;color:var(--am);
+  border:1px solid rgba(255,255,255,0.2);
+  margin-top:.75rem;
+}
+
+@media(max-width:900px){
+  .nl{display:none}
+  .hb{display:flex}
+}
+
+
+/* ── 2. PAGE-TOPIC COLOR DIFFERENTIATION ────────────────────── */
+
+/* -- Residential (warm coral/peach/orange) -- */
+.page-residential{--accent:var(--o);--accent2:var(--coral);--accent-bg:rgba(232,97,45,0.04);--accent-bg2:rgba(255,184,74,0.06)}
+.page-residential .se:nth-child(even){background:linear-gradient(180deg,rgba(255,184,74,0.04),rgba(232,97,45,0.02))}
+.page-residential .cb{background:linear-gradient(135deg,var(--o),#D4551F,var(--am))}
+.page-residential .tg.to{background:rgba(232,97,45,0.1);color:var(--o)}
+
+/* -- Commercial (dark/navy/gold professional) -- */
+.page-commercial{
+  --accent:#1A365D;--accent2:var(--gold);
+  --accent-bg:rgba(26,54,93,0.03);--accent-bg2:rgba(212,164,83,0.05);
+}
+.page-commercial .se:nth-child(even){background:linear-gradient(180deg,rgba(26,54,93,0.03),rgba(212,164,83,0.02))}
+.page-commercial .tg.to{background:rgba(26,54,93,0.1);color:#1A365D}
+.page-commercial .sh .gr{
+  background:linear-gradient(135deg,#1A365D,var(--gold));
+  -webkit-background-clip:text;background-clip:text;
+}
+
+/* Commercial sub-page accent overrides */
+.page-storage{--sub-accent:#2D6A4F}
+.page-storage .cd:hover,.page-storage .faq-item:hover{border-color:rgba(45,106,79,0.25)}
+.page-mobile-parks{--sub-accent:#7C3AED}
+.page-mobile-parks .cd:hover,.page-mobile-parks .faq-item:hover{border-color:rgba(124,58,237,0.2)}
+.page-multifamily{--sub-accent:#0369A1}
+.page-multifamily .cd:hover,.page-multifamily .faq-item:hover{border-color:rgba(3,105,161,0.2)}
+.page-industrial{--sub-accent:#78350F}
+.page-industrial .cd:hover,.page-industrial .faq-item:hover{border-color:rgba(120,53,15,0.25)}
+.page-office{--sub-accent:#334155}
+.page-office .cd:hover,.page-office .faq-item:hover{border-color:rgba(51,65,85,0.2)}
+.page-retail{--sub-accent:#BE185D}
+.page-retail .cd:hover,.page-retail .faq-item:hover{border-color:rgba(190,24,93,0.2)}
+
+/* -- Support pages (neutral/trust tones) -- */
+.page-support{--accent:var(--teal);--accent2:var(--sky);--accent-bg:rgba(29,158,117,0.03);--accent-bg2:rgba(74,173,232,0.04)}
+.page-support .se:nth-child(even){background:linear-gradient(180deg,rgba(29,158,117,0.03),rgba(74,173,232,0.02))}
+.page-support .tg.to{background:rgba(29,158,117,0.1);color:var(--teal)}
+
+/* -- Submit Deal (professional portal) -- */
+.page-deal{--accent:#1A365D;--accent2:var(--gold);--accent-bg:rgba(26,54,93,0.03)}
+
+
+/* ── 3. SCROLL ANIMATIONS ───────────────────────────────────── */
+.anim-ready [data-anim]{
+  opacity:0;transform:translateY(30px);
+  transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);
+}
+.anim-ready [data-anim].visible{opacity:1;transform:translateY(0)}
+.anim-ready [data-anim="fade"]{transform:none}
+.anim-ready [data-anim="fade"].visible{opacity:1}
+.anim-ready [data-anim="scale"]{transform:scale(.95);opacity:0}
+.anim-ready [data-anim="scale"].visible{transform:scale(1);opacity:1}
+/* Stagger children */
+.anim-ready [data-anim-delay="1"]{transition-delay:.1s}
+.anim-ready [data-anim-delay="2"]{transition-delay:.2s}
+.anim-ready [data-anim-delay="3"]{transition-delay:.3s}
+.anim-ready [data-anim-delay="4"]{transition-delay:.4s}
+.anim-ready [data-anim-delay="5"]{transition-delay:.5s}
+
+
+/* ── 4. IMPROVED FAQ ACCORDION ──────────────────────────────── */
+.faq-item{
+  background:#fff;border:1px solid rgba(74,44,26,0.06);
+  border-radius:12px;margin-bottom:.85rem;overflow:hidden;
+  transition:border-color .3s,box-shadow .3s;
+}
+.faq-item:hover{border-color:rgba(232,97,45,0.15);box-shadow:0 4px 16px rgba(44,24,16,0.04)}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.15rem 1.5rem;cursor:pointer;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;
+  color:var(--td);gap:1rem;user-select:none;
+  min-height:56px;transition:background .2s;
+}
+.faq-q:hover{background:rgba(232,97,45,0.02)}
+/* Animated chevron icon */
+.faq-q::after{
+  content:'';display:block;flex-shrink:0;
+  width:10px;height:10px;
+  border-right:2.5px solid var(--o);border-bottom:2.5px solid var(--o);
+  transform:rotate(45deg);
+  transition:transform .3s ease;
+  margin-top:-3px;
+}
+.faq-item.open .faq-q::after{transform:rotate(-135deg);margin-top:3px}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s cubic-bezier(.22,.61,.36,1),padding .3s ease;
+  padding:0 1.5rem;
+}
+.faq-item.open .faq-a{max-height:600px;padding:0 1.5rem 1.25rem}
+.faq-a p{color:var(--tm);font-size:.9rem;line-height:1.75}
+
+
+/* ── 5. CARDS & HOVER EFFECTS ───────────────────────────────── */
+.cd{
+  background:#fff;border:1px solid rgba(74,44,26,0.06);
+  border-radius:14px;padding:2rem 1.75rem;
+  transition:all .35s cubic-bezier(.22,.61,.36,1);
+  position:relative;overflow:hidden;
+}
+.cd::after{
+  content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--o),var(--am));
+  transform:scaleX(0);transition:transform .35s ease;
+  transform-origin:left;
+}
+.cd:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 48px rgba(44,24,16,0.08);
+  border-color:rgba(232,97,45,0.12);
+}
+.cd:hover::after{transform:scaleX(1)}
+.cd .ci{font-size:2.2rem;margin-bottom:1rem;display:block}
+.cd h3{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:.5rem}
+
+
+/* ── 6. CTA BUTTON EFFECTS ──────────────────────────────────── */
+/* Subtle pulse glow on primary CTA buttons */
+.bs,.nc,.bp,.bw{position:relative}
+@keyframes ctaPulse{
+  0%{box-shadow:0 0 0 0 rgba(232,97,45,0.35)}
+  70%{box-shadow:0 0 0 10px rgba(232,97,45,0)}
+  100%{box-shadow:0 0 0 0 rgba(232,97,45,0)}
+}
+.bs:not(:disabled){animation:ctaPulse 3s infinite}
+.bs:hover{animation:none}
+
+/* Phone icon wiggle on hover */
+@keyframes phoneRing{
+  0%{transform:rotate(0deg)}
+  10%{transform:rotate(14deg)}
+  20%{transform:rotate(-10deg)}
+  30%{transform:rotate(8deg)}
+  40%{transform:rotate(-4deg)}
+  50%{transform:rotate(0deg)}
+}
+.nav-call-btn:hover .phone-icon,
+.call-btn-hero:hover .phone-icon,
+a[href^="tel:"]:hover{animation:phoneRing .6s ease}
+
+
+/* ── 7. PROCESS STEPS (How It Works) ────────────────────────── */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.75rem;margin-top:2rem}
+
+/* Step numbered circles with connecting line */
+.step-card{
+  background:#fff;border-radius:14px;padding:2rem 1.75rem;
+  border:1px solid rgba(74,44,26,0.06);
+  transition:all .35s ease;position:relative;text-align:center;
+}
+.step-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(44,24,16,0.08)}
+.step-num{
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--o),var(--am));
+  color:#fff;font-weight:700;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1rem;
+  box-shadow:0 4px 16px rgba(232,97,45,0.25);
+  transition:transform .3s ease;
+}
+.step-card:hover .step-num{transform:scale(1.1)}
+
+
+/* ── 8. WHITESPACE & SECTION SPACING ─────────────────────────── */
+.se{padding:5.5rem 2rem}
+.sh{margin-bottom:3.5rem}
+.sh h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:.85rem}
+.sh p{color:var(--tm);font-size:1rem;line-height:1.7;max-width:620px;margin:0 auto}
+
+/* Alternating section backgrounds */
+.se.sw{background:var(--cr)}
+.se.sc2{background:var(--cr2)}
+
+/* Subtle divider between sections */
+.se+.se{border-top:1px solid rgba(74,44,26,0.04)}
+
+
+/* ── 9. TYPOGRAPHY HIERARCHY ─────────────────────────────────── */
+h1{font-size:clamp(2.2rem,4.5vw,3.2rem);line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.5vw,2.4rem);line-height:1.2}
+h3{font-size:clamp(1rem,2vw,1.2rem);line-height:1.35}
+p{line-height:1.75}
+
+/* Section heading tag badges */
+.tg{
+  display:inline-block;padding:.35rem .9rem;border-radius:100px;
+  font-size:.72rem;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;margin-bottom:1.1rem;
+}
+
+
+/* ── 10. FORM IMPROVEMENTS ───────────────────────────────────── */
+/* Form card sits above deco icons with solid background */
+.fc{
+  position:relative;z-index:1;
+  background:#fff!important;
+}
+.fc-d{
+  background:rgba(26,18,16,0.95)!important;
+}
+/* Better focus states */
+.fc input:focus,.fc select:focus,.fc textarea:focus{
+  border-color:var(--o);
+  box-shadow:0 0 0 3px rgba(232,97,45,0.1),0 2px 8px rgba(232,97,45,0.06);
+}
+/* Labels with smooth float feel */
+.fc label{
+  font-size:.72rem;font-weight:600;color:var(--tm);
+  text-transform:uppercase;letter-spacing:.04em;
+  margin-bottom:.3rem;display:block;transition:color .2s;
+}
+.fc input:focus~label,.fc select:focus~label{color:var(--o)}
+
+
+/* ── 11. FOOTER IMPROVEMENTS ─────────────────────────────────── */
+.ft{padding:3.5rem 2rem 1.5rem}
+.fi{gap:2.5rem}
+.fc2 a{margin-bottom:.6rem;transition:color .2s,padding-left .2s}
+.fc2 a:hover{color:#fff;padding-left:.3rem}
+.fbo{padding-top:1.5rem;margin-top:2.5rem}
+
+/* Footer logo — business card full logo */
+.footer-logo{
+  max-width:250px;height:auto;width:100%;
+  margin-bottom:.75rem;display:block;
+  object-fit:contain;
+}
+.fb img{max-width:250px;height:auto!important}
+/* Footer tagline — italic serif matching business card */
+.footer-tagline{
+  font-family:Georgia,'Playfair Display',serif;
+  font-style:italic;font-size:.92rem;
+  letter-spacing:.04em;color:rgba(245,166,35,0.88);
+  margin-bottom:.5rem;line-height:1.5;
+}
+/* Company name serif font override */
+.company-name,.brand-name{
+  font-family:Georgia,'Playfair Display',serif;
+  font-weight:700;letter-spacing:.1em;
+}
+
+
+/* ── 12. ACCESSIBILITY ───────────────────────────────────────── */
+/* Focus visible for keyboard nav */
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--o);outline-offset:2px;border-radius:4px;
+}
+/* Skip to main content (hidden until focused) */
+.skip-link{
+  position:absolute;top:-100%;left:1rem;
+  background:var(--o);color:#fff;padding:.75rem 1.5rem;
+  border-radius:0 0 8px 8px;z-index:999;
+  font-weight:600;text-decoration:none;
+  transition:top .2s;
+}
+.skip-link:focus{top:0}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .anim-ready [data-anim]{opacity:1;transform:none}
+}
+
+
+/* ── 13. GENERAL POLISH ──────────────────────────────────────── */
+/* Consistent border-radius */
+.fc,.cd,.faq-item,.step-card{border-radius:14px}
+
+/* Smooth scrollbar */
+html{scroll-behavior:smooth;scrollbar-color:var(--o) var(--cr)}
+
+/* Selection color */
+::selection{background:rgba(232,97,45,0.15);color:var(--td)}
+
+/* Decorative hero icon — half-icon.png, massive building in background */
+.deco-icon-hero{
+  position:absolute!important;
+  right:15%!important;bottom:-5%!important;top:auto!important;
+  transform:none!important;
+  height:clamp(500px,85vh,900px)!important;width:auto!important;
+  object-fit:contain;
+  opacity:.20!important;pointer-events:none;z-index:0;
+}
+/* Dark hero sections */
+[style*="var(--bd)"] .deco-icon-hero,
+[style*="#1A0F08"] .deco-icon-hero,
+[style*="#2C1810"] .deco-icon-hero{
+  opacity:.15!important;
+}
+/* Mirrored half-icon on bottom form sections — flipped to left side */
+.deco-icon-form{
+  position:absolute!important;
+  left:15%!important;bottom:-5%!important;top:auto!important;
+  height:clamp(500px,85vh,900px)!important;width:auto!important;
+  object-fit:contain;
+  transform:scaleX(-1)!important;
+  opacity:.20!important;pointer-events:none;z-index:0;
+}
+/* Parent section needs positioning context */
+#bf{position:relative;overflow:hidden}
+@media(max-width:900px){
+  .deco-icon-form{display:none!important}
+}
+
+.deco-icon-sm{
+  width:36px;height:auto;object-fit:contain;
+  opacity:.15;margin:0 auto .75rem;pointer-events:none;
+}
+
+/* Hero call button */
+.call-btn-hero{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:linear-gradient(135deg,var(--o),#D4551F);
+  border:none;color:#fff;font-weight:700;font-size:.9rem;
+  padding:.7rem 1.5rem;border-radius:8px;text-decoration:none;
+  transition:all .25s;white-space:nowrap;
+  box-shadow:0 3px 12px rgba(232,97,45,0.25);
+}
+.call-btn-hero:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(232,97,45,0.35);
+}
+
+/* CTA bar styling */
+.cb{
+  position:relative;overflow:hidden;
+  padding:4rem 2rem;text-align:center;
+}
+.cb h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:.7rem}
+
+/* Button base styles */
+.bp{
+  display:inline-flex;align-items:center;gap:.4rem;
+  padding:.7rem 1.4rem;border-radius:8px;font-weight:700;
+  font-size:.88rem;text-decoration:none;transition:all .25s;
+  cursor:pointer;
+}
+.bp:hover{transform:translateY(-2px)}
+.bw{
+  background:#fff;color:var(--o);padding:.75rem 1.8rem;
+  border-radius:8px;font-weight:700;font-size:.9rem;
+  border:none;cursor:pointer;transition:all .3s;
+  box-shadow:0 3px 12px rgba(0,0,0,0.08);display:inline-block;
+  text-decoration:none;
+}
+.bw:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.12)}
+
+
+/* ── 14. RESPONSIVE TWEAKS ───────────────────────────────────── */
+@media(max-width:900px){
+  .se{padding:3.5rem 1.25rem}
+  .sh{margin-bottom:2.5rem}
+  .sg{grid-template-columns:1fr}
+  .fi{grid-template-columns:1fr 1fr}
+  .nv{padding:.6rem 1rem}
+  .nv .nav-brand img{height:40px!important;max-height:40px!important}
+  .nav-brand-text{font-size:.95rem;letter-spacing:.12em}
+  .fr{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .fi{grid-template-columns:1fr}
+  .se{padding:3rem 1rem}
+  .cb{padding:3rem 1rem}
+  .nav-call-btn{display:none}
+  .cat-nav{gap:.4rem}
+  .cat-btn{font-size:.78rem;padding:.4rem .8rem}
+  .nv .nav-brand img{height:36px!important;max-height:36px!important}
+  .nav-brand-text{font-size:.85rem;letter-spacing:.08em}
+  .footer-logo{max-width:200px}
+  .fb img{max-width:200px}
+}

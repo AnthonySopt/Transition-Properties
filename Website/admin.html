@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Transition Properties</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Admin — Transition Properties">
+  <meta name="description" content="Transition Properties admin lead dashboard.">
+  <meta name="author" content="Anthony Sopt, Transition Properties">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Admin — Transition Properties">
+  <meta property="og:description" content="Transition Properties admin lead dashboard.">
+  <meta property="og:url" content="https://transitionfl.com/admin">
+  <meta property="og:image" content="https://transitionfl.com/images/logo-full.png">
+  <meta property="og:site_name" content="Transition Properties">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Admin — Transition Properties">
+  <meta name="twitter:description" content="Transition Properties admin lead dashboard.">
+  <meta name="twitter:image" content="https://transitionfl.com/images/logo-full.png">
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="Fort Myers">
+  <meta name="geo.position" content="26.6406;-81.8723">
+  <meta name="ICBM" content="26.6406, -81.8723">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://transitionfl.com/admin">
+
+  <style>
+    :root {
+      --orange: #E8612D;
+      --amber:  #F5A623;
+      --dark:   #2C1810;
+      --cream:  #FFFAF5;
+      --text:   #3D2B1F;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #F7F0E8;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--dark), #4A2218);
+      color: #fff;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.5px; }
+    header span { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+    #btn-logout {
+      padding: 8px 18px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    #btn-logout:hover { background: rgba(255,255,255,0.2); }
+
+    /* ── Login ── */
+    #login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .login-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px 36px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 8px 40px rgba(44,24,16,0.12);
+    }
+    .login-card h2 {
+      font-size: 1.4rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .login-card p { color: #8B6E5A; font-size: 0.9rem; margin-bottom: 24px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--dark); }
+    .form-group input {
+      padding: 10px 14px;
+      border: 1.5px solid rgba(44,24,16,0.2);
+      border-radius: 7px;
+      font-size: 1rem;
+    }
+    .form-group input:focus { outline: none; border-color: var(--orange); }
+    #btn-login {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--orange), var(--amber));
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+    #btn-login:hover { opacity: 0.9; }
+    #login-error {
+      display: none;
+      color: #991B1B;
+      background: #FEE2E2;
+      border: 1px solid #FECACA;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.875rem;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* ── Dashboard ── */
+    #dashboard { display: none; }
+
+    .stats-bar {
+      display: flex;
+      gap: 16px;
+      padding: 24px 32px;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px 24px;
+      flex: 1;
+      min-width: 140px;
+      box-shadow: 0 2px 8px rgba(44,24,16,0.07);
+    }
+    .stat-card .label { font-size: 0.78rem; font-weight: 600; color: #8B6E5A; text-transform: uppercase; letter-spacing: 0.05em; }
+    .stat-card .value { font-size: 2rem; font-weight: 800; color: var(--dark); margin-top: 4px; line-height: 1; }
+    .stat-card .value.orange { color: var(--orange); }
+
+    /* ── Controls ── */
+    .controls {
+      display: flex;
+      gap: 12px;
+      padding: 0 32px 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1.5px solid rgba(44,24,16,0.2);
+      background: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text);
+    }
+    .filter-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+    }
+    #btn-export {
+      margin-left: auto;
+      padding: 8px 18px;
+      border-radius: 7px;
+      border: 1.5px solid rgba(44,24,16,0.2);
+      background: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text);
+    }
+    #btn-export:hover { background: #F7F0E8; }
+    #search {
+      padding: 8px 16px;
+      border: 1.5px solid rgba(44,24,16,0.2);
+      border-radius: 7px;
+      font-size: 0.875rem;
+      background: #fff;
+      min-width: 220px;
+    }
+    #search:focus { outline: none; border-color: var(--orange); }
+
+    /* ── Table ── */
+    .table-wrap {
+      padding: 0 32px 40px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(44,24,16,0.07);
+      font-size: 0.875rem;
+    }
+    thead tr { background: linear-gradient(135deg, var(--dark), #4A2218); }
+    thead th {
+      padding: 14px 16px;
+      text-align: left;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid #F3EDE6; transition: background 0.15s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #FEF6EE; }
+    td { padding: 13px 16px; color: var(--text); vertical-align: top; }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-residential { background: #FEF3C7; color: #92400E; }
+    .badge-commercial   { background: #DBEAFE; color: #1E40AF; }
+    .btn-del {
+      padding: 5px 12px;
+      border-radius: 5px;
+      border: 1.5px solid #FECACA;
+      background: #FEF2F2;
+      color: #991B1B;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .btn-del:hover { background: #FEE2E2; }
+    #empty-msg {
+      text-align: center;
+      padding: 48px;
+      color: #8B6E5A;
+      font-size: 1rem;
+    }
+    .detail-toggle {
+      color: var(--orange);
+      cursor: pointer;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    .detail-row td { background: #FEF6EE; font-size: 0.82rem; color: #5C3D2A; }
+    .detail-row td pre { white-space: pre-wrap; font-family: inherit; }
+  </style>
+</head>
+<body>
+
+<!-- ── Login ── -->
+<div id="login-screen">
+  <div class="login-card">
+    <h2>Admin Login</h2>
+    <p>Transition Properties Lead Dashboard</p>
+    <div class="form-group">
+      <label for="inp-user">Username</label>
+      <input type="text" id="inp-user" placeholder="admin" autocomplete="username" />
+    </div>
+    <div class="form-group">
+      <label for="inp-pass">Password</label>
+      <input type="password" id="inp-pass" placeholder="••••••••" autocomplete="current-password" />
+    </div>
+    <button id="btn-login">Sign In</button>
+    <div id="login-error">Invalid username or password.</div>
+  </div>
+</div>
+
+<!-- ── Dashboard ── -->
+<div id="dashboard">
+  <header>
+    <div>
+      <h1>Transition Properties — Lead Dashboard</h1>
+      <span id="header-count"></span>
+    </div>
+    <button id="btn-logout">Sign Out</button>
+  </header>
+
+  <div class="stats-bar" id="stats-bar">
+    <div class="stat-card"><div class="label">Total Leads</div><div class="value" id="s-total">—</div></div>
+    <div class="stat-card"><div class="label">Residential</div><div class="value orange" id="s-res">—</div></div>
+    <div class="stat-card"><div class="label">Commercial</div><div class="value orange" id="s-com">—</div></div>
+    <div class="stat-card"><div class="label">Today</div><div class="value" id="s-today">—</div></div>
+  </div>
+
+  <div class="controls">
+    <button class="filter-btn active" data-type="">All</button>
+    <button class="filter-btn" data-type="residential">Residential</button>
+    <button class="filter-btn" data-type="commercial">Commercial</button>
+    <input type="search" id="search" placeholder="Search name, email, address…" />
+    <button id="btn-export">Export CSV</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="leads-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Property Type</th>
+          <th>Date</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="leads-body"></tbody>
+    </table>
+    <div id="empty-msg" style="display:none">No leads found.</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  let credentials = null;
+  let allLeads    = [];
+  let activeType  = '';
+
+  // ── Auth ───────────────────────────────────────────────────────────────────
+
+  function authHeader() {
+    return 'Basic ' + btoa(credentials.user + ':' + credentials.pass);
+  }
+
+  async function tryLogin(user, pass) {
+    const res = await fetch('/api/admin/stats', {
+      headers: { Authorization: 'Basic ' + btoa(user + ':' + pass) }
+    });
+    if (res.ok) {
+      credentials = { user, pass };
+      return true;
+    }
+    return false;
+  }
+
+  // ── API calls ──────────────────────────────────────────────────────────────
+
+  async function fetchStats() {
+    const res  = await fetch('/api/admin/stats',  { headers: { Authorization: authHeader() } });
+    const data = await res.json();
+    document.getElementById('s-total').textContent = data.total;
+    document.getElementById('s-res').textContent   = data.residential;
+    document.getElementById('s-com').textContent   = data.commercial;
+    document.getElementById('s-today').textContent = data.today;
+  }
+
+  async function fetchLeads(type = '') {
+    const url = '/api/admin/leads' + (type ? '?type=' + type : '');
+    const res  = await fetch(url, { headers: { Authorization: authHeader() } });
+    allLeads   = await res.json();
+    renderTable(allLeads);
+  }
+
+  async function deleteLead(id) {
+    if (!confirm('Delete this lead? This cannot be undone.')) return;
+    await fetch('/api/admin/leads/' + id, {
+      method: 'DELETE',
+      headers: { Authorization: authHeader() },
+    });
+    fetchStats();
+    fetchLeads(activeType);
+  }
+
+  // ── Render ─────────────────────────────────────────────────────────────────
+
+  function renderTable(leads) {
+    const query  = document.getElementById('search').value.toLowerCase();
+    const filtered = query
+      ? leads.filter(l => JSON.stringify(l).toLowerCase().includes(query))
+      : leads;
+
+    const body   = document.getElementById('leads-body');
+    const empty  = document.getElementById('empty-msg');
+    const table  = document.getElementById('leads-table');
+    body.innerHTML = '';
+
+    if (!filtered.length) {
+      table.style.display = 'none';
+      empty.style.display = 'block';
+      document.getElementById('header-count').textContent = '0 leads';
+      return;
+    }
+
+    table.style.display = '';
+    empty.style.display = 'none';
+    document.getElementById('header-count').textContent = filtered.length + ' lead' + (filtered.length !== 1 ? 's' : '');
+
+    filtered.forEach(lead => {
+      const name = lead.type === 'residential'
+        ? [lead.first_name, lead.last_name].filter(Boolean).join(' ') || '—'
+        : lead.name || '—';
+
+      const date = new Date(lead.created_at).toLocaleDateString('en-US', {
+        month: 'short', day: 'numeric', year: 'numeric'
+      });
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="color:#aaa;font-size:0.78rem">${lead.id}</td>
+        <td><span class="badge badge-${lead.type}">${lead.type}</span></td>
+        <td><strong>${name}</strong></td>
+        <td><a href="tel:${lead.phone}" style="color:var(--orange);text-decoration:none">${lead.phone}</a></td>
+        <td><a href="mailto:${lead.email}" style="color:var(--orange);text-decoration:none">${lead.email}</a></td>
+        <td>${lead.address || '—'}</td>
+        <td>${lead.property_type || '—'}</td>
+        <td style="white-space:nowrap;color:#8B6E5A">${date}</td>
+        <td><span class="detail-toggle" data-id="${lead.id}">Details ▾</span></td>
+        <td><button class="btn-del" data-id="${lead.id}">Delete</button></td>
+      `;
+
+      body.appendChild(tr);
+
+      // Detail row (hidden by default)
+      const extras = [
+        lead.situation    && `Situation: ${lead.situation}`,
+        lead.asking_price && `Asking Price: ${lead.asking_price}`,
+        lead.details      && `Notes: ${lead.details}`,
+        `IP: ${lead.ip || '—'}`,
+        `Submitted: ${new Date(lead.created_at).toLocaleString()}`,
+      ].filter(Boolean).join('\n');
+
+      const trDetail = document.createElement('tr');
+      trDetail.className = 'detail-row';
+      trDetail.style.display = 'none';
+      trDetail.dataset.forId = lead.id;
+      trDetail.innerHTML = `<td colspan="10"><pre>${extras}</pre></td>`;
+      body.appendChild(trDetail);
+    });
+
+    // Detail toggles
+    body.querySelectorAll('.detail-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id     = btn.dataset.id;
+        const detail = body.querySelector(`.detail-row[data-for-id="${id}"]`);
+        const hidden = detail.style.display === 'none';
+        detail.style.display = hidden ? '' : 'none';
+        btn.textContent = hidden ? 'Details ▴' : 'Details ▾';
+      });
+    });
+
+    // Delete buttons
+    body.querySelectorAll('.btn-del').forEach(btn => {
+      btn.addEventListener('click', () => deleteLead(btn.dataset.id));
+    });
+  }
+
+  // ── CSV Export ─────────────────────────────────────────────────────────────
+
+  function exportCsv() {
+    if (!allLeads.length) return alert('No leads to export.');
+    const cols = ['id','type','first_name','last_name','name','phone','email','address','property_type','situation','asking_price','details','created_at'];
+    const rows = [cols.join(',')];
+    allLeads.forEach(lead => {
+      rows.push(cols.map(c => JSON.stringify(lead[c] ?? '')).join(','));
+    });
+    const blob = new Blob([rows.join('\n')], { type: 'text/csv' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = `transition-leads-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  // ── Events ─────────────────────────────────────────────────────────────────
+
+  document.getElementById('btn-login').addEventListener('click', async () => {
+    const user = document.getElementById('inp-user').value.trim();
+    const pass = document.getElementById('inp-pass').value;
+    const err  = document.getElementById('login-error');
+    if (!user || !pass) { err.style.display = 'block'; err.textContent = 'Enter username and password.'; return; }
+    const ok = await tryLogin(user, pass);
+    if (ok) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      fetchStats();
+      fetchLeads();
+    } else {
+      err.style.display = 'block';
+      err.textContent   = 'Invalid username or password.';
+    }
+  });
+
+  document.getElementById('inp-pass').addEventListener('keydown', e => {
+    if (e.key === 'Enter') document.getElementById('btn-login').click();
+  });
+
+  document.getElementById('btn-logout').addEventListener('click', () => {
+    credentials = null;
+    document.getElementById('dashboard').style.display    = 'none';
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('inp-pass').value = '';
+  });
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeType = btn.dataset.type;
+      fetchLeads(activeType);
+    });
+  });
+
+  document.getElementById('search').addEventListener('input', () => renderTable(allLeads));
+  document.getElementById('btn-export').addEventListener('click', exportCsv);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><link rel="icon" type="image/png" href="/images/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Submit a Deal | Bring Us Your Off-Market Properties | Transition Properties</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--o:#E8612D;--am:#F5A623;--gold:#D4A453;--peach:#FFB84A;--coral:#FF6B5A;--cr:#FFFAF5;--cr2:#FFF3E6;--ww:#FEFCF9;--bd:#2C1810;--b:#4A2C1A;--bm:#6B4432;--td:#1A1210;--tb:#3D2E24;--tm:#7A6B5D;--sky:#4AADE8;--teal:#1D9E75}
+html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--tb);background:var(--ww);overflow-x:hidden;line-height:1.7}h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.25;color:var(--td)}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.gr{background:linear-gradient(135deg,var(--o),var(--am));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nv{position:fixed;top:0;left:0;width:100%;z-index:100;padding:.7rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,250,245,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(74,44,26,0.06)}.nv img{height:88px}.nl{display:flex;gap:1.6rem;align-items:center}.nl a{font-size:.85rem;color:var(--tm);font-weight:500;transition:.3s}.nl a:hover,.nl a.ac{color:var(--o)}.nc{background:var(--o);color:#fff;padding:.5rem 1.2rem;border-radius:8px;font-weight:600;font-size:.8rem;border:none;cursor:pointer;transition:.3s;box-shadow:0 2px 10px rgba(232,97,45,0.2)}.nc:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,97,45,0.3)}.hb{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px}.hb span{width:22px;height:2px;background:var(--b)}
+.fc{background:#fff;border-radius:14px;padding:1.75rem;box-shadow:0 6px 32px rgba(44,24,16,0.07);border:1px solid rgba(74,44,26,0.06)}.fc h3{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:.2rem;color:var(--td)}.fc .su{font-size:.85rem;color:var(--tm);margin-bottom:1rem}.fr{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.65rem}.fr.fu{grid-template-columns:1fr}.fc label{font-size:.72rem;font-weight:600;color:var(--tm);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.25rem;display:block}.fc input,.fc select,.fc textarea{width:100%;padding:.6rem .75rem;border:1.5px solid rgba(74,44,26,0.1);border-radius:7px;font-size:.87rem;font-family:inherit;background:var(--ww);transition:.3s;color:var(--td)}.fc input:focus,.fc select:focus,.fc textarea:focus{outline:none;border-color:var(--o);box-shadow:0 0 0 3px rgba(232,97,45,0.08)}.fc textarea{resize:vertical;min-height:80px}.bs{width:100%;background:linear-gradient(135deg,var(--o),#D4551F);color:#fff;padding:.75rem;border-radius:8px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:.3s;margin-top:.4rem;box-shadow:0 3px 14px rgba(232,97,45,0.22)}.bs:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,97,45,0.3)}.fn{font-size:.7rem;color:var(--tm);text-align:center;margin-top:.6rem}
+.se{padding:5rem 2rem}.si{max-width:1200px;margin:0 auto}.sh{text-align:center;max-width:660px;margin:0 auto 3rem}.sh h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:.7rem}.sh p{color:var(--tm);font-size:.95rem}.sw{background:var(--cr)}.sc2{background:var(--cr2)}.tg{display:inline-block;padding:.3rem .85rem;border-radius:18px;font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:1.1rem}.to{background:rgba(232,97,45,0.1);color:var(--o)}.ta{background:rgba(245,166,35,0.1);color:var(--am)}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem}.cd{background:#fff;border:1px solid rgba(74,44,26,0.06);border-radius:12px;padding:1.5rem;transition:.35s;position:relative;overflow:hidden}.cd:hover{border-color:var(--o);transform:translateY(-3px);box-shadow:0 12px 36px rgba(232,97,45,0.07)}.cd::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--o),var(--am));opacity:0;transition:.35s}.cd:hover::before{opacity:1}.ci{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(232,97,45,0.1),rgba(245,166,35,0.07));display:flex;align-items:center;justify-content:center;margin-bottom:.85rem;font-size:1.2rem}.cd h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;margin-bottom:.4rem;color:var(--td)}.cd p{color:var(--tm);font-size:.87rem;line-height:1.55}
+.cb{background:linear-gradient(135deg,var(--o),#D4551F,var(--am));padding:3.5rem 2rem;text-align:center}.cb h2{font-size:clamp(1.5rem,3vw,2.2rem);color:#fff;margin-bottom:.6rem}.cb p{color:rgba(255,255,255,0.88);font-size:.95rem;margin-bottom:1.3rem;max-width:500px;margin-left:auto;margin-right:auto}.bw{background:#fff;color:var(--o);padding:.75rem 1.8rem;border-radius:8px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:.3s;box-shadow:0 3px 12px rgba(0,0,0,0.08);display:inline-block}.bw:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.12)}
+.tb{background:var(--ww);padding:1.5rem 2rem;border-bottom:1px solid rgba(74,44,26,0.05)}.ti{max-width:1200px;margin:0 auto;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}.tt{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--tm);font-weight:500}.tc{width:34px;height:34px;border-radius:50%;background:var(--cr2);display:flex;align-items:center;justify-content:center;color:var(--o);font-size:.9rem;font-weight:700}
+.ft{background:var(--bd);padding:3rem 2rem 1.25rem;color:rgba(255,255,255,0.65)}.fi{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem}.fb img{height:92px;margin-bottom:.6rem}.fb p{color:rgba(255,255,255,0.4);font-size:.82rem;max-width:260px}.fc2 h4{font-family:'DM Sans',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.85rem;color:var(--am)}.fc2 a{display:block;color:rgba(255,255,255,0.45);font-size:.85rem;margin-bottom:.5rem;transition:.3s}.fc2 a:hover{color:#fff}.fbo{max-width:1200px;margin:2rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;font-size:.75rem;color:rgba(255,255,255,0.25)}
+.nav-call-btn{display:inline-flex;align-items:center;gap:.35rem;color:var(--o);font-weight:700;font-size:.85rem;text-decoration:none;padding:.45rem 1rem;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(232,97,45,.15);transition:.25s;white-space:nowrap}.nav-call-btn:hover{box-shadow:0 4px 16px rgba(232,97,45,.25);transform:translateY(-1px)}
+.deco-icon-hero{position:absolute;right:4%;top:50%;transform:translateY(-50%);height:clamp(140px,18vw,240px);opacity:.07;pointer-events:none;z-index:0}
+.call-btn-hero{display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,var(--o),#D4551F);border:none;color:#fff;font-weight:700;font-size:.9rem;padding:.65rem 1.4rem;border-radius:8px;text-decoration:none;transition:.25s;white-space:nowrap;box-shadow:0 3px 12px rgba(232,97,45,0.25)}.call-btn-hero:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,97,45,0.35)}
+
+.prose{max-width:800px;margin:0 auto}.prose p{color:var(--tm);font-size:.93rem;line-height:1.75;margin-bottom:1.1rem}.prose a{color:var(--o);font-weight:600}.prose a:hover{text-decoration:underline}
+
+/* CRITERIA GRID */
+.crit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto}
+.crit-box{background:#fff;border:1px solid rgba(74,44,26,0.06);border-radius:12px;padding:1.5rem}
+.crit-box h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:var(--td);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
+.crit-box ul{list-style:none;padding:0;margin:0}
+.crit-box li{color:var(--tm);font-size:.88rem;padding:.3rem 0;padding-left:1.4rem;position:relative;line-height:1.5}
+.crit-box li::before{content:'';position:absolute;left:0;top:.55rem;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--o),var(--am))}
+
+.dd{position:relative}.dd-toggle{font-size:.85rem;color:var(--tm);font-weight:500;transition:.3s;cursor:pointer;background:none;border:none;font-family:inherit;display:inline-flex;align-items:center;gap:.25rem;padding:0}.dd-toggle:hover{color:var(--o)}.dd-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:220px;background:#fff;border-radius:10px;box-shadow:0 12px 40px rgba(44,24,16,0.12);border:1px solid rgba(74,44,26,0.06);padding:.5rem 0;margin-top:.6rem;z-index:200}.dd-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:#fff;border-left:1px solid rgba(74,44,26,0.06);border-top:1px solid rgba(74,44,26,0.06);rotate:45deg}.dd-menu a{display:block;padding:.5rem 1.25rem;font-size:.84rem;color:var(--tb);font-weight:500;transition:.2s;white-space:nowrap}.dd-menu a:hover{background:var(--cr);color:var(--o)}.dd:hover .dd-menu{display:block}
+@media(max-width:900px){.hero-g{grid-template-columns:1fr!important}.fc{margin-top:1.25rem}.sg{grid-template-columns:repeat(2,1fr)!important}.fi{grid-template-columns:1fr 1fr}.nl{display:none}.hb{display:flex}.fr{grid-template-columns:1fr}.crit-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.sg{grid-template-columns:1fr!important}.fi{grid-template-columns:1fr}.ti{flex-direction:column;gap:.8rem}.nav-call-btn{display:none}}.nl.mob-open{display:flex!important;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(44,24,16,0.97);flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;z-index:200;padding:2rem}.nl.mob-open a,.nl.mob-open button{color:rgba(255,255,255,0.85);font-size:1.05rem}.nl.mob-open a:hover{color:var(--am)}.nl.mob-open .dd-menu{position:static;transform:none;background:transparent;box-shadow:none;border:none;display:block;padding:0;margin:0;min-width:auto}.nl.mob-open .dd-menu::before{display:none}.nl.mob-open .dd-menu a{color:rgba(255,255,255,0.6);font-size:.9rem;padding:.3rem 0;white-space:normal}.nl.mob-open .dd-menu a:hover{background:transparent;color:var(--am)}.nl.mob-open .dd-toggle{color:var(--am);font-size:1.05rem}.nl.mob-open .nav-call-btn{display:inline-flex!important;background:transparent;box-shadow:none;color:var(--am);border:1px solid rgba(255,255,255,0.2);margin-top:.5rem}</style><link rel="stylesheet" href="/squarespace-custom.css">
+
+<meta name="title" content="Submit a Deal | Bring Us Your Off-Market Properties | Transition Properties">
+<meta name="description" content="Have an off-market property deal? Submit it to Transition Properties. We buy wholesale deals, assignable contracts, and off-market residential and commercial properties. Residential in Southwest Florida, commercial NATIONWIDE. Fast response, fair offers.">
+<meta name="keywords" content="submit wholesale deal, wholesale real estate buyer, submit off-market property, assignable contract buyer, wholesale deal submission, JV real estate deals, bring me a deal real estate, bird dog real estate, nationwide wholesale buyer, submit commercial deal nationwide, wholesale buyer Southwest Florida">
+<meta name="author" content="Anthony Sopt, Transition Properties">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Submit a Deal | Bring Us Your Off-Market Properties">
+<meta property="og:description" content="Have an off-market deal? We buy wholesale deals, assignable contracts, and off-market properties. Residential SWFL, commercial nationwide.">
+<meta property="og:url" content="https://transitionfl.com/submit-deal">
+<meta property="og:image" content="https://transitionfl.com/images/logo-full.png">
+<meta property="og:site_name" content="Transition Properties">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Submit a Deal | Bring Us Your Off-Market Properties">
+<meta name="twitter:description" content="We buy wholesale deals, assignable contracts, and off-market properties. Residential SWFL, commercial nationwide. Fast response.">
+<meta name="twitter:image" content="https://transitionfl.com/images/logo-full.png">
+
+<meta name="geo.region" content="US-FL">
+<meta name="geo.placename" content="Fort Myers">
+<meta name="geo.position" content="26.6406;-81.8723">
+<meta name="ICBM" content="26.6406, -81.8723">
+
+<link rel="canonical" href="https://transitionfl.com/submit-deal">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Submit a Deal — Transition Properties",
+  "url": "https://transitionfl.com/submit-deal",
+  "description": "Deal submission portal for wholesalers, agents, bird dogs, and investors. Transition Properties buys off-market residential properties in Southwest Florida and commercial properties nationwide.",
+  "publisher": {
+    "@type": "RealEstateAgent",
+    "name": "Transition Properties",
+    "url": "https://transitionfl.com",
+    "logo": "https://transitionfl.com/images/logo-full.png",
+    "telephone": "(239) 766-6978",
+    "email": "deals@transitionfl.com",
+    "founder": { "@type": "Person", "name": "Anthony Sopt" }
+  }
+}
+</script>
+
+</head><body class="page-deal page-submit-deal">
+
+<!-- NAV -->
+<nav class="nv" aria-label="Main navigation"><div class="nav-brand"><a href="/"><img src="/images/logo-icon.png" alt="Transition Properties" width="567" height="512"><span class="nav-brand-text">TRANSITION</span></a></div>
+<div class="nl">
+<a href="/">Home</a>
+<div class="dd"><button class="dd-toggle">Services &#9662;</button><div class="dd-menu"><a href="/sell-my-house-fast">Sell My House Fast</a><a href="/pre-foreclosure">Pre-Foreclosure Help</a><a href="/probate">Probate &amp; Inherited</a><a href="/land">Sell Land</a><a href="/tired-landlords">Tired Landlords</a></div></div>
+<div class="dd"><button class="dd-toggle">Commercial &#9662;</button><div class="dd-menu"><a href="/commercial">Commercial Overview</a><a href="/storage">Self-Storage</a><a href="/mobile-parks">Mobile Home Parks</a><a href="/multifamily">Multifamily</a><a href="/industrial">Industrial &amp; Warehouse</a><a href="/office">Office Buildings</a><a href="/retail">Retail Properties</a></div></div>
+<a href="/how-it-works">How It Works</a>
+<a href="/areas-we-serve">Areas We Serve</a>
+<a href="/submit-deal">Submit a Deal</a>
+<a href="/faq">FAQ</a>
+<a href="/about">About</a>
+<a href="tel:+12397666978" class="nav-call-btn">&#128222; (239) 766-6978</a>
+<button class="nc" onclick="document.getElementById('hero-form').scrollIntoView({behavior:'smooth'})">Get Your Offer</button>
+</div>
+<div class="hb" role="button" aria-label="Toggle menu" tabindex="0" onclick="toggleMobileNav()"><span></span><span></span><span></span></div></nav>
+
+<!-- HERO -->
+<section style="min-height:100vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--cr),var(--cr2) 40%,#FFE8CC);position:relative;overflow:hidden"><img src="/images/half-icon.png" alt="Transition Properties logo icon - submit a wholesale deal" class="deco-icon-hero" aria-hidden="true" width="567" height="512" loading="lazy">
+<div style="max-width:1200px;margin:0 auto;padding:7rem 2rem 3.5rem;display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center" class="hero-g">
+<div>
+<span class="tg to">For Industry Professionals</span>
+<h1 style="font-size:clamp(2.1rem,4.5vw,3.2rem);margin-bottom:.8rem">Submit a Deal to <span class="gr" style="display:block">Transition Properties</span></h1>
+<p style="font-size:1rem;color:var(--tm);max-width:480px;margin-bottom:1.25rem">Wholesalers, agents, bird dogs, and investors &mdash; if you have an off-market property deal, we want to see it. Residential in Southwest Florida, commercial nationwide. We respond to every submission within 24 hours.</p>
+<div style="display:flex;gap:.75rem;flex-wrap:wrap">
+<div class="tt"><div class="tc">&#9201;</div><span>24-Hour Response</span></div>
+<div class="tt"><div class="tc">&#128176;</div><span>We Close &amp; We Close Fast</span></div>
+</div>
+<div style="margin-top:1.1rem"><a href="tel:+12397666978" class="call-btn-hero">&#128222; (239) 766-6978</a></div>
+</div>
+
+<!-- DEAL SUBMISSION FORM -->
+<div class="fc" id="deal-form" data-deal-form="true">
+<h3>Submit Your Deal</h3><p class="su">All submissions reviewed within 24 hours. Sent to deals@transitionfl.com.</p>
+<div class="fr"><div><label>Your Name</label><input type="text" placeholder="Full Name" required></div><div><label>Your Phone</label><input type="tel" placeholder="(555) 000-0000" required></div></div>
+<div class="fr fu"><div><label>Email</label><input type="email" placeholder="you@email.com" required></div></div>
+<div class="fr fu"><div><label>Your Role</label><select>
+<option value="" disabled selected>Select your role...</option>
+<option>Wholesaler</option>
+<option>Agent / Broker</option>
+<option>Bird Dog</option>
+<option>Property Owner</option>
+<option>Other</option>
+</select></div></div>
+<div class="fr fu"><div><label>Property Address</label><input type="text" placeholder="Full address or City, State" required></div></div>
+<div class="fr"><div><label>Property Type</label><select>
+<option value="" disabled selected>Select type...</option>
+<option>Single Family</option>
+<option>Multifamily</option>
+<option>Commercial</option>
+<option>Land</option>
+<option>Mobile Home Park</option>
+<option>Storage Facility</option>
+<option>Industrial / Warehouse</option>
+<option>Other</option>
+</select></div>
+<div><label>Property Condition</label><select>
+<option value="" disabled selected>Condition...</option>
+<option>Excellent</option>
+<option>Good</option>
+<option>Fair</option>
+<option>Poor</option>
+<option>Needs Full Rehab</option>
+</select></div></div>
+<div class="fr"><div><label>Asking Price / Contract Price</label><input type="text" placeholder="$0"></div><div><label>Estimated ARV or Market Value</label><input type="text" placeholder="$0"></div></div>
+<div class="fr fu"><div><label>Deal Details</label><textarea placeholder="Brief description of the deal: property details, motivation, timeline, assignment fee, any other relevant info..."></textarea></div></div>
+<div class="fr fu"><div><label>How did you hear about us?</label><input type="text" placeholder="Referral, Google, social media, etc."></div></div>
+<button class="bs">Submit Deal &rarr;</button>
+<p class="fn">100% confidential &bull; We respond within 24 hours &bull; deals@transitionfl.com</p>
+</div>
+
+</div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="tb"><div class="ti">
+<div class="tt"><div class="tc">&#9201;</div><span>24-Hour Response</span></div>
+<div class="tt"><div class="tc">&#128176;</div><span>Proof of Funds Available</span></div>
+<div class="tt"><div class="tc">&#129309;</div><span>We Close &mdash; No Re-Trades</span></div>
+<div class="tt"><div class="tc">&#128260;</div><span>Double Close or Assign</span></div>
+</div></div>
+
+
+<!-- WHAT DEALS WE'RE LOOKING FOR -->
+<section class="se" id="criteria">
+<div class="si">
+<div class="sh">
+<span class="tg to">What We Buy</span>
+<h2>What Kind of Deals We're Looking For</h2>
+<p>We're active buyers across residential and commercial real estate. Here's what we want to see in our inbox.</p>
+</div>
+<div class="crit-grid">
+<div class="crit-box">
+<h3>&#127968; Residential — Southwest Florida</h3>
+<ul>
+<li>Single-family homes in any condition</li>
+<li><a href="/pre-foreclosure" style="color:var(--o)">Pre-foreclosure</a> and distressed properties</li>
+<li><a href="/probate" style="color:var(--o)">Probate and inherited</a> homes</li>
+<li><a href="/tired-landlords" style="color:var(--o)">Tired landlord</a> rental properties</li>
+<li><a href="/land" style="color:var(--o)">Vacant land</a> and lots</li>
+<li>Duplexes, triplexes, fourplexes</li>
+<li>Condos and townhouses</li>
+<li>Any situation, any condition, any price range</li>
+</ul>
+</div>
+<div class="crit-box">
+<h3>&#127970; Commercial — Nationwide (All 50 States)</h3>
+<ul>
+<li><a href="/storage" style="color:var(--o)">Self-storage facilities</a> — any size, any occupancy</li>
+<li><a href="/mobile-parks" style="color:var(--o)">Mobile home parks</a> — land-lease, POH, mixed</li>
+<li><a href="/multifamily" style="color:var(--o)">Multifamily</a> — 5+ units, any class</li>
+<li><a href="/industrial" style="color:var(--o)">Industrial &amp; warehouse</a> — flex, manufacturing, distribution</li>
+<li><a href="/office" style="color:var(--o)">Office buildings</a> — suburban, CBD, medical</li>
+<li><a href="/retail" style="color:var(--o)">Retail properties</a> — strip centers, NNN, standalone</li>
+<li>Portfolio deals and bulk acquisitions</li>
+<li>Distressed, value-add, and stabilized assets</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- OUR CRITERIA -->
+<section class="se sw" id="buying-criteria">
+<div class="si">
+<div class="sh">
+<span class="tg ta">Buying Criteria</span>
+<h2>Our Acquisition Criteria</h2>
+<p>Here's what you need to know before submitting a deal.</p>
+</div>
+<div class="sg">
+<div class="cd">
+<div class="ci">&#127965;&#65039;</div>
+<h3>Residential: Southwest Florida</h3>
+<p>Our residential buying area covers Lee County, Collier County, and Charlotte County. Fort Myers, Cape Coral, Naples, Lehigh Acres, Bonita Springs, Estero, and surrounding areas. Any price range, any condition, any situation. We buy single-family, small multifamily, condos, townhouses, and <a href="/land" style="color:var(--o)">vacant land</a>.</p>
+</div>
+<div class="cd">
+<div class="ci">&#127758;</div>
+<h3>Commercial: All 50 States</h3>
+<p>Our <a href="/commercial" style="color:var(--o)">commercial acquisitions</a> are nationwide. We buy storage, mobile parks, multifamily, industrial, office, and retail in every state. No geographic restriction on commercial deals. Any deal size, any condition, stabilized or value-add.</p>
+</div>
+<div class="cd">
+<div class="ci">&#9201;</div>
+<h3>24-Hour Response</h3>
+<p>Every deal submission gets a response within 24 hours. If we're interested, you'll receive a preliminary offer or a request for additional information. If it's not a fit, we'll tell you straight &mdash; no ghosting, no weeks of silence.</p>
+</div>
+<div class="cd">
+<div class="ci">&#128176;</div>
+<h3>We Close Fast</h3>
+<p>Residential: 7&ndash;21 days. Commercial: 14&ndash;45 days. We provide proof of funds on request and don't re-trade after going under contract. We can double close or work with assignable contracts &mdash; whatever structure works for the deal.</p>
+</div>
+<div class="cd">
+<div class="ci">&#128260;</div>
+<h3>Double Close or Assign</h3>
+<p>We're comfortable with assignments, double closings, and direct purchases. If you have an assignable contract, we can step in as the end buyer. If you're marketing a property you control, we can close directly. We're flexible on deal structure.</p>
+</div>
+<div class="cd">
+<div class="ci">&#128200;</div>
+<h3>All Price Ranges</h3>
+<p>We don't have a minimum or maximum deal size. A $50,000 wholesale deal gets the same attention and response time as a $5 million commercial acquisition. Good deals come in all sizes.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- WHY WORK WITH US -->
+<section class="se" id="why-us">
+<div class="si">
+<div class="sh">
+<span class="tg to">Why Partner With Us</span>
+<h2>Why Wholesalers and Agents Work With Transition Properties</h2>
+<p>We're the buyer you want on the other end of your deal. Here's why.</p>
+</div>
+<div class="sg">
+<div class="cd">
+<div class="ci">&#9201;</div>
+<h3>We Respond Fast</h3>
+<p>Every submission gets a response within 24 hours &mdash; not days, not "when we get to it." We know your deal has a timeline, and we respect that. If it's a fit, you'll know immediately. If it's not, we'll tell you right away so you can move on.</p>
+</div>
+<div class="cd">
+<div class="ci">&#129309;</div>
+<h3>We Actually Close</h3>
+<p>When we go under contract, we close. We don't tie up your deal for weeks and then walk away. We provide proof of funds upfront, close on the agreed date, and don't re-trade. Our reputation as a reliable closer is the foundation of our business.</p>
+</div>
+<div class="cd">
+<div class="ci">&#128172;</div>
+<h3>We're Easy to Work With</h3>
+<p>No ego, no drama, no unnecessary complexity. We communicate clearly, make decisions quickly, and treat every person we work with &mdash; from first-time bird dogs to seasoned commercial brokers &mdash; with the same respect and professionalism.</p>
+</div>
+<div class="cd">
+<div class="ci">&#128260;</div>
+<h3>Repeat Business</h3>
+<p>We're not looking for one deal &mdash; we're looking for ongoing relationships with reliable deal sources. If you bring us good deals consistently, we'll prioritize your submissions and build a long-term partnership that benefits both sides.</p>
+</div>
+<div class="cd">
+<div class="ci">&#128203;</div>
+<h3>Transparent Communication</h3>
+<p>You'll always know where your deal stands. We don't go dark during due diligence or leave you wondering. If there's an issue, we flag it early. If we're moving forward, you'll know the timeline. Clear, honest communication at every step.</p>
+</div>
+<div class="cd">
+<div class="ci">&#128176;</div>
+<h3>We Pay Referral Fees</h3>
+<p>Bird dogs and referral sources who bring us deals that close get paid. If you don't have the deal under contract but you know about a property, reach out anyway. We'll discuss a referral fee structure that works for both of us.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- CTA -->
+<section class="cb">
+<h2>Have a Deal? Send It Over.</h2>
+<p>We review every submission within 24 hours. Residential SWFL, commercial nationwide. Let's do business.</p>
+<div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;align-items:center">
+<button class="bw" onclick="document.getElementById('deal-form').scrollIntoView({behavior:'smooth'})">Submit a Deal</button>
+<a href="tel:+12397666978" class="bw" style="background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.4)">&#128222; (239) 766-6978</a>
+<a href="mailto:deals@transitionfl.com" class="bw" style="background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.4)">&#9993; deals@transitionfl.com</a>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="ft"><div class="fi">
+<div class="fb"><img src="/images/logo-light.png" alt="Transition Properties - Southwest Florida residential and nationwide commercial property buyer" loading="lazy" class="footer-logo"><p class="footer-tagline"><em>Helping People Through Life's Transitions</em></p><p>Southwest Florida residential. Nationwide commercial.</p><p style="margin-top:.6rem;font-size:.82rem"><a href="tel:+12397666978" style="color:rgba(255,255,255,0.6)">(239) 766-6978</a><br><a href="mailto:info@transitionfl.com" style="color:rgba(255,255,255,0.6)">info@transitionfl.com</a></p></div>
+<div class="fc2"><h4>Residential</h4><a href="/sell-my-house-fast">Sell My House Fast</a><a href="/pre-foreclosure">Pre-Foreclosure</a><a href="/probate">Probate &amp; Inherited</a><a href="/land">Land</a><a href="/tired-landlords">Tired Landlords</a></div>
+<div class="fc2"><h4>Commercial</h4><a href="/commercial">Commercial Overview</a><a href="/storage">Self-Storage</a><a href="/mobile-parks">Mobile Home Parks</a><a href="/multifamily">Multifamily</a><a href="/industrial">Industrial &amp; Warehouse</a><a href="/office">Office</a><a href="/retail">Retail</a></div>
+<div class="fc2"><h4>Resources</h4><a href="/how-it-works">How It Works</a><a href="/areas-we-serve">Areas We Serve</a><a href="/submit-deal">Submit a Deal</a><a href="/faq">FAQ</a><a href="/about">About</a></div>
+</div><div class="fbo"><span>&copy; 2026 Transition Properties. All rights reserved.</span><span>transitionfl.com</span></div></footer>
+
+<!-- DEAL FORM HANDLER — routes to deals@transitionfl.com instead of the standard leads API -->
+<script>
+(function(){
+  var form = document.querySelector('[data-deal-form="true"]');
+  if(!form) return;
+  var btn = form.querySelector('.bs');
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    // Collect all fields
+    var labels = form.querySelectorAll('label');
+    var data = {};
+    labels.forEach(function(label){
+      var key = label.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'_');
+      var field = label.parentElement.querySelector('input, select, textarea');
+      if(field) data[key] = field.value.trim();
+    });
+    // Validate required fields
+    if(!data.your_name || !data.email || !data.your_phone || !data.property_address){
+      showBanner(form, 'Please fill in all required fields (name, email, phone, property address).', true);
+      return;
+    }
+    // Submit to deals endpoint
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+    fetch('/api/leads/commercial', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        name: data.your_name,
+        phone: data.your_phone,
+        email: data.email,
+        address: data.property_address,
+        property_type: data.property_type || '',
+        situation: 'Deal Submission — ' + (data.your_role || 'Unknown Role'),
+        asking_price: data.asking_price___contract_price || '',
+        details: [
+          'Role: ' + (data.your_role || ''),
+          'Condition: ' + (data.property_condition || ''),
+          'ARV/Market Value: ' + (data.estimated_arv_or_market_value || ''),
+          'Deal Details: ' + (data.deal_details || ''),
+          'Source: ' + (data.how_did_you_hear_about_us_ || '')
+        ].join('\n')
+      })
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(){
+      showBanner(form, 'Deal submitted successfully! We will review and respond within 24 hours.', false);
+      // Clear fields
+      form.querySelectorAll('input, textarea').forEach(function(f){ f.value=''; });
+      form.querySelectorAll('select').forEach(function(s){ s.selectedIndex=0; });
+      btn.disabled = false;
+      btn.textContent = 'Submit Deal \u2192';
+    })
+    .catch(function(){
+      showBanner(form, 'Something went wrong. Please email deals@transitionfl.com directly or call (239) 766-6978.', true);
+      btn.disabled = false;
+      btn.textContent = 'Submit Deal \u2192';
+    });
+  });
+  function showBanner(container, message, isError){
+    var banner = container.querySelector('.tp-deal-banner');
+    if(!banner){
+      banner = document.createElement('div');
+      banner.className = 'tp-deal-banner';
+      banner.style.cssText = 'margin-top:16px;padding:14px 20px;border-radius:8px;font-weight:600;font-size:1rem;text-align:center';
+      var btn2 = container.querySelector('.bs');
+      btn2.parentNode.insertBefore(banner, btn2.nextSibling);
+    }
+    banner.textContent = message;
+    banner.style.background = isError ? '#FEE2E2' : '#D1FAE5';
+    banner.style.color = isError ? '#991B1B' : '#065F46';
+    banner.style.border = '1px solid ' + (isError ? '#FECACA' : '#A7F3D0');
+    banner.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+})();
+</script>
+<script>
+function toggleMobileNav(){var n=document.querySelector('.nl');if(n.classList.contains('mob-open')){n.classList.remove('mob-open');var cb=n.querySelector('.mob-close-btn');if(cb)cb.remove();}else{n.classList.add('mob-open');var btn=document.createElement('button');btn.className='mob-close-btn';btn.innerHTML='\u00D7';btn.style.cssText='position:fixed;top:1.5rem;right:2rem;background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;z-index:250;line-height:1';btn.onclick=function(){n.classList.remove("mob-open");btn.remove()};n.appendChild(btn);}}
+</script>
+<script src="/interactions.js"></script></body></html>

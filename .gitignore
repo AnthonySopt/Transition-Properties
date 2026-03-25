@@ -1,0 +1,24 @@
+# Everything except Website/
+/*
+!Website/
+!.gitignore
+
+# Inside Website/ — exclude sensitive/generated files
+Website/node_modules/
+Website/.env
+Website/*.db
+Website/*.sqlite
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+Website/*.log
+Website/server-error.log
+
+# Backup files
+Website/*.bak
+
+# Lead data
+Website/leads.json

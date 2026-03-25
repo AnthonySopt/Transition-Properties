@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><link rel="icon" type="image/png" href="/images/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Transition Properties | Sell Your Home Fast in Southwest Florida</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--o:#E8612D;--am:#F5A623;--gold:#D4A453;--peach:#FFB84A;--coral:#FF6B5A;
+--cr:#FFFAF5;--cr2:#FFF3E6;--ww:#FEFCF9;--bd:#2C1810;--b:#4A2C1A;--bm:#6B4432;
+--td:#1A1210;--tb:#3D2E24;--tm:#7A6B5D;--sky:#4AADE8;--teal:#1D9E75}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--tb);background:var(--ww);overflow-x:hidden;line-height:1.7}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.25;color:var(--td)}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.gr{background:linear-gradient(135deg,var(--o),var(--am));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* NAV */
+.nv{position:fixed;top:0;left:0;width:100%;z-index:100;padding:.7rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,250,245,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(74,44,26,0.06)}
+.nv img{height:88px}
+.nl{display:flex;gap:1.6rem;align-items:center}
+.nl a{font-size:.85rem;color:var(--tm);font-weight:500;transition:.3s}.nl a:hover,.nl a.ac{color:var(--o)}
+.nc{background:var(--o);color:#fff;padding:.5rem 1.2rem;border-radius:8px;font-weight:600;font-size:.8rem;border:none;cursor:pointer;transition:.3s;box-shadow:0 2px 10px rgba(232,97,45,0.2)}
+.nc:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,97,45,0.3)}
+.hb{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px}.hb span{width:22px;height:2px;background:var(--b)}
+/* DARK NAV */
+.nv-d{background:rgba(44,24,16,0.95)}.nv-d .nl a{color:rgba(255,255,255,0.6)}.nv-d .nl a:hover,.nv-d .nl a.ac{color:var(--am)}.nv-d .hb span{background:#fff}
+
+/* FORM */
+.fc{background:#fff;border-radius:14px;padding:1.75rem;box-shadow:0 6px 32px rgba(44,24,16,0.07);border:1px solid rgba(74,44,26,0.06)}
+.fc h3{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:.2rem;color:var(--td)}
+.fc .su{font-size:.85rem;color:var(--tm);margin-bottom:1rem}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.65rem}.fr.fu{grid-template-columns:1fr}
+.fc label{font-size:.72rem;font-weight:600;color:var(--tm);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.25rem;display:block}
+.fc input,.fc select,.fc textarea{width:100%;padding:.6rem .75rem;border:1.5px solid rgba(74,44,26,0.1);border-radius:7px;font-size:.87rem;font-family:inherit;background:var(--ww);transition:.3s;color:var(--td)}
+.fc input:focus,.fc select:focus,.fc textarea:focus{outline:none;border-color:var(--o);box-shadow:0 0 0 3px rgba(232,97,45,0.08)}
+.fc textarea{resize:vertical;min-height:55px}
+.bs{width:100%;background:linear-gradient(135deg,var(--o),#D4551F);color:#fff;padding:.75rem;border-radius:8px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:.3s;margin-top:.4rem;box-shadow:0 3px 14px rgba(232,97,45,0.22)}
+.bs:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,97,45,0.3)}
+.fn{font-size:.7rem;color:var(--tm);text-align:center;margin-top:.6rem}
+/* DARK FORM */
+.fc-d{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px)}
+.fc-d h3{color:#fff}.fc-d .su{color:rgba(255,255,255,0.5)}.fc-d label{color:rgba(255,255,255,0.4)}
+.fc-d input,.fc-d select,.fc-d textarea{border:1.5px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:#fff}
+.fc-d input:focus,.fc-d select:focus,.fc-d textarea:focus{border-color:var(--o);box-shadow:0 0 0 3px rgba(232,97,45,0.12)}
+.fc-d .fn{color:rgba(255,255,255,0.3)}
+
+/* SECTIONS */
+.se{padding:5rem 2rem}.si{max-width:1200px;margin:0 auto}
+.sh{text-align:center;max-width:660px;margin:0 auto 3rem}
+.sh h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:.7rem}
+.sh p{color:var(--tm);font-size:.95rem}
+.sw{background:var(--cr)}.sc2{background:var(--cr2)}
+.tg{display:inline-block;padding:.3rem .85rem;border-radius:18px;font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:1.1rem}
+.to{background:rgba(232,97,45,0.1);color:var(--o)}.ta{background:rgba(245,166,35,0.1);color:var(--am)}
+
+/* CARDS */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem}
+.cd{background:#fff;border:1px solid rgba(74,44,26,0.06);border-radius:12px;padding:1.5rem;transition:.35s;position:relative;overflow:hidden}
+.cd:hover{border-color:var(--o);transform:translateY(-3px);box-shadow:0 12px 36px rgba(232,97,45,0.07)}
+.cd::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--o),var(--am));opacity:0;transition:.35s}
+.cd:hover::before{opacity:1}
+.ci{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(232,97,45,0.1),rgba(245,166,35,0.07));display:flex;align-items:center;justify-content:center;margin-bottom:.85rem;font-size:1.2rem}
+.cd h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;margin-bottom:.4rem;color:var(--td)}
+.cd p{color:var(--tm);font-size:.87rem;line-height:1.55}
+
+/* STEPS */
+.ps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.ps::before{content:'';position:absolute;top:33px;left:12%;right:12%;height:3px;background:linear-gradient(90deg,var(--o),var(--am),var(--peach),var(--gold));border-radius:2px}
+.st{text-align:center;padding:0 .7rem;position:relative}
+.sn{width:66px;height:66px;border-radius:50%;background:#fff;border:3px solid var(--o);display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--o);position:relative;z-index:2;box-shadow:0 3px 12px rgba(232,97,45,0.1)}
+.st h3{font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;margin-bottom:.35rem;color:var(--td)}
+.st p{color:var(--tm);font-size:.82rem}
+
+/* CTA BAR */
+.cb{background:linear-gradient(135deg,var(--o),#D4551F,var(--am));padding:3.5rem 2rem;text-align:center}
+.cb h2{font-size:clamp(1.5rem,3vw,2.2rem);color:#fff;margin-bottom:.6rem}
+.cb p{color:rgba(255,255,255,0.88);font-size:.95rem;margin-bottom:1.3rem;max-width:500px;margin-left:auto;margin-right:auto}
+.bw{background:#fff;color:var(--o);padding:.75rem 1.8rem;border-radius:8px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:.3s;box-shadow:0 3px 12px rgba(0,0,0,0.08);display:inline-block}
+.bw:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.12)}
+.bp{background:linear-gradient(135deg,var(--o),#D4551F);color:#fff;padding:.75rem 1.6rem;border-radius:8px;font-weight:600;font-size:.87rem;border:none;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:.4rem;box-shadow:0 3px 12px rgba(232,97,45,0.2)}
+.bp:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(232,97,45,0.3)}
+
+/* TRUST */
+.tb{background:var(--ww);padding:1.5rem 2rem;border-bottom:1px solid rgba(74,44,26,0.05)}
+.ti{max-width:1200px;margin:0 auto;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.tt{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--tm);font-weight:500}
+.tc{width:34px;height:34px;border-radius:50%;background:var(--cr2);display:flex;align-items:center;justify-content:center;color:var(--o);font-size:.9rem;font-weight:700}
+
+/* FOOTER */
+.ft{background:var(--bd);padding:3rem 2rem 1.25rem;color:rgba(255,255,255,0.65)}
+.fi{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem}
+.fb img{height:92px;margin-bottom:.6rem}.fb p{color:rgba(255,255,255,0.4);font-size:.82rem;max-width:260px}
+.fc2 h4{font-family:'DM Sans',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.85rem;color:var(--am)}
+.fc2 a{display:block;color:rgba(255,255,255,0.45);font-size:.85rem;margin-bottom:.5rem;transition:.3s}.fc2 a:hover{color:#fff}
+.fbo{max-width:1200px;margin:2rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;font-size:.75rem;color:rgba(255,255,255,0.25)}
+
+.dd{position:relative}.dd-toggle{font-size:.85rem;color:var(--tm);font-weight:500;transition:.3s;cursor:pointer;background:none;border:none;font-family:inherit;display:inline-flex;align-items:center;gap:.25rem;padding:0}.dd-toggle:hover{color:var(--o)}.dd-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:220px;background:#fff;border-radius:10px;box-shadow:0 12px 40px rgba(44,24,16,0.12);border:1px solid rgba(74,44,26,0.06);padding:.5rem 0;margin-top:.6rem;z-index:200}.dd-menu::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:#fff;border-left:1px solid rgba(74,44,26,0.06);border-top:1px solid rgba(74,44,26,0.06);rotate:45deg}.dd-menu a{display:block;padding:.5rem 1.25rem;font-size:.84rem;color:var(--tb);font-weight:500;transition:.2s;white-space:nowrap}.dd-menu a:hover{background:var(--cr);color:var(--o)}.dd:hover .dd-menu{display:block}
+@media(max-width:900px){
+  .hero-g{grid-template-columns:1fr!important}.fc{margin-top:1.25rem}
+  #svc .sg{grid-template-columns:repeat(2,1fr)!important}
+  .ag{grid-template-columns:1fr!important}.abl{grid-template-columns:1fr!important}
+  .ps{grid-template-columns:repeat(2,1fr);gap:1.5rem}.ps::before{display:none}
+  .fi{grid-template-columns:1fr 1fr}.nl{display:none}.hb{display:flex}
+  .fr{grid-template-columns:1fr}.ch-g{grid-template-columns:1fr!important}
+}
+@media(max-width:600px){.ps{grid-template-columns:1fr}#svc .sg{grid-template-columns:1fr!important}.fi{grid-template-columns:1fr}.ti{flex-direction:column;gap:.8rem}}.nav-call-btn{display:inline-flex;align-items:center;gap:.35rem;color:var(--o);font-weight:700;font-size:.85rem;text-decoration:none;padding:.45rem 1rem;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(232,97,45,.15);transition:.25s;white-space:nowrap}
+.nav-call-btn:hover{box-shadow:0 4px 16px rgba(232,97,45,.25);transform:translateY(-1px)}
+.call-btn-hero{display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,var(--o),#D4551F);border:none;color:#fff;font-weight:700;font-size:.9rem;padding:.65rem 1.4rem;border-radius:8px;text-decoration:none;transition:.25s;white-space:nowrap;box-shadow:0 3px 12px rgba(232,97,45,0.25)}
+.call-btn-hero:hover{background:rgba(255,255,255,0.25);border-color:#fff}
+.or-call-dark{margin-top:.9rem;font-size:.87rem;color:rgba(255,255,255,0.65)}
+.or-call-dark a{color:#fff;font-weight:700;text-decoration:none}
+.or-call-dark a:hover{text-decoration:underline}
+.or-call-light{margin-top:.75rem;font-size:.87rem;color:#8B6E5A;text-align:center}
+.or-call-light a{color:var(--o);font-weight:700;text-decoration:none}
+.or-call-light a:hover{text-decoration:underline}
+@media(max-width:600px){.nav-call-btn{display:none}}.deco-icon-sm{height:52px;opacity:.92;display:block;margin:0 auto .9rem}
+.deco-icon-lg{height:90px;opacity:.95;display:block;margin:0 auto 1.2rem}
+.deco-icon-hero{position:absolute;right:4%;top:50%;transform:translateY(-50%);height:clamp(140px,18vw,240px);opacity:.07;pointer-events:none;z-index:0}.nl.mob-open{display:flex!important;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(44,24,16,0.97);flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;z-index:200;padding:2rem}.nl.mob-open a,.nl.mob-open button{color:rgba(255,255,255,0.85);font-size:1.05rem}.nl.mob-open a:hover{color:var(--am)}.nl.mob-open .dd-menu{position:static;transform:none;background:transparent;box-shadow:none;border:none;display:block;padding:0;margin:0;min-width:auto}.nl.mob-open .dd-menu::before{display:none}.nl.mob-open .dd-menu a{color:rgba(255,255,255,0.6);font-size:.9rem;padding:.3rem 0;white-space:normal}.nl.mob-open .dd-menu a:hover{background:transparent;color:var(--am)}.nl.mob-open .dd-toggle{color:var(--am);font-size:1.05rem}.nl.mob-open .nav-call-btn{display:inline-flex!important;background:transparent;box-shadow:none;color:var(--am);border:1px solid rgba(255,255,255,0.2);margin-top:.5rem}</style><link rel="stylesheet" href="/squarespace-custom.css">
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Transition Properties | Sell Your Home Fast in Southwest Florida">
+<meta name="description" content="Transition Properties buys residential and commercial properties for cash in Southwest Florida. Serving Fort Myers, Cape Coral, Naples, Lehigh Acres, Bonita Springs, and Estero. Fast closings, no fees, no repairs needed.">
+<meta name="keywords" content="sell my house fast, cash home buyers, we buy houses, Southwest Florida, Fort Myers, Cape Coral, Naples, Lehigh Acres, Bonita Springs, Estero, pre-foreclosure, probate, inherited property, tired landlord, sell property fast, cash offer">
+<meta name="author" content="Anthony Sopt, Transition Properties">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Transition Properties | Sell Your Home Fast in Southwest Florida">
+<meta property="og:description" content="We buy residential and commercial properties for cash in Southwest Florida. Fast closings, no fees, no repairs needed.">
+<meta property="og:url" content="https://transitionfl.com/">
+<meta property="og:image" content="https://transitionfl.com/images/logo-full.png">
+<meta property="og:site_name" content="Transition Properties">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Transition Properties | Sell Your Home Fast in Southwest Florida">
+<meta name="twitter:description" content="We buy residential and commercial properties for cash in Southwest Florida. Fast closings, no fees, no repairs needed.">
+<meta name="twitter:image" content="https://transitionfl.com/images/logo-full.png">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="US-FL">
+<meta name="geo.placename" content="Fort Myers">
+<meta name="geo.position" content="26.6406;-81.8723">
+<meta name="ICBM" content="26.6406, -81.8723">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://transitionfl.com/">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Transition Properties",
+  "url": "https://transitionfl.com",
+  "logo": "https://transitionfl.com/images/logo-full.png",
+  "image": "https://transitionfl.com/images/logo-full.png",
+  "description": "Transition Properties buys residential and commercial properties for cash in Southwest Florida. Pre-foreclosure, probate, inherited, land, tired landlords, storage units, industrial flex space, mobile parks, and multifamily.",
+  "telephone": "(239) 766-6978",
+  "email": "info@transitionfl.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Anthony Sopt"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Fort Myers", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Cape Coral", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Naples", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Lehigh Acres", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Bonita Springs", "containedInPlace": {"@type": "State", "name": "Florida"}},
+    {"@type": "City", "name": "Estero", "containedInPlace": {"@type": "State", "name": "Florida"}}
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fort Myers",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "26.6406",
+    "longitude": "-81.8723"
+  },
+  "serviceType": ["Cash Home Buying", "Commercial Property Buying", "Pre-Foreclosure Solutions", "Probate Property Buying", "Inherited Property Buying"],
+  "priceRange": "$$"
+}
+</script>
+
+<!-- JSON-LD: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Transition Properties",
+  "url": "https://transitionfl.com",
+  "logo": "https://transitionfl.com/images/logo-full.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "(239) 766-6978",
+    "contactType": "sales",
+    "email": "info@transitionfl.com",
+    "areaServed": "US",
+    "availableLanguage": "English"
+  },
+  "founder": { "@type": "Person", "name": "Anthony Sopt" },
+  "sameAs": []
+}
+</script>
+
+<!-- JSON-LD: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Transition Properties",
+  "url": "https://transitionfl.com",
+  "description": "Transition Properties buys residential and commercial properties for cash. Southwest Florida residential. Nationwide commercial.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Transition Properties",
+    "logo": "https://transitionfl.com/images/logo-full.png"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://transitionfl.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+</head><body class="page-home page-residential">
+<nav class="nv" aria-label="Main navigation"><div class="nav-brand"><a href="/"><img src="/images/logo-icon.png" alt="Transition Properties" width="567" height="512"><span class="nav-brand-text">TRANSITION</span></a></div>
+<div class="nl">
+<a href="/">Home</a>
+<div class="dd"><button class="dd-toggle">Services &#9662;</button><div class="dd-menu"><a href="/sell-my-house-fast">Sell My House Fast</a><a href="/pre-foreclosure">Pre-Foreclosure Help</a><a href="/probate">Probate &amp; Inherited</a><a href="/land">Sell Land</a><a href="/tired-landlords">Tired Landlords</a></div></div>
+<div class="dd"><button class="dd-toggle">Commercial &#9662;</button><div class="dd-menu"><a href="/commercial">Commercial Overview</a><a href="/storage">Self-Storage</a><a href="/mobile-parks">Mobile Home Parks</a><a href="/multifamily">Multifamily</a><a href="/industrial">Industrial &amp; Warehouse</a><a href="/office">Office Buildings</a><a href="/retail">Retail Properties</a></div></div>
+<a href="/how-it-works">How It Works</a>
+<a href="/areas-we-serve">Areas We Serve</a>
+<a href="/submit-deal">Submit a Deal</a>
+<a href="/faq">FAQ</a>
+<a href="/about">About</a>
+<a href="tel:+12397666978" class="nav-call-btn">&#128222; (239) 766-6978</a>
+<button class="nc" onclick="document.getElementById('hero-form').scrollIntoView({behavior:'smooth'})">Get Your Offer</button>
+</div>
+<div class="hb" role="button" aria-label="Toggle menu" tabindex="0" onclick="toggleMobileNav()"><span></span><span></span><span></span></div></nav>
+
+<section style="min-height:100vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--cr),var(--cr2) 40%,#FFE8CC);position:relative;overflow:hidden"><img src="/images/half-icon.png" alt="Transition Properties logo icon - sell your house fast Southwest Florida" class="deco-icon-hero" aria-hidden="true" width="567" height="512" loading="lazy">
+<div style="max-width:1200px;margin:0 auto;padding:7rem 2rem 3.5rem;display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center" class="hero-g">
+<div>
+<span class="tg to">Southwest Florida Residential</span>
+<h1 style="font-size:clamp(2.1rem,4.5vw,3.2rem);margin-bottom:.8rem">Helping People Through <span class="gr" style="display:block">Life's Transitions</span></h1>
+<p style="font-size:1rem;color:var(--tm);max-width:480px;margin-bottom:1.25rem">Navigating probate, foreclosure, or managing an estate? We provide fair, honest solutions that put your needs first. Not another wholesaler — a real partner.</p>
+<div style="display:flex;gap:.75rem;flex-wrap:wrap">
+<div class="tt"><div class="tc">&#10003;</div><span>No Fees or Commissions</span></div>
+<div class="tt"><div class="tc">&#9829;</div><span>We Help Even If You Don't Sell</span></div>
+</div>
+<div style="margin-top:1.1rem;display:flex;gap:.75rem;flex-wrap:wrap;align-items:center"><a href="tel:+12397666978" class="call-btn-hero">&#128222; (239) 766-6978</a></div>
+</div>
+<div class="fc">
+<h3>Get Your Free Cash Offer</h3><p class="su">Tell us about your property. We respond within 24 hours.</p>
+<div class="fr"><div><label>First Name</label><input type="text" placeholder="John"></div><div><label>Last Name</label><input type="text" placeholder="Smith"></div></div>
+<div class="fr"><div><label>Phone</label><input type="tel" placeholder="(239) 555-0123"></div><div><label>Email</label><input type="email" placeholder="john@email.com"></div></div>
+<div class="fr fu"><div><label>Property Address</label><input type="text" placeholder="123 Main St, Fort Myers, FL 33901"></div></div>
+<div class="fr"><div><label>Property Type</label><select><option>Single Family</option><option>Condo / Townhouse</option><option>Multi-Family</option><option>Vacant Land</option><option>Other</option></select></div>
+<div><label>Situation</label><select><option>Probate / Inherited</option><option>Foreclosure</option><option>Divorce</option><option>Relocation</option><option>Tired Landlord</option><option>Other</option></select></div></div>
+<div class="fr fu"><div><label>Anything else? (optional)</label><textarea placeholder="Tell us about your situation..."></textarea></div></div>
+<button class="bs">Get My Cash Offer &rarr;</button><p class="fn">100% confidential &bull; No spam &bull; No obligation</p><div class="or-call-light">Prefer to call? <a href="tel:+12397666978">(239) 766-6978</a></div></div>
+</div>
+</section>
+
+<div class="tb"><div class="ti">
+<div class="tt"><div class="tc">&#10029;</div><span>No Obligation Offers</span></div>
+<div class="tt"><div class="tc">&#9201;</div><span>Close on Your Timeline</span></div>
+<div class="tt"><div class="tc">&#10003;</div><span>Zero Fees</span></div>
+<div class="tt"><div class="tc">&#9829;</div><span>We Help Even If You Don't Sell</span></div>
+</div></div>
+
+<section class="se sw" id="svc"><div class="si">
+<div class="sh"><span class="tg to">What We Do</span><h2>Real Solutions, <span class="gr">Not Sales Pitches</span></h2><p>We approach every situation with empathy and expertise. Our goal is to help you find the best path forward.</p></div>
+<div class="sg" style="grid-template-columns:repeat(3,1fr)">
+<div class="cd"><div class="ci">&#127968;</div><h3>Residential Wholesale</h3><p>Fair cash offers for homes across Southwest Florida. As-is, no repairs, no showings, close on your schedule.</p></div>
+<div class="cd"><div class="ci">&#9878;</div><h3>Probate &amp; Estate Help</h3><p>We work gently with families and attorneys to simplify property transitions during difficult times.</p></div>
+<div class="cd"><div class="ci">&#128170;</div><h3>Foreclosure Solutions</h3><p>We explore every option to protect your equity and give you a fresh start before it's too late.</p></div>
+<div class="cd"><div class="ci">&#128200;</div><h3>Investor Partnerships</h3><p>Transparent numbers and long-term partnerships. Invest with us and learn alongside our team.</p></div>
+<div class="cd"><div class="ci">&#127970;</div><h3>Commercial Acquisitions</h3><p>Nationwide commercial deals with creative structures. <a href="/commercial" style="color:var(--o);font-weight:600">Learn more &rarr;</a></p></div>
+<div class="cd"><div class="ci">&#127793;</div><h3>Financial Freedom</h3><p>We teach clients, employees, and partners to invest alongside us — building generational wealth together.</p></div>
+</div></div></section>
+
+<section class="se" id="hw"><div class="si">
+<div class="sh"><span class="tg to">Simple &amp; Honest</span><h2>How It <span class="gr">Works</span></h2><p>No games, no pressure. A straightforward process designed around your needs.</p></div>
+<div class="ps">
+<div class="st"><div class="sn">1</div><h3>Tell Us Your Situation</h3><p>Fill out the form or call. Share as much or as little as you'd like.</p></div>
+<div class="st"><div class="sn">2</div><h3>We Evaluate Together</h3><p>We review your property and walk you through every option available.</p></div>
+<div class="st"><div class="sn">3</div><h3>Fair Cash Offer</h3><p>Transparent offer. No fees, no commissions, no pressure.</p></div>
+<div class="st"><div class="sn">4</div><h3>Close on Your Timeline</h3><p>You pick the date. We handle everything. Walk away with cash.</p></div>
+</div></div></section>
+
+<div class="cb"><img src="/images/logo-icon.png" alt="Transition Properties decorative icon" class="deco-icon-sm" aria-hidden="true" width="567" height="512" loading="lazy"><h2>Need to Sell Fast?</h2><p>Fair, no-obligation cash offer in as little as 24 hours. We buy homes as-is across Southwest Florida.</p>
+<button class="bw" onclick="document.getElementById('bf').scrollIntoView({behavior:'smooth'})">Get Your Free Offer &rarr;</button><div class="or-call-dark">or call us: <a href="tel:+12397666978">(239) 766-6978</a></div></div>
+
+<section class="se sc2"><div class="si">
+<div class="sh"><img src="/images/logo-icon.png" alt="Transition Properties decorative icon" class="deco-icon-sm" aria-hidden="true" width="567" height="512" loading="lazy"><span class="tg to">Our Mission</span><h2>More Than Business. <span class="gr">A Calling.</span></h2><p>Every deal we close funds a greater purpose.</p></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem" class="ag">
+<div class="cd" style="border:none;background:linear-gradient(135deg,rgba(232,97,45,0.04),rgba(245,166,35,0.03))"><div class="ci">&#9829;</div><h3>People Over Profits</h3><p>We help even if you don't sell to us. Your situation matters more than our bottom line.</p></div>
+<div class="cd" style="border:none;background:linear-gradient(135deg,rgba(245,166,35,0.04),rgba(212,164,83,0.03))"><div class="ci">&#128161;</div><h3>Radical Transparency</h3><p>No hidden fees, no surprises. You'll know exactly what we're offering and why.</p></div>
+<div class="cd" style="border:none;background:linear-gradient(135deg,rgba(29,158,117,0.04),rgba(74,173,232,0.03))"><div class="ci">&#127758;</div><h3>Kingdom Impact</h3><p>Our profits fund fighting child trafficking, serving orphans and widows, and spreading God's love.</p></div>
+<div class="cd" style="border:none;background:linear-gradient(135deg,rgba(212,164,83,0.04),rgba(232,97,45,0.03))"><div class="ci">&#127793;</div><h3>Teach &amp; Empower</h3><p>We invite everyone around us to invest and learn, building financial freedom together.</p></div>
+</div>
+<div style="text-align:center;margin-top:2rem"><a href="/about" class="bp">Read Our Full Story &rarr;</a></div>
+</div></section>
+
+<section class="se" id="bf"><img src="/images/half-icon.png" alt="" class="deco-icon-form" aria-hidden="true" loading="lazy"><div style="max-width:650px;margin:0 auto">
+<div style="text-align:center;margin-bottom:1.5rem"><span class="tg to">Get Started</span><h2>Ready to <span class="gr">Talk?</span></h2><p style="color:var(--tm);font-size:.9rem">No obligation. No pressure. Just a conversation.</p></div>
+<div class="fc">
+<h3>Get Your Free Cash Offer</h3><p class="su">Tell us about your property. We respond within 24 hours.</p>
+<div class="fr"><div><label>First Name</label><input type="text" placeholder="John"></div><div><label>Last Name</label><input type="text" placeholder="Smith"></div></div>
+<div class="fr"><div><label>Phone</label><input type="tel" placeholder="(239) 555-0123"></div><div><label>Email</label><input type="email" placeholder="john@email.com"></div></div>
+<div class="fr fu"><div><label>Property Address</label><input type="text" placeholder="123 Main St, Fort Myers, FL 33901"></div></div>
+<div class="fr"><div><label>Property Type</label><select><option>Single Family</option><option>Condo / Townhouse</option><option>Multi-Family</option><option>Vacant Land</option><option>Other</option></select></div>
+<div><label>Situation</label><select><option>Probate / Inherited</option><option>Foreclosure</option><option>Divorce</option><option>Relocation</option><option>Tired Landlord</option><option>Other</option></select></div></div>
+<div class="fr fu"><div><label>Anything else? (optional)</label><textarea placeholder="Tell us about your situation..."></textarea></div></div>
+<button class="bs">Get My Cash Offer &rarr;</button><p class="fn">100% confidential &bull; No spam &bull; No obligation</p></div>
+</div></section>
+
+<footer class="ft"><div class="fi">
+<div class="fb"><img src="/images/logo-light.png" alt="Transition Properties - Southwest Florida residential and nationwide commercial property buyer" loading="lazy" class="footer-logo"><p class="footer-tagline"><em>Helping People Through Life's Transitions</em></p><p>Southwest Florida residential. Nationwide commercial.</p><p style="margin-top:.6rem;font-size:.82rem"><a href="tel:+12397666978" style="color:rgba(255,255,255,0.6)">(239) 766-6978</a><br><a href="mailto:info@transitionfl.com" style="color:rgba(255,255,255,0.6)">info@transitionfl.com</a></p></div>
+<div class="fc2"><h4>Residential</h4><a href="/sell-my-house-fast">Sell My House Fast</a><a href="/pre-foreclosure">Pre-Foreclosure</a><a href="/probate">Probate &amp; Inherited</a><a href="/land">Land</a><a href="/tired-landlords">Tired Landlords</a></div>
+<div class="fc2"><h4>Commercial</h4><a href="/commercial">Commercial Overview</a><a href="/storage">Self-Storage</a><a href="/mobile-parks">Mobile Home Parks</a><a href="/multifamily">Multifamily</a><a href="/industrial">Industrial &amp; Warehouse</a><a href="/office">Office</a><a href="/retail">Retail</a></div>
+<div class="fc2"><h4>Resources</h4><a href="/how-it-works">How It Works</a><a href="/areas-we-serve">Areas We Serve</a><a href="/submit-deal">Submit a Deal</a><a href="/faq">FAQ</a><a href="/about">About</a></div>
+</div><div class="fbo"><span>&copy; 2026 Transition Properties. All rights reserved.</span><span>transitionfl.com</span></div></footer><script src="/form-handler.js"></script><script>
+function toggleMobileNav(){var n=document.querySelector('.nl');if(n.classList.contains('mob-open')){n.classList.remove('mob-open');var cb=n.querySelector('.mob-close-btn');if(cb)cb.remove();}else{n.classList.add('mob-open');var btn=document.createElement('button');btn.className='mob-close-btn';btn.innerHTML='\u00D7';btn.style.cssText='position:fixed;top:1.5rem;right:2rem;background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;z-index:250;line-height:1';btn.onclick=function(){n.classList.remove("mob-open");btn.remove()};n.appendChild(btn);}}
+</script>
+<script src="/interactions.js"></script></body></html>
