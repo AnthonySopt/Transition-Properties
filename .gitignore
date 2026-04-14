@@ -15,6 +15,9 @@ Thumbs.db
 # Logs
 *.log
 
+# Build output (generated on Cloudflare Pages — do not commit)
+dist/
+
 # Backup files
 *.bak
 
@@ -27,10 +30,17 @@ convert-cards.js
 *.code-workspace
 .claude/
 
-# Non-website folders
-Business Cards/
-LOgo Package/
-Leads/
-Legal Registration/
-SOP/
-Website/
+# Non-website folders (sit alongside the repo but aren't part of the site).
+# Leading slash anchors the pattern to the repo root so we don't accidentally
+# ignore e.g. functions/api/leads/ (case-insensitive filesystems match "Leads").
+/Business Cards/
+/Buyers List/
+/CRM/
+/LOgo Package/
+/Leads/
+/Legal Registration/
+/SOP/
+
+# Legacy local scratch folder — contents of the site now live at the repo root.
+# Safe to delete when no processes are holding it open.
+/Website/

@@ -1,11 +1,14 @@
 require('dotenv').config();
 
-const express   = require('express');
-const cors      = require('cors');
-const rateLimit = require('express-rate-limit');
-const path      = require('path');
+const express     = require('express');
+const cors        = require('cors');
+const compression = require('compression');
+const rateLimit   = require('express-rate-limit');
+const path        = require('path');
+const fs = require('fs');
 const { initDb, getLeads, deleteLead, getStats } = require('./db');
 const leadsRouter = require('./routes/leads');
+const { buildVersions, version } = require('./asset-versioning');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -13,7 +16,12 @@ const PORT = process.env.PORT || 3000;
 // ── Database ──────────────────────────────────────────────────────────────────
 initDb();
 
+// ── Asset fingerprints (computed once at boot) ───────────────────────────────
+buildVersions(__dirname);
+
 // ── Middleware ────────────────────────────────────────────────────────────────
+// gzip/deflate — massive win for HTML/CSS/JS payloads on mobile networks
+app.use(compression({ level: 6, threshold: 1024 }));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -90,14 +98,50 @@ app.get('/*.html', (req, res) => {
 });
 
 // ── Static Files ──────────────────────────────────────────────────────────────
-app.use(express.static(path.join(__dirname)));
+// Long-cache static assets (images, css, js, fonts). HTML stays short so edits
+// propagate immediately. Cache-busting via filename changes recommended for css/js.
+app.use(express.static(path.join(__dirname), {
+  etag: true,
+  lastModified: true,
+  // Do NOT auto-serve HTML from static — all HTML goes through the versioning
+  // helper below so asset refs get ?v=<hash> appended. Static handles images,
+  // css, js, fonts only.
+  index: false,
+  extensions: [],
+  setHeaders: (res, filePath) => {
+    const ext = path.extname(filePath).toLowerCase();
+    if (['.png', '.jpg', '.jpeg', '.webp', '.avif', '.gif', '.svg', '.ico', '.woff', '.woff2', '.ttf'].includes(ext)) {
+      // Images & fonts: 1 year, immutable-ish
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (ext === '.css' || ext === '.js') {
+      // CSS/JS: 1 day + revalidate so updates are picked up quickly
+      res.setHeader('Cache-Control', 'public, max-age=86400, must-revalidate');
+    } else if (ext === '.html') {
+      // HTML: no long cache — lets content updates go live fast
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    }
+  },
+}));
 
 // ── SEO Files ─────────────────────────────────────────────────────────────────
 app.get('/robots.txt',  (_, res) => res.sendFile(path.join(__dirname, 'robots.txt')));
 app.get('/sitemap.xml', (_, res) => res.type('application/xml').sendFile(path.join(__dirname, 'sitemap.xml')));
 
-// ── Helper: serve HTML file ───────────────────────────────────────────────────
-const html = (file) => (_, res) => res.sendFile(path.join(__dirname, file));
+// ── Helper: serve HTML file (versioned + cached in memory) ────────────────────
+// HTML is read from disk once, rewritten to include ?v=<hash> on every asset
+// reference, and stashed in memory. Subsequent requests serve straight from RAM.
+const htmlCache = {};
+function loadHtml(file) {
+  const raw = fs.readFileSync(path.join(__dirname, file), 'utf8');
+  htmlCache[file] = version(raw);
+}
+const html = (file) => {
+  loadHtml(file);
+  return (_, res) => {
+    res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    res.type('html').send(htmlCache[file]);
+  };
+};
 
 // ── Page Routes (clean URLs) ──────────────────────────────────────────────────
 
