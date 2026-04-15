@@ -44,3 +44,7 @@ convert-cards.js
 # Legacy local scratch folder — contents of the site now live at the repo root.
 # Safe to delete when no processes are holding it open.
 /Website/
+
+# The internal business app (separate repo: transitionfl-app) — lives here
+# on disk for convenience but has its own git repo under /app/.git/.
+/app/

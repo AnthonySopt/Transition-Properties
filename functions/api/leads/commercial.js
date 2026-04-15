@@ -1,4 +1,4 @@
-import { sendLeadEmail, rateLimit, clientIp } from '../../_shared/send-lead.js';
+import { forwardToCrm, rateLimit, clientIp } from '../../_shared/forward-to-crm.js';
 
 export async function onRequestPost({ request, env }) {
   const ip = clientIp(request);
@@ -15,15 +15,15 @@ export async function onRequestPost({ request, env }) {
     return json({ error: 'Phone, email, and property address are required.' }, 400);
   }
 
-  // Deal submissions (from /submit-deal) route to deals@transitionfl.com;
-  // regular commercial inquiries go to the main leads inbox.
+  // `submit-deal.html` prefixes `situation` with "Deal Submission" so we can
+  // tag these separately in the CRM (web_deal_submission) for reporting.
   const isDeal = situation && situation.startsWith('Deal Submission');
-  const recipient = isDeal ? (env.DEALS_EMAIL || 'deals@transitionfl.com') : undefined;
+  const kind = isDeal ? 'deal' : 'commercial';
 
   try {
-    await sendLeadEmail(env, { type: 'commercial', data: { ...data, ip }, recipient });
+    await forwardToCrm(env, { kind, data, clientIp: ip, request });
   } catch (err) {
-    console.error('Lead email failed:', err.message);
+    console.error('[leads/commercial] CRM forward failed:', err.message);
     return json({ error: 'Could not send your submission. Please call us at (239) 766-6978.' }, 500);
   }
 

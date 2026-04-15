@@ -35,6 +35,15 @@
         data[key] = field.value.trim();
       }
     });
+    // Attribution: which page + traffic source created this lead. Captured
+    // client-side so the server can record it against the lead row.
+    data.page_path = window.location.pathname;
+    data.referrer  = document.referrer || '';
+    const q = new URLSearchParams(window.location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(k => {
+      const v = q.get(k);
+      if (v) data[k] = v;
+    });
     return data;
   }
 

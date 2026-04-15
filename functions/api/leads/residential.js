@@ -1,4 +1,4 @@
-import { sendLeadEmail, rateLimit, clientIp } from '../../_shared/send-lead.js';
+import { forwardToCrm, rateLimit, clientIp } from '../../_shared/forward-to-crm.js';
 
 export async function onRequestPost({ request, env }) {
   const ip = clientIp(request);
@@ -10,7 +10,7 @@ export async function onRequestPost({ request, env }) {
   try { data = await request.json(); }
   catch { return json({ error: 'Invalid request.' }, 400); }
 
-  const { first_name, last_name, phone, email, address, property_type } = data;
+  const { first_name, last_name, phone, email, address } = data;
   if (!phone?.trim() || !email?.trim() || !address?.trim()) {
     return json({ error: 'Phone, email, and property address are required.' }, 400);
   }
@@ -19,18 +19,17 @@ export async function onRequestPost({ request, env }) {
   }
 
   try {
-    await sendLeadEmail(env, { type: 'residential', data: { ...data, ip } });
+    await forwardToCrm(env, { kind: 'residential', data, clientIp: ip, request });
   } catch (err) {
-    console.error('Lead email failed:', err.message);
+    console.error('[leads/residential] CRM forward failed:', err.message);
     return json({ error: 'Could not send your request. Please call us at (239) 766-6978.' }, 500);
   }
 
   return json({ success: true, message: "✓ Request received! We'll reach out within 24 hours." });
 }
 
-// Block everything except POST
 export async function onRequest({ request }) {
-  if (request.method === 'POST') return; // falls through to onRequestPost
+  if (request.method === 'POST') return;
   return new Response('Method Not Allowed', { status: 405, headers: { Allow: 'POST' } });
 }
 
