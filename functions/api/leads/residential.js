@@ -1,4 +1,5 @@
 import { forwardToCrm, rateLimit, clientIp } from '../../_shared/forward-to-crm.js';
+import { sendLeadEmail } from '../../_shared/send-lead.js';
 
 export async function onRequestPost({ request, env }) {
   const ip = clientIp(request);
@@ -18,11 +19,26 @@ export async function onRequestPost({ request, env }) {
     return json({ error: 'Your name is required.' }, 400);
   }
 
-  try {
-    await forwardToCrm(env, { kind: 'residential', data, clientIp: ip, request });
-  } catch (err) {
-    console.error('[leads/residential] CRM forward failed:', err.message);
-    return json({ error: 'Could not send your request. Please call us at (239) 766-6978.' }, 500);
+  // Fire CRM forward and email notification in parallel — the email is a
+  // fallback in case SMS delivery is blocked (A2P 10DLC pending) or the
+  // CRM is temporarily unreachable. Only the CRM forward gates the user-
+  // facing error; email failures are logged but don't break the form.
+  const [crmResult, emailResult] = await Promise.allSettled([
+    forwardToCrm(env, { kind: 'residential', data, clientIp: ip, request }),
+    sendLeadEmail(env, { type: 'residential', data: { ...data, ip } }),
+  ]);
+
+  if (emailResult.status === 'rejected') {
+    console.error('[leads/residential] email fallback failed:', emailResult.reason?.message);
+  }
+  if (crmResult.status === 'rejected') {
+    console.error('[leads/residential] CRM forward failed:', crmResult.reason?.message);
+    // If the CRM failed but email succeeded, we still have the lead — treat
+    // as success from the visitor's perspective. If BOTH failed, show the
+    // "call us" error so nothing falls on the floor silently.
+    if (emailResult.status === 'rejected') {
+      return json({ error: 'Could not send your request. Please call us at (239) 766-6978.' }, 500);
+    }
   }
 
   return json({ success: true, message: "✓ Request received! We'll reach out within 24 hours." });

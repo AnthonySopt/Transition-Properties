@@ -1,4 +1,5 @@
 import { forwardToCrm, rateLimit, clientIp } from '../../_shared/forward-to-crm.js';
+import { sendLeadEmail } from '../../_shared/send-lead.js';
 
 export async function onRequestPost({ request, env }) {
   const ip = clientIp(request);
@@ -19,12 +20,23 @@ export async function onRequestPost({ request, env }) {
   // tag these separately in the CRM (web_deal_submission) for reporting.
   const isDeal = situation && situation.startsWith('Deal Submission');
   const kind = isDeal ? 'deal' : 'commercial';
+  const emailRecipient = isDeal ? (env.DEALS_EMAIL || 'deals@transitionfl.com') : undefined;
 
-  try {
-    await forwardToCrm(env, { kind, data, clientIp: ip, request });
-  } catch (err) {
-    console.error('[leads/commercial] CRM forward failed:', err.message);
-    return json({ error: 'Could not send your submission. Please call us at (239) 766-6978.' }, 500);
+  // CRM forward + email in parallel. Email is a backup for when OpenPhone
+  // SMS is blocked or the CRM is down. See residential.js for logic notes.
+  const [crmResult, emailResult] = await Promise.allSettled([
+    forwardToCrm(env, { kind, data, clientIp: ip, request }),
+    sendLeadEmail(env, { type: 'commercial', data: { ...data, ip }, recipient: emailRecipient }),
+  ]);
+
+  if (emailResult.status === 'rejected') {
+    console.error('[leads/commercial] email fallback failed:', emailResult.reason?.message);
+  }
+  if (crmResult.status === 'rejected') {
+    console.error('[leads/commercial] CRM forward failed:', crmResult.reason?.message);
+    if (emailResult.status === 'rejected') {
+      return json({ error: 'Could not send your submission. Please call us at (239) 766-6978.' }, 500);
+    }
   }
 
   return json({
