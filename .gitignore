@@ -18,6 +18,9 @@ Thumbs.db
 # Build output (generated on Cloudflare Pages — do not commit)
 dist/
 
+# Wrangler local cache + auth (never commit — contains account info / creds)
+.wrangler/
+
 # Backup files
 *.bak
 
@@ -40,6 +43,7 @@ convert-cards.js
 /Leads/
 /Legal Registration/
 /SOP/
+/plans/
 
 # Legacy local scratch folder — contents of the site now live at the repo root.
 # Safe to delete when no processes are holding it open.
