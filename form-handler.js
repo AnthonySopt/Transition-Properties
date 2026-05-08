@@ -29,11 +29,14 @@
     const data = {};
     const groups = container.querySelectorAll('label');
     groups.forEach(label => {
-      const key   = labelToKey(label.textContent);
       const field = label.parentElement.querySelector('input, select, textarea');
-      if (field && key) {
-        data[key] = field.value.trim();
-      }
+      if (!field) return;
+      // data-key on the input wins; otherwise derive from the label text.
+      // The TCPA consent label has a long sentence that would otherwise produce
+      // a junk key, so consent inputs carry data-key="sms_consent" explicitly.
+      const key = field.dataset.key || labelToKey(label.textContent);
+      if (!key) return;
+      data[key] = field.type === 'checkbox' ? (field.checked ? 'yes' : 'no') : field.value.trim();
     });
     // Attribution: which page + traffic source created this lead. Captured
     // client-side so the server can record it against the lead row.
@@ -55,6 +58,7 @@
 
   function validate(data, type) {
     const errors = [];
+    if (data.sms_consent !== 'yes') errors.push('Please check the consent box to continue.');
     if (!data.phone)         errors.push('Phone is required.');
     if (!data.email)         errors.push('Email is required.');
     if (!data.address)       errors.push('Property address is required.');
@@ -102,7 +106,10 @@
   }
 
   function clearFields(container) {
-    container.querySelectorAll('input, textarea').forEach(el => { el.value = ''; });
+    container.querySelectorAll('input, textarea').forEach(el => {
+      if (el.type === 'checkbox') el.checked = false;
+      else el.value = '';
+    });
     container.querySelectorAll('select').forEach(el => { el.selectedIndex = 0; });
   }
 

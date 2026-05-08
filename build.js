@@ -26,6 +26,8 @@ const STATIC_FILES = [
   'pre-foreclosure.html', 'probate.html', 'retail.html',
   'sell-my-house-fast.html', 'storage.html', 'submit-deal.html',
   'tired-landlords.html',
+  'privacy.html', 'terms.html',
+  'resource-guide.html',
   'squarespace-custom.css', 'form-handler.js', 'interactions.js',
   'robots.txt', 'sitemap.xml',
 ];

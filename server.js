@@ -89,6 +89,9 @@ app.get('/*.html', (req, res) => {
     'areas-we-serve': '/areas-we-serve',
     'faq': '/faq',
     'submit-deal': '/submit-deal',
+    'privacy': '/privacy',
+    'terms': '/terms',
+    'resource-guide': '/resource-guide',
   };
   if (map[slug]) return res.redirect(301, map[slug]);
   // Fall through to static for non-mapped .html files (e.g. admin.html)
@@ -171,6 +174,13 @@ app.get('/how-it-works',       html('how-it-works.html'));
 app.get('/areas-we-serve',     html('areas-we-serve.html'));
 app.get('/faq',                html('faq.html'));
 app.get('/submit-deal',        html('submit-deal.html'));
+
+// Legal pages
+app.get('/privacy',            html('privacy.html'));
+app.get('/terms',              html('terms.html'));
+
+// Community resource guide (QR-code landing page for foreclosure outreach)
+app.get('/resource-guide',     html('resource-guide.html'));
 
 // ── Redirects (alternate URLs → canonical) ────────────────────────────────────
 app.get('/tired-landlord',     (_, res) => res.redirect(301, '/tired-landlords'));

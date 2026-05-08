@@ -1,0 +1,861 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><link rel="icon" type="image/png" href="/images/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SWFL Foreclosure Resource Guide | Free Help for Homeowners | Transition Properties</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"><style>@font-face{font-family:'DM Sans Fallback';src:local('Arial');size-adjust:102.5%;ascent-override:94%;descent-override:25%;line-gap-override:0%}@font-face{font-family:'Playfair Fallback';src:local('Georgia');size-adjust:104%;ascent-override:95%;descent-override:26%;line-gap-override:0%}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--o:#E8612D;--am:#F5A623;--gold:#D4A453;--peach:#FFB84A;--coral:#FF6B5A;--cr:#FFFAF5;--cr2:#FFF3E6;--ww:#FEFCF9;--bd:#2C1810;--b:#4A2C1A;--bm:#6B4432;--td:#1A1210;--tb:#3D2E24;--tm:#7A6B5D;--sky:#4AADE8;--teal:#1D9E75;--red:#C0392B;--green:#1D9E75}
+html{scroll-behavior:smooth}body{font-family:'DM Sans','DM Sans Fallback',sans-serif;color:var(--tb);background:var(--ww);overflow-x:hidden;line-height:1.65}h1,h2,h3,h4{font-family:'Playfair Display','Playfair Fallback',serif;font-weight:500;line-height:1.25;color:var(--td)}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.gr{background:linear-gradient(135deg,var(--o),var(--am));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nv{position:fixed;top:0;left:0;width:100%;z-index:100;padding:.7rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,250,245,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(74,44,26,0.06)}.nv img{height:64px}.nv .nav-brand{display:flex;align-items:center;gap:.6rem}.nl{display:flex;gap:1.6rem;align-items:center}.nl a{font-size:.85rem;color:var(--tm);font-weight:500;transition:.3s}.nl a:hover{color:var(--o)}.hb{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px}.hb span{width:22px;height:2px;background:var(--b)}
+@media(max-width:900px){.nv{padding:.5rem 1rem}.nv img{height:52px}.nl{display:none}.hb{display:flex}}
+
+/* ========= GUIDE LAYOUT ========= */
+.g-hero{padding:5.5rem 1.25rem 2rem;background:linear-gradient(160deg,var(--cr),var(--cr2) 60%,#FFE8CC);text-align:center;border-bottom:1px solid rgba(74,44,26,0.06)}
+.g-hero .badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--o);background:rgba(232,97,45,0.1);padding:.35rem 1rem;border-radius:18px;margin-bottom:1rem}
+.g-hero h1{font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:.7rem;line-height:1.15}
+.g-hero .sub{font-style:italic;color:var(--bm);font-size:1rem;max-width:560px;margin:0 auto 1rem}
+.g-hero .meta{font-size:.78rem;color:var(--tm);letter-spacing:.04em}
+.g-hero .meta strong{color:var(--bm)}
+.g-hero .by{margin-top:.85rem;font-size:.78rem;color:var(--tm)}
+.g-hero .by a{color:var(--o);font-weight:600;text-decoration:underline;text-decoration-color:rgba(232,97,45,0.35);text-underline-offset:2px}
+
+.g-wrap{max-width:760px;margin:0 auto;padding:2rem 1.25rem 4rem}
+
+/* Emergency action banner */
+.g-emerg{background:#fff;border:2px solid var(--o);border-radius:14px;padding:1.4rem 1.5rem;margin-bottom:2rem;box-shadow:0 8px 28px rgba(232,97,45,0.08)}
+.g-emerg h2{font-family:'DM Sans',sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--o);font-weight:800;margin-bottom:.6rem;display:flex;align-items:center;gap:.45rem}
+.g-emerg h2::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--o);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,97,45,0.6)}50%{box-shadow:0 0 0 8px rgba(232,97,45,0)}}
+.g-emerg .em-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--td);margin-bottom:.4rem;line-height:1.25}
+.g-emerg p{font-size:.92rem;color:var(--tb);margin-bottom:.8rem}
+.g-emerg .em-num{display:flex;flex-direction:column;gap:.55rem;margin-top:.8rem}
+.g-emerg .em-num a{display:flex;align-items:center;gap:.7rem;background:linear-gradient(135deg,var(--o),#D4551F);color:#fff;padding:.85rem 1.1rem;border-radius:10px;font-weight:700;font-size:.95rem;box-shadow:0 4px 14px rgba(232,97,45,0.25);transition:.2s}
+.g-emerg .em-num a:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(232,97,45,0.32)}
+.g-emerg .em-num a.alt{background:#fff;color:var(--td);border:2px solid rgba(74,44,26,0.12);box-shadow:none}
+.g-emerg .em-num a.alt:hover{border-color:var(--o);color:var(--o)}
+.g-emerg .em-num .num-icon{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.05rem}
+.g-emerg .em-num a.alt .num-icon{background:var(--cr2);color:var(--o)}
+.g-emerg .em-num .num-label{display:flex;flex-direction:column;text-align:left;line-height:1.3}
+.g-emerg .em-num .num-label small{font-size:.7rem;font-weight:500;opacity:.85}
+
+/* TOC */
+.g-toc{background:#fff;border:1px solid rgba(74,44,26,0.08);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:2rem;box-shadow:0 4px 14px rgba(44,24,16,0.04)}
+.g-toc h3{font-family:'DM Sans',sans-serif;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tm);font-weight:700;margin-bottom:.85rem}
+.g-toc ol{list-style:none;counter-reset:t;padding:0;margin:0}
+.g-toc ol li{counter-increment:t;font-size:.94rem;padding:.5rem 0;border-bottom:1px dashed rgba(74,44,26,0.08);display:flex;align-items:flex-start;gap:.75rem}
+.g-toc ol li:last-child{border-bottom:none}
+.g-toc ol li::before{content:counter(t);color:var(--o);font-weight:700;font-family:'Playfair Display',serif;font-size:1rem;flex-shrink:0;width:1.6rem}
+.g-toc ol a{color:var(--td);font-weight:500;flex:1;line-height:1.4;transition:.2s}
+.g-toc ol a:hover{color:var(--o)}
+.g-toc-tools{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.85rem;padding-top:.85rem;border-top:1px dashed rgba(74,44,26,0.1)}
+.g-toc-tools button{background:var(--cr);border:1px solid rgba(74,44,26,0.12);border-radius:8px;padding:.4rem .85rem;font-family:inherit;font-size:.78rem;color:var(--bm);font-weight:600;cursor:pointer;transition:.2s}
+.g-toc-tools button:hover{background:var(--o);color:#fff;border-color:var(--o)}
+
+/* Section styling */
+section.g-sec{margin-top:2.6rem;scroll-margin-top:84px}
+section.g-sec .sec-num{font-family:'DM Sans',sans-serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--o);font-weight:800;margin-bottom:.35rem}
+section.g-sec h2{font-size:1.65rem;margin-bottom:1rem;color:var(--td);line-height:1.2}
+section.g-sec p{margin-bottom:1rem;font-size:.96rem;color:var(--tb)}
+section.g-sec h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:var(--td);margin:1.5rem 0 .5rem}
+section.g-sec ul,section.g-sec ol{margin:0 0 1rem 1.4rem;color:var(--tb)}
+section.g-sec ul li,section.g-sec ol li{margin-bottom:.45rem;font-size:.94rem;line-height:1.6}
+section.g-sec strong{color:var(--td);font-weight:700}
+section.g-sec a:not(.btn-call){color:var(--o);font-weight:600;text-decoration:underline;text-decoration-color:rgba(232,97,45,0.4);text-underline-offset:3px}
+
+/* Resource cards */
+.res-card{background:#fff;border:1px solid rgba(74,44,26,0.08);border-radius:10px;padding:1rem 1.15rem;margin-bottom:.75rem;transition:.2s}
+.res-card:hover{border-color:rgba(232,97,45,0.3);box-shadow:0 4px 14px rgba(44,24,16,0.06)}
+.res-card .res-name{font-family:'DM Sans',sans-serif;font-size:.98rem;font-weight:700;color:var(--td);margin-bottom:.4rem;line-height:1.3}
+.res-card .res-meta{font-size:.84rem;color:var(--tb);line-height:1.55}
+.res-card .res-meta a{font-weight:600;display:inline-flex;align-items:center;gap:.25rem}
+.res-card .res-meta a.tel{color:var(--o);background:rgba(232,97,45,0.08);padding:.18rem .5rem;border-radius:6px;font-size:.86rem;font-weight:700;text-decoration:none}
+.res-card .res-meta a.tel:hover{background:var(--o);color:#fff}
+.res-card .res-meta a.tel::before{content:'\260E';margin-right:.18rem;font-size:.92rem}
+.res-card .res-meta a.web{color:var(--o);text-decoration:underline;text-decoration-color:rgba(232,97,45,0.35);text-underline-offset:2px}
+.res-card .res-meta .lbl{display:block;font-size:.72rem;color:var(--tm);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-top:.45rem}
+.res-card .res-meta p{margin:.45rem 0 0;font-size:.84rem;color:var(--tb)}
+.res-card.compact{padding:.75rem 1rem}
+.res-card.compact .res-name{font-size:.92rem;margin-bottom:.3rem}
+.res-card.compact .res-meta{font-size:.82rem}
+
+/* County section grouping */
+.county-block{margin-bottom:1.6rem}
+.county-block h3.cty{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--o);margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem;padding-bottom:.3rem;border-bottom:2px solid var(--cr2)}
+.county-block h3.cty::before{content:'';display:inline-block;width:6px;height:18px;background:linear-gradient(to bottom,var(--o),var(--am));border-radius:3px}
+
+/* Warning callout */
+.callout{padding:1.1rem 1.3rem;border-radius:10px;margin:1.2rem 0;font-size:.92rem;line-height:1.6}
+.callout.warn{background:#FEF1ED;border-left:4px solid var(--red);color:#742C20}
+.callout.warn strong{color:#742C20}
+.callout.warn ul{margin:.5rem 0 0 1.2rem;color:#742C20}
+.callout.warn ul li{margin-bottom:.4rem}
+.callout.tip{background:#F0FAF6;border-left:4px solid var(--green);color:#0F5C40}
+.callout.tip strong{color:#0F5C40}
+.callout.note{background:#FFF8EC;border-left:4px solid var(--am);color:var(--bm)}
+.callout.note strong{color:var(--td)}
+
+/* Action checklist */
+.checklist{background:#fff;border:1px solid rgba(74,44,26,0.08);border-radius:10px;padding:1.1rem 1.4rem;margin:1rem 0}
+.checklist ol{list-style:none;counter-reset:c;padding:0;margin:0}
+.checklist ol li{counter-increment:c;padding:.55rem 0 .55rem 2.4rem;position:relative;font-size:.95rem;line-height:1.55;border-bottom:1px solid rgba(74,44,26,0.06)}
+.checklist ol li:last-child{border-bottom:none}
+.checklist ol li::before{content:counter(c);position:absolute;left:0;top:.55rem;width:1.7rem;height:1.7rem;background:var(--o);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:.9rem}
+
+/* Bottom CTA */
+.g-cta{background:linear-gradient(135deg,#2C1810,#3D2E24);color:#fff;border-radius:14px;padding:2.2rem 1.6rem;margin-top:3rem;text-align:center;box-shadow:0 16px 44px rgba(44,24,16,0.18)}
+.g-cta .tag{display:inline-block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--am);font-weight:700;margin-bottom:.7rem;background:rgba(245,166,35,0.15);padding:.3rem .85rem;border-radius:18px}
+.g-cta h2{color:#fff;font-size:1.55rem;margin-bottom:.65rem;line-height:1.25}
+.g-cta p{color:rgba(255,255,255,0.78);font-size:.92rem;max-width:520px;margin:0 auto 1.2rem;line-height:1.65}
+.g-cta .cta-btns{display:flex;flex-direction:column;gap:.65rem;max-width:320px;margin:1.4rem auto 0}
+.g-cta .cta-btns a{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.95rem 1.2rem;border-radius:10px;font-weight:700;font-size:.95rem;transition:.2s;text-decoration:none}
+.g-cta .cta-btns .primary{background:linear-gradient(135deg,var(--o),var(--am));color:#fff;box-shadow:0 6px 20px rgba(232,97,45,0.3)}
+.g-cta .cta-btns .primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(232,97,45,0.4)}
+.g-cta .cta-btns .secondary{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.22)}
+.g-cta .cta-btns .secondary:hover{border-color:var(--am);color:var(--am)}
+.g-cta .fine{font-size:.74rem;color:rgba(255,255,255,0.5);margin-top:1.1rem}
+
+/* Final word */
+.g-final{background:var(--cr);border-radius:12px;padding:1.6rem 1.5rem;margin-top:2rem;border:1px solid rgba(212,164,83,0.2)}
+.g-final h2{font-size:1.3rem;color:var(--td);margin-bottom:.7rem}
+.g-final p{font-size:.94rem;margin-bottom:.85rem}
+.g-final .punch{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:var(--o);margin-top:.6rem;font-weight:600}
+
+/* Footer (light, single-page) */
+.g-foot{background:var(--bd);color:rgba(255,255,255,0.5);padding:1.5rem 1rem;text-align:center;font-size:.78rem}
+.g-foot a{color:rgba(255,255,255,0.65);text-decoration:underline}
+.g-foot .ft-legal{margin-top:.6rem}
+.g-foot .ft-legal a{margin:0 .35rem}
+
+/* Inline lead form */
+.lead-form{background:#fff;border-radius:12px;padding:1.4rem 1.4rem 1.6rem;margin-top:1.5rem;text-align:left;color:var(--tb);box-shadow:0 14px 38px rgba(0,0,0,0.18)}
+.lead-form h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:var(--td);margin-bottom:.2rem}
+.lead-form .su{font-size:.82rem;color:var(--tm);margin-bottom:.85rem}
+.lead-form .fr{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:.55rem}
+.lead-form .fr.fu{grid-template-columns:1fr}
+.lead-form label{font-size:.7rem;font-weight:600;color:var(--tm);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:.2rem}
+.lead-form input,.lead-form select,.lead-form textarea{width:100%;padding:.6rem .75rem;border:1.5px solid rgba(74,44,26,0.12);border-radius:7px;font-size:.88rem;font-family:inherit;background:var(--ww);color:var(--td);transition:.2s}
+.lead-form input:focus,.lead-form textarea:focus,.lead-form select:focus{outline:none;border-color:var(--o);box-shadow:0 0 0 3px rgba(232,97,45,0.1)}
+.lead-form textarea{min-height:55px;resize:vertical}
+.lead-form .bs{width:100%;background:linear-gradient(135deg,var(--o),#D4551F);color:#fff;padding:.85rem;border-radius:8px;font-weight:700;font-size:.94rem;border:none;cursor:pointer;margin-top:.4rem;box-shadow:0 4px 14px rgba(232,97,45,0.22);transition:.2s}
+.lead-form .bs:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(232,97,45,0.3)}
+.lead-form .fn{font-size:.7rem;color:var(--tm);text-align:center;margin-top:.55rem}
+@media(max-width:480px){.lead-form .fr{grid-template-columns:1fr}}
+
+/* Print */
+@media print{
+  .nv,.g-toc-tools,.g-cta,.g-foot,.lead-form,.no-print{display:none!important}
+  body{background:#fff}
+  .g-hero{padding:1rem;border:none}
+  .g-emerg{break-inside:avoid;border:2px solid #000}
+  .res-card{break-inside:avoid;border:1px solid #ccc;page-break-inside:avoid}
+  section.g-sec{break-before:auto}
+  a[href^="tel:"]::after{content:""!important}
+  a{color:#000!important;text-decoration:none!important}
+}
+
+/* Mobile optimisations */
+@media(max-width:600px){
+  .g-wrap{padding:1.5rem .9rem 3rem}
+  .g-hero{padding:5rem 1rem 1.6rem}
+  section.g-sec h2{font-size:1.4rem}
+  .g-emerg{padding:1.1rem 1.1rem}
+  .g-cta{padding:1.8rem 1.2rem}
+  .g-cta h2{font-size:1.3rem}
+}
+</style>
+
+<meta name="title" content="SWFL Foreclosure Resource Guide | Free Help for Homeowners">
+<meta name="description" content="A free directory of HUD counselors, legal aid offices, and assistance programs for homeowners facing foreclosure in Lee, Charlotte, Collier, Hendry, and Sarasota counties. Compiled by Transition Properties.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://transitionfl.com/resource-guide">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SWFL Foreclosure Resource Guide — Free Help for Homeowners">
+<meta property="og:description" content="HUD counselors, legal aid, mortgage relief, utility help, food, shelter, and crisis support in Lee, Charlotte, Collier, Hendry, and Sarasota counties.">
+<meta property="og:url" content="https://transitionfl.com/resource-guide">
+<meta property="og:image" content="https://transitionfl.com/images/logo-full.png">
+<meta name="theme-color" content="#E8612D">
+
+</head><body class="page-resource-guide">
+
+<!-- LIGHT NAV (no full mega-menu — keeps page focused) -->
+<nav class="nv" aria-label="Main navigation">
+<div class="nav-brand"><a href="/"><img decoding="async" src="/images/logo-icon.png" alt="Transition Properties" width="567" height="512"></a></div>
+<div class="nl">
+<a href="/">Home</a>
+<a href="/pre-foreclosure">Pre-Foreclosure Help</a>
+<a href="/about">About</a>
+<a href="tel:+12397666978" style="color:var(--o);font-weight:700">&#9742; (239) 766-6978</a>
+</div>
+<div class="hb" role="button" aria-label="Toggle menu" tabindex="0" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="g-hero">
+<span class="badge">Southwest Florida</span>
+<h1>Community Resource Guide<br><span class="gr">For Homeowners Facing Foreclosure</span></h1>
+<p class="sub">Lee &middot; Charlotte &middot; Collier &middot; Hendry &middot; Sarasota counties</p>
+<p class="meta"><strong>Updated April 2026</strong> &middot; Free to share</p>
+<p class="by">Compiled by <a href="/about">Transition Properties</a> as a community resource. We are not paid by any agency listed below. <a href="#about-this">About this guide</a>.</p>
+</section>
+
+<div class="g-wrap">
+
+<!-- EMERGENCY ACTION BANNER -->
+<div class="g-emerg">
+<h2>If you only have 2 minutes</h2>
+<div class="em-title">Make these calls today &mdash; help is free.</div>
+<p>Florida is a judicial foreclosure state. The earlier you act, the more options you have. These two numbers connect you with federally-certified counselors who can help you for <strong>zero cost</strong>.</p>
+<div class="em-num">
+<a href="tel:+18005694287"><span class="num-icon">&#9742;</span><span class="num-label">1-800-569-4287<small>HUD Housing Counselor Hotline (English &amp; Spanish)</small></span></a>
+<a href="tel:+18889954673" class="alt"><span class="num-icon">&#9742;</span><span class="num-label">1-888-995-HOPE (4673)<small>24/7 Foreclosure Prevention Hotline</small></span></a>
+<a href="tel:211" class="alt"><span class="num-icon">2-1-1</span><span class="num-label">Dial 2-1-1<small>United Way &mdash; local social-service referrals</small></span></a>
+</div>
+</div>
+
+<!-- TOC -->
+<nav class="g-toc" aria-label="Table of contents">
+<h3>What's in this guide</h3>
+<ol>
+<li><a href="#start">If You Are Facing Foreclosure &mdash; Start Here</a></li>
+<li><a href="#hud">Free HUD-Approved Housing Counseling</a></li>
+<li><a href="#legal">Free Legal Aid for Foreclosure Defense</a></li>
+<li><a href="#mortgage">Mortgage &amp; Housing Assistance Programs</a></li>
+<li><a href="#counties">County-by-County Resources</a></li>
+<li><a href="#utility">Utility Assistance</a></li>
+<li><a href="#food">Food Assistance</a></li>
+<li><a href="#shelter">Emergency Shelter &amp; Housing</a></li>
+<li><a href="#crisis">Crisis Support &amp; Mental Health</a></li>
+<li><a href="#scams">Protect Yourself from Foreclosure Rescue Scams</a></li>
+<li><a href="#final">A Final Word</a></li>
+</ol>
+<div class="g-toc-tools">
+<button onclick="window.print()">&#128424; Print this guide</button>
+<button onclick="if(navigator.share){navigator.share({title:'SWFL Foreclosure Resource Guide',url:location.href})}else{navigator.clipboard.writeText(location.href);this.textContent='✓ Link copied'}">&#128279; Share</button>
+<a href="#talk" style="background:var(--cr);border:1px solid rgba(74,44,26,0.12);border-radius:8px;padding:.4rem .85rem;font-size:.78rem;color:var(--bm);font-weight:600;text-decoration:none">&#128172; Talk to us</a>
+</div>
+</nav>
+
+<!-- DISCLAIMER NOTE -->
+<div class="callout note">
+<strong>Please read.</strong> This list of providers and programs has been compiled from public sources for information only. No endorsements or recommendations are being made. Program availability, eligibility, phone numbers, and hours change frequently &mdash; <strong>call before you go</strong> and verify eligibility directly with each agency. The omission of an agency does not imply disapproval.
+</div>
+
+<!-- =================== SECTION 1 =================== -->
+<section class="g-sec" id="start">
+<div class="sec-num">Section 1</div>
+<h2>If You Are Facing Foreclosure &mdash; Start Here</h2>
+<p>The earlier you act, the more options you have. Do not wait for a court date. Do not ignore mail from your lender or the clerk of court. Florida is a judicial foreclosure state, which means your lender must sue you in court to take your home &mdash; and that process creates opportunities to defend yourself, negotiate, or qualify for help.</p>
+
+<h3>First steps (take these today)</h3>
+<div class="checklist">
+<ol>
+<li>Open every piece of mail from your lender and from the county clerk. A foreclosure complaint gives you only <strong>20 days</strong> to file a written answer before a default judgment can be entered.</li>
+<li>Call your mortgage servicer &mdash; the company you send payments to &mdash; and ask for the <strong>Loss Mitigation</strong> department. Ask about forbearance, repayment plans, loan modification, short sale, or deed-in-lieu.</li>
+<li>Call a free HUD-approved housing counselor at <a href="tel:+18005694287">1-800-569-4287</a> or Lee County Housing Development Corporation at <a href="tel:+12396521966">(239) 652-1966</a>. This help is always free.</li>
+<li>If a lawsuit has been filed against you, contact <a href="#legal">Florida Rural Legal Services or your county legal aid office</a> for free foreclosure defense representation.</li>
+<li>Gather pay stubs, tax returns, hardship letter, mortgage statement, and all foreclosure notices &mdash; so you are ready when help arrives.</li>
+</ol>
+</div>
+
+<div class="callout warn">
+<strong>Warning &mdash; do not do these things:</strong>
+<ul>
+<li><strong>Do not pay anyone</strong> who asks for an upfront fee to stop your foreclosure or modify your loan. Under Florida law, that alone is a red flag.</li>
+<li><strong>Do not sign your deed over</strong> to anyone promising to make your mortgage payments for you. This is the most common equity-stripping scam.</li>
+<li><strong>Do not stop talking to your lender.</strong> Avoidance is what turns a cure-able delinquency into a foreclosure judgment.</li>
+<li><strong>Do not abandon the house</strong> before you are legally required to. You may still owe the deficiency and you lose negotiating leverage the day you leave.</li>
+</ul>
+</div>
+</section>
+
+<!-- =================== SECTION 2 =================== -->
+<section class="g-sec" id="hud">
+<div class="sec-num">Section 2</div>
+<h2>Free HUD-Approved Housing Counseling</h2>
+<p>HUD-approved housing counselors are federally certified, free, and legally prohibited from taking advance fees. They will review your full financial picture, help you talk to your servicer, prepare you for loss mitigation applications, and evaluate whether any state or federal programs can help you.</p>
+
+<div class="res-card">
+<div class="res-name">HUD Housing Counselor Hotline (National)</div>
+<div class="res-meta">
+<a href="tel:+18005694287" class="tel">1-800-569-4287</a>
+<a href="https://www.hud.gov/findacounselor" target="_blank" class="web">hud.gov/findacounselor</a>
+<p>Connects you to a certified counselor in your area. Available in English and Spanish.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Lee County Housing Development Corporation (LCHDC)</div>
+<div class="res-meta">
+<a href="tel:+12396521966" class="tel">(239) 652-1966</a>
+<a href="https://leecountyhdc.org" target="_blank" class="web">leecountyhdc.org</a>
+<p>HUD-approved agency providing foreclosure intervention counseling, pre-purchase counseling, rental counseling, and financial capability coaching. Serves Lee County and frequently neighboring counties.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Housing, Education &amp; Lending Programs (HELP) &mdash; Collier County</div>
+<div class="res-meta">
+<a href="tel:+12394342397" class="tel">(239) 434-2397</a>
+<a href="https://floridahelp.org" target="_blank" class="web">floridahelp.org</a>
+<p>HUD-certified housing counseling covering homebuyer education, foreclosure prevention, and financial capability. Based in Naples.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Consolidated Credit &mdash; Statewide</div>
+<div class="res-meta">
+<a href="tel:+18004352261" class="tel">1-800-435-2261</a>
+<a href="https://consolidatedcredit.org/housing" target="_blank" class="web">consolidatedcredit.org/housing</a>
+<p>HUD-certified nonprofit offering free housing stability counseling to Florida homeowners, including help navigating state programs and servicer negotiations.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">HOPE Hotline (Homeownership Preservation Foundation)</div>
+<div class="res-meta">
+<a href="tel:+18889954673" class="tel">1-888-995-HOPE</a>
+<a href="https://995hope.org" target="_blank" class="web">995hope.org</a>
+<p>24/7 hotline staffed by HUD-approved counselors. Free foreclosure prevention counseling in English and Spanish.</p>
+</div>
+</div>
+</section>
+
+<!-- =================== SECTION 3 =================== -->
+<section class="g-sec" id="legal">
+<div class="sec-num">Section 3</div>
+<h2>Free Legal Aid for Foreclosure Defense</h2>
+<p>If you have been served with a foreclosure lawsuit (a summons and complaint from the clerk of court), you need legal representation quickly. You have only <strong>20 days from the date of service</strong> to file a written answer before a default can be entered. These nonprofits provide free representation for homeowners who qualify financially.</p>
+
+<div class="res-card">
+<div class="res-name">Florida Rural Legal Services, Inc. (FRLS)</div>
+<div class="res-meta">
+<a href="tel:+12393344554" class="tel">Fort Myers: (239) 334-4554</a>
+<a href="tel:+18636750888" class="tel">LaBelle: (863) 675-0888</a>
+<a href="https://frls.org" target="_blank" class="web">frls.org</a>
+<span class="lbl">Counties served (in our footprint)</span>
+<p>Lee, Charlotte, and Hendry. Free legal representation in foreclosure defense, landlord-tenant, subsidized housing, consumer, bankruptcy, and public benefits matters for income-qualified residents.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Legal Aid of Manasota, Inc.</div>
+<div class="res-meta">
+<a href="tel:+18006252257" class="tel">1-800-625-2257</a>
+<a href="https://legalaidofmanasota.org" target="_blank" class="web">legalaidofmanasota.org</a>
+<span class="lbl">Counties served</span>
+<p>Sarasota and Manatee. Free foreclosure defense program for income-eligible homeowners, staffed by both staff attorneys and a pro bono panel.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Lee County Legal Aid Society, Inc.</div>
+<div class="res-meta">
+<a href="tel:+12393344554" class="tel">(239) 334-4554</a>
+<span class="lbl">Address</span>
+<p>2401 First Street, Suite 300, Fort Myers, FL 33901. Pro bono attorney referral, civil legal assistance, and limited-scope foreclosure defense for qualifying Lee County residents.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Legal Aid Service of Collier County</div>
+<div class="res-meta">
+<a href="tel:+12392988126" class="tel">(239) 298-8126</a>
+<a href="https://legalaid.org" target="_blank" class="web">legalaid.org</a>
+<span class="lbl">Address</span>
+<p>4125 E. Tamiami Trail, Suite 200, Naples, FL 34112. Free civil legal help including foreclosure defense, family law, and public benefits for Collier County residents who meet income guidelines.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Florida Bar Lawyer Referral Service</div>
+<div class="res-meta">
+<a href="tel:+18003428011" class="tel">1-800-342-8011</a>
+<a href="https://floridabar.org/public/lrs" target="_blank" class="web">floridabar.org/public/lrs</a>
+<p>Connects you with a Florida-licensed attorney for a reduced-fee initial consultation ($25 for 30 minutes).</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Florida Courts Self-Help Center</div>
+<div class="res-meta">
+<a href="https://www.flcourts.gov/resources-services/office-of-family-courts/self-help-information" target="_blank" class="web">flcourts.gov &mdash; Self-Help</a>
+<p>Free statewide self-help center with forms and instructions if you must represent yourself (pro se).</p>
+</div>
+</div>
+</section>
+
+<!-- =================== SECTION 4 =================== -->
+<section class="g-sec" id="mortgage">
+<div class="sec-num">Section 4</div>
+<h2>Mortgage &amp; Housing Assistance Programs</h2>
+
+<h3>Florida Homeowner Assistance Fund (HAF)</h3>
+<p>The Florida HAF program was funded by the federal American Rescue Plan Act. HAF could provide up to <strong>$50,000 per eligible household</strong> for past-due mortgage, property tax, insurance, HOA, and utility payments, with priority for homeowners impacted by COVID-19.</p>
+<div class="callout note">
+<strong>Current status:</strong> As of the latest tracking, Florida's HAF program is listed as closed to new applications. Federal HAF funds are scheduled to sunset September 30, 2026. Programs occasionally reopen if funds are returned or reallocated &mdash; worth checking before assuming the door is closed.
+</div>
+<div class="res-card">
+<div class="res-name">Florida HAF Customer Assistance Center</div>
+<div class="res-meta">
+<a href="tel:+18339878997" class="tel">1-833-987-8997</a>
+<a href="https://www.consumerfinance.gov/housing/housing-insecurity/help-for-homeowners/get-homeowner-assistance-fund-help" target="_blank" class="web">CFPB: HAF program info</a>
+</div>
+</div>
+
+<h3>Lee County Rent / Mortgage &amp; Water Assistance</h3>
+<div class="res-card">
+<div class="res-name">Lee County Human &amp; Veteran Services</div>
+<div class="res-meta">
+<a href="tel:+12395337900" class="tel">(239) 533-7900</a>
+<a href="mailto:HVSHousing@leegov.com">HVSHousing@leegov.com</a>
+<a href="https://www.leegov.com/dhs/assistance" target="_blank" class="web">leegov.com/dhs/assistance</a>
+<p>For residents with past-due rent, mortgage, move-in costs, or water bills caused by a temporary loss of income. The application portal opens at noon Mon&ndash;Fri and closes once the daily limit is reached. Must be Lee County resident; income at or below 60% of Florida State Median Income.</p>
+</div>
+</div>
+
+<h3>Other mortgage relief paths to ask your lender about</h3>
+<ul>
+<li><strong>Forbearance:</strong> a temporary pause or reduction of payments, with a repayment plan after.</li>
+<li><strong>Loan modification:</strong> a permanent change to your loan terms (rate, length, principal).</li>
+<li><strong>Partial claim (FHA loans):</strong> HUD pays a lump sum to bring you current; you repay it when you sell or refinance.</li>
+<li><strong>Repayment plan:</strong> you add a portion of the past-due amount to your regular payments over a set period.</li>
+<li><strong>Short sale:</strong> the lender agrees to accept less than the balance owed if you sell the home.</li>
+<li><strong>Deed-in-lieu of foreclosure:</strong> you voluntarily sign over the deed, and the lender releases you from the debt.</li>
+<li><strong>Fannie Mae RefiNow / Freddie Mac Refi Possible:</strong> refinancing options for lower-income borrowers with limited equity.</li>
+</ul>
+</section>
+
+<!-- =================== SECTION 5 =================== -->
+<section class="g-sec" id="counties">
+<div class="sec-num">Section 5</div>
+<h2>County-by-County Resources</h2>
+<p>Each Southwest Florida county has a human services or housing services department that administers local SHIP funds, emergency rental and utility assistance, and referrals. Call before visiting &mdash; application windows often open and close with demand.</p>
+
+<div class="county-block">
+<h3 class="cty">Lee County</h3>
+<div class="res-card compact"><div class="res-name">Human &amp; Veteran Services</div><div class="res-meta"><a href="tel:+12395337900" class="tel">(239) 533-7900</a> <a href="https://www.leegov.com/dhs" target="_blank" class="web">leegov.com/dhs</a></div></div>
+<div class="res-card compact"><div class="res-name">Rent / Mortgage / Water Aid</div><div class="res-meta"><a href="https://www.leegov.com/dhs/assistance" target="_blank" class="web">leegov.com/dhs/assistance</a></div></div>
+<div class="res-card compact"><div class="res-name">SHIP Program (Owner Rehab)</div><div class="res-meta"><a href="tel:+12395337900" class="tel">(239) 533-7900</a> <a href="mailto:HVSHousing@leegov.com">HVSHousing@leegov.com</a></div></div>
+<div class="res-card compact"><div class="res-name">United Way 211 (24/7)</div><div class="res-meta"><a href="tel:211" class="tel">2-1-1</a> <a href="tel:+12394333900" class="tel">(239) 433-3900</a> &middot; Text 898-211</div></div>
+<div class="res-card compact"><div class="res-name">Housing Authority of Fort Myers</div><div class="res-meta"><a href="tel:+12393443220" class="tel">(239) 344-3220</a> <a href="https://hacfm.com" target="_blank" class="web">hacfm.com</a></div></div>
+<div class="res-card compact"><div class="res-name">Cape Coral Housing Dev. Corp.</div><div class="res-meta"><a href="tel:+12394710922" class="tel">(239) 471-0922</a></div></div>
+<div class="res-card compact"><div class="res-name">Community Cooperative (food, meals)</div><div class="res-meta"><a href="tel:+12393327687" class="tel">(239) 332-7687</a> <a href="https://communitycooperative.com" target="_blank" class="web">communitycooperative.com</a></div></div>
+<div class="res-card compact"><div class="res-name">Salvation Army of Lee County</div><div class="res-meta"><a href="tel:+12392781551" class="tel">(239) 278-1551</a></div></div>
+</div>
+
+<div class="county-block">
+<h3 class="cty">Charlotte County</h3>
+<div class="res-card compact"><div class="res-name">Human Services &mdash; Housing</div><div class="res-meta"><a href="tel:+19418336500" class="tel">(941) 833-6500</a> &middot; 21500 Gibralter Dr., Port Charlotte</div></div>
+<div class="res-card compact"><div class="res-name">SHIP Program</div><div class="res-meta"><a href="tel:+19418336500" class="tel">(941) 833-6500</a> <a href="https://www.charlottecountyfl.gov/departments/human-services/housing" target="_blank" class="web">charlottecountyfl.gov</a></div></div>
+<div class="res-card compact"><div class="res-name">Punta Gorda Housing Authority</div><div class="res-meta"><a href="tel:+19416392112" class="tel">(941) 639-2112</a> <a href="https://puntagordaha.org" target="_blank" class="web">puntagordaha.org</a></div></div>
+<div class="res-card compact"><div class="res-name">Charlotte County Homeless Coalition</div><div class="res-meta"><a href="tel:+19416274313" class="tel">(941) 627-4313</a> <a href="https://cchomelesscoalition.org" target="_blank" class="web">cchomelesscoalition.org</a></div></div>
+<div class="res-card compact"><div class="res-name">Charlotte Habitat for Humanity</div><div class="res-meta"><a href="tel:+19416393162" class="tel">(941) 639-3162</a></div></div>
+<div class="res-card compact"><div class="res-name">United Way 211</div><div class="res-meta"><a href="tel:211" class="tel">2-1-1</a> <a href="tel:+18664885875" class="tel">(866) 488-5875</a></div></div>
+<div class="res-card compact"><div class="res-name">Salvation Army Charlotte Co.</div><div class="res-meta"><a href="tel:+19416296060" class="tel">(941) 629-6060</a></div></div>
+</div>
+
+<div class="county-block">
+<h3 class="cty">Collier County</h3>
+<div class="res-card compact"><div class="res-name">Community &amp; Human Services</div><div class="res-meta"><a href="tel:+12392524663" class="tel">(239) 252-4663</a> <a href="https://colliercountyhousing.com" target="_blank" class="web">colliercountyhousing.com</a></div></div>
+<div class="res-card compact"><div class="res-name">SHIP Owner-Occupied Rehab</div><div class="res-meta"><a href="tel:+12392522486" class="tel">(239) 252-2486</a></div></div>
+<div class="res-card compact"><div class="res-name">Housing, Education &amp; Lending Programs (HELP)</div><div class="res-meta"><a href="tel:+12394342397" class="tel">(239) 434-2397</a> <a href="https://floridahelp.org" target="_blank" class="web">floridahelp.org</a></div></div>
+<div class="res-card compact"><div class="res-name">Collier County Housing Authority</div><div class="res-meta"><a href="tel:+12396573649" class="tel">(239) 657-3649</a> <a href="https://cchafl.org" target="_blank" class="web">cchafl.org</a></div></div>
+<div class="res-card compact"><div class="res-name">Catholic Charities of Collier</div><div class="res-meta"><a href="tel:+12394552655" class="tel">(239) 455-2655</a> &middot; 3174 Tamiami Trail East, Naples</div></div>
+<div class="res-card compact"><div class="res-name">Hunger &amp; Homeless Coalition</div><div class="res-meta"><a href="tel:+12392639363" class="tel">(239) 263-9363</a> <a href="https://collierhomelesscoalition.org" target="_blank" class="web">collierhomelesscoalition.org</a></div></div>
+<div class="res-card compact"><div class="res-name">St. Matthew's House (shelter)</div><div class="res-meta"><a href="tel:+12397740500" class="tel">(239) 774-0500</a> <a href="https://stmatthewshouse.org" target="_blank" class="web">stmatthewshouse.org</a></div></div>
+<div class="res-card compact"><div class="res-name">Collier County 211</div><div class="res-meta"><a href="tel:211" class="tel">2-1-1</a> <a href="tel:+12392634211" class="tel">(239) 263-4211</a></div></div>
+</div>
+
+<div class="county-block">
+<h3 class="cty">Hendry County</h3>
+<div class="res-card compact"><div class="res-name">County Housing Programs</div><div class="res-meta"><a href="tel:+18636755262" class="tel">(863) 675-5262</a> <a href="https://hendryfla.net" target="_blank" class="web">hendryfla.net</a></div></div>
+<div class="res-card compact"><div class="res-name">Foreclosure Case Management (20th Judicial Circuit)</div><div class="res-meta"><a href="tel:+18636124714" class="tel">(863) 612-4714</a> &middot; Magistrate &amp; Senior Judges Office, LaBelle</div></div>
+<div class="res-card compact"><div class="res-name">Catholic Charities &mdash; Immokalee Outreach</div><div class="res-meta"><a href="tel:+12396576242" class="tel">(239) 657-6242</a></div></div>
+<div class="res-card compact"><div class="res-name">Florida Rural Legal Services &mdash; LaBelle</div><div class="res-meta"><a href="tel:+18636750888" class="tel">(863) 675-0888</a></div></div>
+<div class="res-card compact"><div class="res-name">United Way 211 (Hendry)</div><div class="res-meta"><a href="tel:211" class="tel">2-1-1</a> <a href="tel:+18008879234" class="tel">(800) 887-9234</a></div></div>
+<div class="res-card compact"><div class="res-name">Harry Chapin Food Bank Partners</div><div class="res-meta"><a href="tel:+12393347007" class="tel">(239) 334-7007</a> <a href="https://harrychapinfoodbank.org/find-help" target="_blank" class="web">find-help</a></div></div>
+</div>
+
+<div class="county-block">
+<h3 class="cty">Sarasota County</h3>
+<div class="res-card compact"><div class="res-name">Housing Enhancement &amp; Redevelopment Office (HERO) &mdash; SHIP</div><div class="res-meta">4510 Fruitville Rd., 2nd Floor, Sarasota &middot; <a href="https://herosrq.net" target="_blank" class="web">herosrq.net</a> &middot; Walk-ins Mon/Wed/Fri 9 AM&ndash;12 PM</div></div>
+<div class="res-card compact"><div class="res-name">Sarasota Clerk Foreclosure Help</div><div class="res-meta"><a href="https://sarasotaclerk.com" target="_blank" class="web">sarasotaclerk.com</a> &mdash; homeowner resources and mediation info</div></div>
+<div class="res-card compact"><div class="res-name">12th Judicial Circuit Foreclosure Managed Mediation</div><div class="res-meta">Court-based program for residential foreclosures; ask the clerk to enroll.</div></div>
+<div class="res-card compact"><div class="res-name">Legal Aid of Manasota</div><div class="res-meta"><a href="tel:+18006252257" class="tel">(800) 625-2257</a> <a href="https://legalaidofmanasota.org" target="_blank" class="web">legalaidofmanasota.org</a></div></div>
+<div class="res-card compact"><div class="res-name">Sarasota Housing Authority</div><div class="res-meta"><a href="tel:+19413616210" class="tel">(941) 361-6210</a> <a href="https://sarasotahousing.org" target="_blank" class="web">sarasotahousing.org</a></div></div>
+<div class="res-card compact"><div class="res-name">Salvation Army &mdash; Sarasota County</div><div class="res-meta"><a href="tel:+19419544673" class="tel">(941) 954-4673</a> &middot; 1400 10th St. (24-hour shelter)</div></div>
+<div class="res-card compact"><div class="res-name">Caritas &mdash; Catholic Charities Partner</div><div class="res-meta"><a href="tel:+19413665620" class="tel">(941) 366-5620</a> &middot; 1645 Fruitville Rd., Sarasota</div></div>
+<div class="res-card compact"><div class="res-name">All Faiths Food Bank</div><div class="res-meta"><a href="tel:+19413796333" class="tel">(941) 379-6333</a> <a href="https://allfaithsfoodbank.org" target="_blank" class="web">allfaithsfoodbank.org</a></div></div>
+<div class="res-card compact"><div class="res-name">United Way 211 (Manasota/Suncoast)</div><div class="res-meta"><a href="tel:211" class="tel">2-1-1</a></div></div>
+</div>
+</section>
+
+<!-- =================== SECTION 6 =================== -->
+<section class="g-sec" id="utility">
+<div class="sec-num">Section 6</div>
+<h2>Utility Assistance</h2>
+<p>Keeping your lights and water on is a prerequisite to keeping your home. Utility shutoffs can also trigger insurance issues and, in some HOA communities, code violations. Apply for help <strong>before</strong> disconnect, not after.</p>
+
+<div class="res-card">
+<div class="res-name">LIHEAP &mdash; Low Income Home Energy Assistance Program</div>
+<div class="res-meta">
+<span class="lbl">By county</span>
+<p><strong>Lee:</strong> <a href="tel:+12395337900" class="tel">(239) 533-7900</a><br>
+<strong>Charlotte:</strong> <a href="tel:+19418336500" class="tel">(941) 833-6500</a><br>
+<strong>Collier:</strong> <a href="tel:+12392524663" class="tel">(239) 252-4663</a><br>
+<strong>Hendry:</strong> <a href="tel:+18636751092" class="tel">(863) 675-1092</a> &mdash; CAA of South Central Florida<br>
+<strong>Sarasota:</strong> <a href="tel:+19418615000" class="tel">(941) 861-5000</a></p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">EHEAP &mdash; Emergency Home Energy Assistance for the Elderly</div>
+<div class="res-meta">
+<p>For households with an adult age 60+ and a delinquent electric bill. Can also help repair or replace AC units for elderly homeowners. Apply through your county human services office (numbers above).</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">LCEC (Lee County Electric Cooperative) &mdash; Project Share</div>
+<div class="res-meta">
+<a href="tel:+12396562300" class="tel">(239) 656-2300</a>
+<a href="https://lcec.net" target="_blank" class="web">lcec.net</a>
+<p>Emergency bill assistance for LCEC customers experiencing financial hardship, administered through Salvation Army.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">FPL Care to Share</div>
+<div class="res-meta">
+<a href="https://www.fpl.com/help" target="_blank" class="web">fpl.com/help</a>
+<p>Emergency bill assistance for FPL customers facing a one-time crisis, distributed through partner agencies including Salvation Army and Catholic Charities.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Salvation Army &mdash; Utility &amp; Rent Assistance</div>
+<div class="res-meta">
+<p><strong>Lee:</strong> <a href="tel:+12392781551" class="tel">(239) 278-1551</a><br>
+<strong>Charlotte:</strong> <a href="tel:+19416296060" class="tel">(941) 629-6060</a><br>
+<strong>Collier:</strong> <a href="tel:+12397759447" class="tel">(239) 775-9447</a><br>
+<strong>Sarasota:</strong> <a href="tel:+19419544673" class="tel">(941) 954-4673</a></p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Catholic Charities, Diocese of Venice</div>
+<div class="res-meta">
+<a href="tel:+19414885581" class="tel">(941) 488-5581</a>
+<a href="https://catholiccharitiesdov.org" target="_blank" class="web">catholiccharitiesdov.org</a>
+<p>Counties: Charlotte, Collier, Hendry, Lee, and Sarasota. Short-term emergency financial assistance for rent, mortgage, utilities, prescriptions, and food &mdash; availability varies.</p>
+</div>
+</div>
+</section>
+
+<!-- =================== SECTION 7 =================== -->
+<section class="g-sec" id="food">
+<div class="sec-num">Section 7</div>
+<h2>Food Assistance</h2>
+<p>If you are behind on your mortgage, cutting your grocery bill with free food is one of the fastest ways to free up cash to put toward saving your home. These resources do not require you to be homeless to use them.</p>
+
+<div class="res-card">
+<div class="res-name">Harry Chapin Food Bank of Southwest Florida</div>
+<div class="res-meta">
+<a href="tel:+12393347007" class="tel">(239) 334-7007</a>
+<a href="https://harrychapinfoodbank.org" target="_blank" class="web">harrychapinfoodbank.org</a>
+<p>Counties: Charlotte, Collier, Hendry, Lee. Operates 175+ partner pantries, mobile pantries, in-school pantries, and senior feeding programs. Use the Find Food tool on their site.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">All Faiths Food Bank</div>
+<div class="res-meta">
+<a href="tel:+19413796333" class="tel">(941) 379-6333</a>
+<a href="https://allfaithsfoodbank.org" target="_blank" class="web">allfaithsfoodbank.org</a>
+<p>Counties: Sarasota and DeSoto. SNAP enrollment help: <a href="tel:+19413760120" class="tel">(941) 376-0120</a>.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Community Cooperative (Lee County)</div>
+<div class="res-meta">
+<a href="tel:+12393327687" class="tel">(239) 332-7687</a>
+<a href="https://communitycooperative.com" target="_blank" class="web">communitycooperative.com</a>
+<p>Hot meals, mobile pantries, and social-service referrals throughout Lee County.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">SNAP (Food Stamps) &mdash; Florida ACCESS</div>
+<div class="res-meta">
+<a href="tel:+18667622237" class="tel">1-866-762-2237</a>
+<a href="https://www.myflfamilies.com/services/access" target="_blank" class="web">myflfamilies.com/services/access</a>
+<p>Monthly food benefits based on income and household size. A foreclosure-related income drop often makes households newly eligible.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">WIC (Women, Infants, and Children)</div>
+<div class="res-meta">
+<a href="tel:+18003423556" class="tel">1-800-342-3556</a>
+<a href="https://floridawic.org" target="_blank" class="web">floridawic.org</a>
+</div>
+</div>
+</section>
+
+<!-- =================== SECTION 8 =================== -->
+<section class="g-sec" id="shelter">
+<div class="sec-num">Section 8</div>
+<h2>Emergency Shelter &amp; Housing</h2>
+<p>If you have exhausted options to keep the home, the shelter and transitional housing programs below can provide a stable next step. Most require a phone intake or a referral from 211. <strong>Call before showing up.</strong></p>
+
+<div class="res-card">
+<div class="res-name">Salvation Army &mdash; Emergency Shelter</div>
+<div class="res-meta">
+<p><strong>Lee:</strong> <a href="tel:+12392781551" class="tel">(239) 278-1551</a> &middot; 2400 Edison Ave., Fort Myers<br>
+<strong>Charlotte:</strong> <a href="tel:+19416296060" class="tel">(941) 629-6060</a><br>
+<strong>Collier:</strong> <a href="tel:+12397759447" class="tel">(239) 775-9447</a> &middot; 3180 Estey Ave., Naples<br>
+<strong>Sarasota:</strong> <a href="tel:+19419544673" class="tel">(941) 954-4673</a> &middot; 1400 10th St. (the only 24-hour adult shelter in the county)</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">St. Matthew's House (Collier County)</div>
+<div class="res-meta">
+<a href="tel:+12397740500" class="tel">(239) 774-0500</a>
+<a href="https://stmatthewshouse.org" target="_blank" class="web">stmatthewshouse.org</a>
+<p>Emergency shelter, transitional housing, and recovery programs.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Charlotte County Homeless Coalition</div>
+<div class="res-meta">
+<a href="tel:+19416274313" class="tel">(941) 627-4313</a>
+<a href="https://cchomelesscoalition.org" target="_blank" class="web">cchomelesscoalition.org</a>
+<p>1476 Kenesaw St., Port Charlotte.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Hunger &amp; Homeless Coalition of Collier County</div>
+<div class="res-meta">
+<a href="tel:+12392639363" class="tel">(239) 263-9363</a>
+<a href="https://collierhomelesscoalition.org" target="_blank" class="web">collierhomelesscoalition.org</a>
+<p>Coordinated entry for homeless services in Collier County.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">ACT (Abuse Counseling &amp; Treatment) &mdash; Lee County</div>
+<div class="res-meta">
+<a href="tel:+12399393112" class="tel">24-hour: (239) 939-3112</a>
+<a href="https://actabuse.com" target="_blank" class="web">actabuse.com</a>
+<p>Confidential emergency shelter for survivors of domestic violence, sexual violence, and human trafficking.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">The Shelter for Abused Women &amp; Children (Collier)</div>
+<div class="res-meta">
+<a href="tel:+12397751101" class="tel">24-hour crisis: (239) 775-1101</a>
+<a href="https://naplesshelter.org" target="_blank" class="web">naplesshelter.org</a>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">CARE (Center for Abuse and Rape Emergencies) &mdash; Charlotte</div>
+<div class="res-meta">
+<a href="tel:+19416276000" class="tel">24-hour: (941) 627-6000</a>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">SPARCC &mdash; Sarasota</div>
+<div class="res-meta">
+<a href="tel:+19413651976" class="tel">24-hour: (941) 365-1976</a>
+<a href="https://sparcc.net" target="_blank" class="web">sparcc.net</a>
+<p>Confidential emergency shelter and advocacy for survivors of domestic and sexual violence in Sarasota and DeSoto counties.</p>
+</div>
+</div>
+</section>
+
+<!-- =================== SECTION 9 =================== -->
+<section class="g-sec" id="crisis">
+<div class="sec-num">Section 9</div>
+<h2>Crisis Support &amp; Mental Health</h2>
+<p>A foreclosure is a financial event &mdash; but for most people it is also a profound personal crisis. If you or someone in your household is struggling emotionally, the resources below are free, confidential, and available around the clock.</p>
+
+<div class="res-card">
+<div class="res-name">988 Suicide and Crisis Lifeline</div>
+<div class="res-meta">
+<a href="tel:988" class="tel">988 (call or text)</a>
+<a href="https://988lifeline.org" target="_blank" class="web">988lifeline.org</a>
+<p>Free, confidential, 24/7 support in English and Spanish for anyone in emotional distress or suicidal crisis.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">United Way 211 &mdash; Southwest Florida</div>
+<div class="res-meta">
+<a href="tel:211" class="tel">2-1-1 (24/7)</a>
+<p><strong>Lee / Hendry:</strong> <a href="tel:+12394333900" class="tel">(239) 433-3900</a><br>
+<strong>Hendry alt:</strong> <a href="tel:+18008879234" class="tel">(800) 887-9234</a><br>
+<strong>Charlotte / Sarasota:</strong> <a href="tel:+18664885875" class="tel">(866) 488-5875</a><br>
+<strong>Text:</strong> your zip code to 898-211</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">SAMHSA National Helpline</div>
+<div class="res-meta">
+<a href="tel:+18006624357" class="tel">1-800-662-HELP (4357)</a>
+<p>Free, confidential, 24/7 treatment referral and information for mental health and substance use concerns.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">Centerstone of Florida &mdash; SWFL Behavioral Health</div>
+<div class="res-meta">
+<a href="tel:+19417824800" class="tel">(941) 782-4800</a>
+<p>Community mental health and substance-use services in Charlotte, DeSoto, Manatee, and Sarasota counties.</p>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">David Lawrence Centers (Collier County)</div>
+<div class="res-meta">
+<a href="tel:+12394558500" class="tel">24-hour crisis: (239) 455-8500</a>
+<a href="https://dlcenters.org" target="_blank" class="web">dlcenters.org</a>
+</div>
+</div>
+
+<div class="res-card">
+<div class="res-name">SalusCare (Lee County Behavioral Health)</div>
+<div class="res-meta">
+<a href="tel:+12392753222" class="tel">24-hour crisis: (239) 275-3222</a>
+<a href="https://saluscareflorida.org" target="_blank" class="web">saluscareflorida.org</a>
+</div>
+</div>
+</section>
+
+<!-- =================== SECTION 10 =================== -->
+<section class="g-sec" id="scams">
+<div class="sec-num">Section 10</div>
+<h2>Protect Yourself from Foreclosure Rescue Scams</h2>
+<p>Foreclosure lists are public records. That means anyone behind on payments will quickly attract phone calls, door-knockers, postcards, and text messages promising to "save" the home. Some of these offers are legitimate. <strong>Many are scams</strong> designed to strip your equity, steal your deed, or take fees for work that is never performed.</p>
+
+<div class="callout warn">
+<strong>Red flags &mdash; walk away if you hear any of these:</strong>
+<ul>
+<li>They demand an upfront fee before providing any service.</li>
+<li>They ask you to sign over your deed, even temporarily, with a promise to "rent it back" or "buy it back later."</li>
+<li>They tell you to stop paying your mortgage and send payments to them instead.</li>
+<li>They guarantee they can stop your foreclosure or modify your loan &mdash; no one can guarantee that.</li>
+<li>They tell you not to contact your lender, a lawyer, or a HUD counselor.</li>
+<li>They pressure you to sign documents you haven't read.</li>
+<li>They claim to be "government-affiliated" or use HUD/FHA/VA logos without authorization.</li>
+</ul>
+</div>
+
+<h3>Common scam structures to recognize</h3>
+<ul>
+<li><strong>Phantom help:</strong> an upfront fee for "loan modification" or "foreclosure consultation," after which the scammer disappears.</li>
+<li><strong>Bailout / equity-stripping:</strong> you transfer the deed in exchange for a promised lease and buyback option, but the terms are structured so you can never repurchase.</li>
+<li><strong>Bait-and-switch:</strong> documents presented as a forbearance or assistance agreement are actually a transfer of title or a power of attorney.</li>
+<li><strong>Forensic loan audit:</strong> a high fee for an "audit" of your loan documents that supposedly forces your lender to modify &mdash; it rarely works.</li>
+</ul>
+
+<h3>Before you sign anything</h3>
+<div class="checklist">
+<ol>
+<li>Read every page. Never sign a blank document. Never sign under pressure.</li>
+<li>Ask for a copy of any offer in writing and take 24&ndash;48 hours to review it.</li>
+<li>Show the offer to a HUD-approved housing counselor or legal aid attorney. Both are free.</li>
+<li>Verify the company with the Florida Attorney General and the Florida Department of Business &amp; Professional Regulation.</li>
+</ol>
+</div>
+
+<h3>Report suspected scams</h3>
+<div class="res-card">
+<div class="res-name">Florida Attorney General &mdash; Consumer Protection</div>
+<div class="res-meta">
+<a href="tel:+18669667226" class="tel">1-866-9-NO-SCAM</a>
+<a href="https://myfloridalegal.com" target="_blank" class="web">myfloridalegal.com</a>
+</div>
+</div>
+<div class="res-card">
+<div class="res-name">Consumer Financial Protection Bureau (CFPB)</div>
+<div class="res-meta">
+<a href="tel:+18554112372" class="tel">1-855-411-2372</a>
+<a href="https://www.consumerfinance.gov/complaint" target="_blank" class="web">consumerfinance.gov/complaint</a>
+</div>
+</div>
+<div class="res-card">
+<div class="res-name">Federal Trade Commission</div>
+<div class="res-meta">
+<a href="https://reportfraud.ftc.gov" target="_blank" class="web">reportfraud.ftc.gov</a>
+</div>
+</div>
+
+<div class="callout tip">
+<strong>What a legitimate cash offer looks like:</strong> Working with a cash buyer or real estate investor is not a scam by itself &mdash; many homeowners legitimately sell their home to avoid foreclosure when other options don't fit. The difference is <strong>transparency</strong>. A legitimate buyer will explain the numbers, give you time to review, recommend you talk to your lender and a counselor, and never ask you to sign over your deed without a clean closing through a licensed title company.
+</div>
+</section>
+
+<!-- =================== SECTION 11 =================== -->
+<section class="g-sec" id="final">
+<div class="sec-num">Section 11</div>
+<div class="g-final">
+<h2>A Final Word</h2>
+<p>A foreclosure notice is not the end of the road. It is a starting line &mdash; a point at which you are forced to make decisions you would rather not make, with help available that you may not have known existed. The agencies and programs in this guide exist specifically to give you options. Use them.</p>
+<p>Call before you go. Bring documentation. Ask questions. If the first number doesn't work, try the next one. If one program says no, another may say yes. And if you are overwhelmed, start with one phone call &mdash; <a href="tel:211">2-1-1</a> &mdash; and let them help you build the list.</p>
+<p class="punch">You are not alone in this. Help is free. The earlier you act, the more you can save.</p>
+</div>
+</section>
+
+<!-- =================== ABOUT / CTA =================== -->
+<section class="g-sec" id="about-this">
+<div class="sec-num">About This Guide</div>
+<h2 style="font-size:1.4rem">Why Transition Properties put this together</h2>
+<p>We're a Southwest Florida home-buying company based in Cape Coral. We don't take fees, don't list houses, don't negotiate with lenders for you, and don't claim to "stop foreclosure" &mdash; the agencies above do that work, and they do it for free. Our job is simpler: if you decide a fast cash sale is the right path, we make a clean, no-pressure offer and close on your timeline through a licensed title company.</p>
+<p>We see homeowners every week who only learned about HUD counselors or Florida Rural Legal Services <em>after</em> they had already paid a scammer. We made this guide so the next family doesn't.</p>
+<p style="font-size:.85rem;color:var(--tm);margin-top:1rem">Compiled from public sources. Updates and corrections welcome &mdash; email <a href="mailto:info@transitionfl.com">info@transitionfl.com</a>.</p>
+</section>
+
+<!-- BOTTOM CTA -->
+<div class="g-cta" id="talk">
+<span class="tag">If a Cash Sale Is Right for You</span>
+<h2>Talk to us &mdash; no pressure, no obligation.</h2>
+<p>If you've been through the resources above and a fast, as-is sale would actually solve your situation, that's where we come in. We'll explain the offer in plain numbers, give you time to talk to your counselor or attorney, and walk away if it's not right. That's it.</p>
+<div class="cta-btns">
+<a href="tel:+12397666978" class="primary">&#9742; Call (239) 766-6978</a>
+<a href="/pre-foreclosure" class="secondary">Read our Pre-Foreclosure page &rarr;</a>
+</div>
+<p class="fine">Or send your details below &mdash; we respond within 24 hours.</p>
+
+<!-- Inline lead form (uses existing form-handler.js + .fc class) -->
+<div class="lead-form fc">
+<h3>Tell us about your property</h3>
+<p class="su">100% confidential. Consent is not required to sell.</p>
+<div class="fr"><div><label>First Name</label><input type="text" placeholder="John"></div><div><label>Last Name</label><input type="text" placeholder="Smith"></div></div>
+<div class="fr"><div><label>Phone</label><input type="tel" placeholder="(239) 555-0123"></div><div><label>Email</label><input type="email" placeholder="john@email.com"></div></div>
+<div class="fr fu"><div><label>Property Address</label><input type="text" placeholder="123 Main St, Fort Myers, FL"></div></div>
+<div class="fr"><div><label>Property Type</label><select><option>Single Family</option><option>Condo / Townhouse</option><option>Multi-Family</option><option>Vacant Land</option><option>Other</option></select></div>
+<div><label>Situation</label><select><option>Pre-Foreclosure</option><option>Behind on Payments</option><option>Probate / Inherited</option><option>Tired Landlord</option><option>Divorce</option><option>Other</option></select></div></div>
+<div class="fr fu"><div><label>Anything else? (optional)</label><textarea placeholder="Tell us about your situation..."></textarea></div></div>
+<div class="fr fu" style="margin-top:.6rem"><label style="display:flex;align-items:flex-start;gap:.55rem;cursor:pointer;font-size:.72rem;color:var(--tm);font-weight:400;letter-spacing:0;text-transform:none;line-height:1.5;margin:0"><input type="checkbox" required data-key="sms_consent" style="margin-top:.18rem;flex-shrink:0;accent-color:#E8612D;cursor:pointer"><span>I agree to receive SMS texts and calls from Transition Properties about my property at the number above. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to unsubscribe. See our <a href="/privacy" target="_blank" onclick="event.stopPropagation()" style="color:#E8612D;text-decoration:underline">Privacy &amp; SMS Policy</a>. Consent is not required to sell.</span></label></div>
+<button class="bs">Get a No-Obligation Offer &rarr;</button>
+<p class="fn">100% confidential &bull; No spam &bull; No obligation</p>
+</div>
+</div>
+
+</div><!-- /g-wrap -->
+
+<!-- FOOTER -->
+<footer class="g-foot">
+<p>&copy; 2026 Transition Properties LLC &middot; Cape Coral, FL &middot; <a href="tel:+12397666978">(239) 766-6978</a> &middot; <a href="mailto:info@transitionfl.com">info@transitionfl.com</a></p>
+<p class="ft-legal"><a href="/">Home</a> &middot; <a href="/pre-foreclosure">Pre-Foreclosure</a> &middot; <a href="/about">About</a> &middot; <a href="/privacy">Privacy &amp; SMS</a> &middot; <a href="/terms">Terms &amp; Disclaimer</a></p>
+</footer>
+
+<script src="/form-handler.js" defer></script>
+<script>
+function toggleMobileNav(){window.location.href='/';}
+</script>
+</body></html>

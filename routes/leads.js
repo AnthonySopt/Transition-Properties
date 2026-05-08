@@ -63,15 +63,20 @@ async function sendNotification(type, data, recipientOverride) {
 
 // POST /api/leads/residential
 router.post('/residential', (req, res) => {
-  const { first_name, last_name, phone, email, address, property_type, situation, details } = req.body;
+  const { first_name, last_name, phone, email, address, property_type, situation, details, sms_consent } = req.body;
 
   if (!phone?.trim() || !email?.trim() || !address?.trim()) {
     return res.status(400).json({ error: 'Phone, email, and property address are required.' });
   }
+  if (sms_consent !== 'yes') {
+    return res.status(400).json({ error: 'Please check the consent box to continue.' });
+  }
 
-  const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
+  const ip         = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
+  const user_agent = req.get('user-agent') || '';
+  const consent_at = new Date().toISOString();
 
-  insertLead({ type: 'residential', first_name, last_name, phone, email, address, property_type, situation, details, ip });
+  insertLead({ type: 'residential', first_name, last_name, phone, email, address, property_type, situation, details, ip, sms_consent, consent_at, user_agent });
   sendNotification('residential', req.body);
 
   res.json({ success: true, message: "✓ Request received! We'll reach out within 24 hours." });
@@ -79,15 +84,20 @@ router.post('/residential', (req, res) => {
 
 // POST /api/leads/commercial
 router.post('/commercial', (req, res) => {
-  const { name, phone, email, address, property_type, situation, asking_price, details } = req.body;
+  const { name, phone, email, address, property_type, situation, asking_price, details, sms_consent } = req.body;
 
   if (!phone?.trim() || !email?.trim() || !address?.trim()) {
     return res.status(400).json({ error: 'Phone, email, and property address are required.' });
   }
+  if (sms_consent !== 'yes') {
+    return res.status(400).json({ error: 'Please check the consent box to continue.' });
+  }
 
-  const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
+  const ip         = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
+  const user_agent = req.get('user-agent') || '';
+  const consent_at = new Date().toISOString();
 
-  insertLead({ type: 'commercial', name, phone, email, address, property_type, situation, asking_price, details, ip });
+  insertLead({ type: 'commercial', name, phone, email, address, property_type, situation, asking_price, details, ip, sms_consent, consent_at, user_agent });
 
   // Deal submissions (from /submit-deal page) go to deals@transitionfl.com
   // Regular commercial leads go to the standard NOTIFY_EMAIL (info/leads)

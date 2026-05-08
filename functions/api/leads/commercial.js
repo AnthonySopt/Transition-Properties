@@ -11,9 +11,13 @@ export async function onRequestPost({ request, env }) {
   try { data = await request.json(); }
   catch { return json({ error: 'Invalid request.' }, 400); }
 
-  const { phone, email, address, situation } = data;
+  const { phone, email, address, situation, sms_consent } = data;
   if (!phone?.trim() || !email?.trim() || !address?.trim()) {
     return json({ error: 'Phone, email, and property address are required.' }, 400);
+  }
+  // TCPA consent gate; see residential.js for the rationale.
+  if (sms_consent !== 'yes') {
+    return json({ error: 'Please check the consent box to continue.' }, 400);
   }
 
   // `submit-deal.html` prefixes `situation` with "Deal Submission" so we can

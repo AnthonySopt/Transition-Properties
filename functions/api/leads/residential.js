@@ -11,12 +11,20 @@ export async function onRequestPost({ request, env }) {
   try { data = await request.json(); }
   catch { return json({ error: 'Invalid request.' }, 400); }
 
-  const { first_name, last_name, phone, email, address } = data;
+  const { first_name, last_name, phone, email, address, sms_consent } = data;
   if (!phone?.trim() || !email?.trim() || !address?.trim()) {
     return json({ error: 'Phone, email, and property address are required.' }, 400);
   }
   if (!first_name?.trim() && !last_name?.trim()) {
     return json({ error: 'Your name is required.' }, 400);
+  }
+  // TCPA consent gate. The form's checkbox carries data-key="sms_consent" and
+  // form-handler.js sends 'yes'/'no'. Server-side check guards against anyone
+  // bypassing the HTML `required` attribute via DevTools / curl. The consent
+  // value, IP, and user-agent flow through to the CRM via forwardToCrm so we
+  // have an audit trail per submission.
+  if (sms_consent !== 'yes') {
+    return json({ error: 'Please check the consent box to continue.' }, 400);
   }
 
   // Fire CRM forward and email notification in parallel — the email is a
